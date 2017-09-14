@@ -1,25 +1,42 @@
+*.class
+
+# Package Files
+*.jar
+*.war
+*.ear
+
+# build dirs
+out
+target
+build
 .gradle
-/build/
-!gradle/wrapper/gradle-wrapper.jar
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
+# Ignore Gradle GUI config
+gradle-app.setting
 
-### IntelliJ IDEA ###
-.idea
-*.iws
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
+
+# IntelliJ
 *.iml
 *.ipr
+*.iws
+.idea
 
-### NetBeans ###
-nbproject/private/
-build/
-nbbuild/
-dist/
-nbdist/
-.nb-gradle/
+!doc/codestyle/settings.jar
+
+# temp
+*.*~
+
+# Mac OS X
+.DS_Store
+
+# local module cache
+node_modules
+nodejs
+bower_components
+typings
+!typings/jquery-simple.d.ts
+
+# repacked client
+quartermaster/src/main/webapp
