@@ -8,21 +8,30 @@ repositories {
 }
 
 dependencies {
-    compile('org.springframework.boot:spring-boot-starter-data-jpa',
-            'org.springframework.boot:spring-boot-starter-data-rest',
-            'org.springframework.data:spring-data-rest-hal-browser',
-            'org.flywaydb:flyway-core',
+    compile(
+            "org.springframework.boot:spring-boot-starter-data-jpa:${version_spring_boot}",
+            "org.springframework.boot:spring-boot-starter-data-rest:${version_spring_boot}",
+            "org.springframework.data:spring-data-rest-hal-browser:${version_spring_hal_browser}",
+            "org.flywaydb:flyway-core:${version_flyway}"
     )
 
-    runtime('org.springframework.boot:spring-boot-devtools',
-            'org.hsqldb:hsqldb'
+    compileOnly(
+            "org.hibernate:hibernate-jpamodelgen:${version_jpamodelgen}"
     )
 
-    testCompile('org.springframework.boot:spring-boot-starter-test',
-            'org.springframework.restdocs:spring-restdocs-mockmvc',
-            'org.springframework.security:spring-security-test',
-            'org.dbunit:dbunit:2.4.3',
-            'com.github.springtestdbunit:spring-test-dbunit:1.3.0'
+    runtime(
+            'org.springframework.boot:spring-boot-devtools',
+            "org.hsqldb:hsqldb:${version_hsqldb}"
+    )
+
+    testCompile(
+            "org.springframework.boot:spring-boot-starter-test:${version_spring_boot}",
+            "org.springframework.restdocs:spring-restdocs-mockmvc:${version_restdocs_mockmvc}",
+            "org.springframework.security:spring-security-test:${version_spring_security_test}",
+            "com.github.springtestdbunit:spring-test-dbunit:${version_spring_dbunit}",
+            "org.dbunit:dbunit:${version_dbunit}",
+            "org.assertj:assertj-core:${version_assertj}",
+            "org.mockito:mockito-core:${version_mockito}"
     )
 }
 
