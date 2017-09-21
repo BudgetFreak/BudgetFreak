@@ -27,10 +27,9 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{
-{ checksum "build.gradle" }
-{ checksum "settings.gradle" }
-{ checksum "gradle.properties" }
+          - v1-dependencies-{{ checksum "build.gradle" }}
+          - v2-dependencies-{{ checksum "settings.gradle" }}
+          - v3-dependencies-{{ checksum "gradle.properties" }}
 }
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
@@ -40,10 +39,10 @@ jobs:
       - save_cache:
           paths:
             - ~/.gradle/caches
-          key: v1-dependencies-{
-{ checksum "build.gradle" }
-{ checksum "settings.gradle" }
-{ checksum "gradle.properties" }
+          keys:
+          - v1-dependencies-{{ checksum "build.gradle" }}
+          - v2-dependencies-{{ checksum "settings.gradle" }}
+          - v3-dependencies-{{ checksum "gradle.properties" }}
 }
         
       # run build
