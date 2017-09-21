@@ -30,7 +30,7 @@ jobs:
           - v1-dependencies-{{ checksum "gradle.properties" }}
           - v1-dependencies
 
-      - run: gradle dependencies
+      - run: ./gradlew resolveDependencies
 
       - save_cache:
           paths:
