@@ -28,8 +28,10 @@ jobs:
       - restore_cache:
           keys:
           - v2-dependencies-{{ checksum "gradle.properties" }}
-          - v2-dependencies
-
+      - restore_cache:
+          keys:
+          - v2-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+          
       - run: ./gradlew resolveDependencies
 
       - save_cache:
@@ -38,8 +40,8 @@ jobs:
           key: v2-dependencies-{{ checksum "gradle.properties" }}
       - save_cache:
           paths:
-            - ~/.gradle/caches
-          key: v2-dependencies
+            - ~/.gradle/wrapper
+          key: v2-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
 
       # run build
       - run: ./gradlew build
