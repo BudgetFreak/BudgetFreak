@@ -28,8 +28,7 @@ jobs:
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "gradle.properties" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+          - v1-dependencies
 
       - run: gradle dependencies
 
@@ -37,6 +36,10 @@ jobs:
           paths:
             - ~/.gradle/caches
           key: v1-dependencies-{{ checksum "gradle.properties" }}
+      - save_cache:
+          paths:
+            - ~/.gradle/caches
+          key: v1-dependencies
 
       # run build
       - run: ./gradlew build
