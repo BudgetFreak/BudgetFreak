@@ -1,0 +1,38 @@
+<!ELEMENT dataset (
+        user*,
+        provider_certificate*,
+        xv_data*
+        )>
+
+        <!ELEMENT user EMPTY>
+        <!ATTLIST user
+                ID CDATA #REQUIRED
+                USERNAME CDATA #REQUIRED
+                PASSWORDHASH CDATA #REQUIRED
+                >
+
+        <!ELEMENT xv_data EMPTY>
+        <!ATTLIST xv_data
+                ID CDATA #REQUIRED
+                DOCTYPE CDATA #REQUIRED
+                VALID_FROM CDATA #REQUIRED
+                VALID_UNTIL CDATA #REQUIRED
+                PROVIDER_ID CDATA #REQUIRED
+                CANCELLED CDATA #REQUIRED
+                XVERGABE_DATA CDATA #IMPLIED
+                BUND_DE_DATA CDATA #IMPLIED
+                PROCEDURE_ID CDATA #IMPLIED
+                RECEPTION_TIMESTAMP CDATA #REQUIRED
+                FIRST_EXPORT CDATA #REQUIRED
+                LAST_EXPORT CDATA #REQUIRED
+                LAST_EXPORT_FILE CDATA #REQUIRED
+                >
+
+        <!ELEMENT provider_certificate EMPTY>
+        <!ATTLIST provider_certificate
+                ID CDATA #REQUIRED
+                PROVIDER_ID CDATA #REQUIRED
+                CERTIFICATE CDATA #REQUIRED
+                LAST_ACTIVITY CDATA #REQUIRED
+                VALID_UNTIL CDATA #REQUIRED
+                >
