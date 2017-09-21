@@ -37,7 +37,6 @@ jobs:
           paths:
             - ~/.gradle/caches
           key: v1-dependencies-{{ checksum "gradle.properties" }}
-}
-        
+
       # run build
       - run: ./gradlew build
