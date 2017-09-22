@@ -1,5 +1,9 @@
 sonarqube {
     properties {
         property "sonar.projectName", "BudgetFreak-${System.env.CIRCLE_BRANCH}"
+        property "sonar.projectKey", "de.budgetfreak:budgetfreak-${System.env.CIRCLE_BRANCH}"
+        property "sonar.organization", "budgetfreak-github"
+        property "sonar.host.url", "https://sonarcloud.io"
+        property "sonar.login", "${System.getenv().SONAR_LOGIN}"
     }
 }
