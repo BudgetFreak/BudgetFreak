@@ -1,0 +1,5 @@
+sonarqube {
+    properties {
+        property "sonar.projectName", "BudgetFreak-${env.CIRCLE_BRANCH}"
+    }
+}
