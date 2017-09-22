@@ -20,7 +20,7 @@ ext {
 
     buildNumber = getEnv('CIRCLE_BUILD_NUM', null)
     gitCommit = getEnv('CIRCLE_SHA1', null)
-    gitCommitShort = getEnv('CIRCLE_SHA1', null)
+    gitCommitShort = gitCommit.substring(0,8)
     pullRequestNumber = getEnv('CIRCLE_PR_NUMBER', null)
     isPullRequest = pullRequestNumber != null
 
