@@ -60,4 +60,4 @@ workflows:
             - java_build
           filters:
             branches:
-              only: add-sonarqube
+              only: master
