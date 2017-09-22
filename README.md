@@ -3,6 +3,7 @@
 ## Code Quality
 
 * Builds on CircleCI
+  * master [![CircleCI](https://circleci.com/gh/BudgetFreak/BudgetFreak/tree/master.svg?style=svg)](https://circleci.com/gh/BudgetFreak/BudgetFreak/tree/master)
 * Linting by sonarcloud: https://sonarcloud.io/organizations/budgetfreak-github/projects
 
 ## Flyway
