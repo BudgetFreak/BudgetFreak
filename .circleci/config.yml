@@ -35,21 +35,37 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          keys:
-          - v2-dependencies-{{ checksum "gradle.properties" }}
+          keys: v2-dependencies-{{ checksum "gradle.properties" }}
       - restore_cache:
-          keys:
-          - v2-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+          keys: v2-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
       - run: ./gradlew resolveDependencies
       - save_cache:
-          paths:
-            - ~/.gradle/caches
+          paths: ~/.gradle/caches
           key: v2-dependencies-{{ checksum "gradle.properties" }}
       - save_cache:
-          paths:
-            - ~/.gradle/wrapper
+          paths: ~/.gradle/wrapper
           key: v2-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
       - run: ./gradlew sonarqube -Dsonar.organization=budgetfreak-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${SONAR_LOGIN}
+  angular_check:
+      working_directory: ~/repo
+      docker:
+        - image: circleci/node:6-browsers
+      steps:
+        - checkout
+        - restore_cache:
+            key: v2-node-dependencies-{{ checksum "web/package.json" }}
+        - run:
+            command: npm install
+            working_directory: ~/repo/web
+        - save_cache:
+            key: v2-node-dependencies-{{ checksum "web/package.json" }}
+            paths: web/node_modules
+        - run:
+            command: xvfb-run -a npm run test -- --single-run --no-progress --browser=ChromeNoSandbox
+            working_directory: ~/repo/web
+        - run:
+            command: xvfb-run -a npm run e2e -- --no-progress --config=protractor-ci.conf.js
+            working_directory: ~/repo/web
 workflows:
   version: 2
   build_and_analze:
@@ -61,3 +77,4 @@ workflows:
           filters:
             branches:
               only: master
+      - angular_check
