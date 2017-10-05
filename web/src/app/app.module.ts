@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
     ClarityModule.forRoot()
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: []
 })
 export class AppModule { }
