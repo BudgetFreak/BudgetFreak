@@ -1,5 +1,12 @@
 # BudgetFreak
 
+[![CircleCI](https://circleci.com/gh/BudgetFreak/BudgetFreak.svg?style=svg)](https://circleci.com/gh/BudgetFreak/BudgetFreak) [![Gradle Status](https://gradleupdate.appspot.com/BudgetFreak/BudgetFreak/status.svg)](https://gradleupdate.appspot.com/BudgetFreak/BudgetFreak/status)
+
+## Code Quality
+
+* Builds on CircleCI
+* Linting by sonarcloud: https://sonarcloud.io/organizations/budgetfreak-github/projects
+
 ## Flyway
 We use Flyway to initialize and migrate our database.
 For your migration scripts use the following form 

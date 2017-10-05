@@ -1,0 +1,28 @@
+def getBuildVersion(String baseVersion) {
+    def version = baseVersion;
+
+    if (project.isCiBuild) {
+        version += "+${project.buildNumber}.${project.gitCommitShort}"
+        if (project.isPullRequest) {
+            version += ".pr${project.pullRequestNumber}"
+        }
+
+    } else {
+        version += "+local"
+    }
+
+    return version
+}
+
+ext {
+    // reads environment variables when running on snap-ci.com
+    isCiBuild = getBoolEnv('CI', false)
+    buildNumber = getEnv('CIRCLE_BUILD_NUM', null)
+    gitCommit = getEnv('CIRCLE_SHA1', null)
+    gitCommitShort = gitCommit != null ? gitCommit.substring(0,8) : null
+    pullRequestNumber = getEnv('CIRCLE_PR_NUMBER', '')
+    isPullRequest = pullRequestNumber != ''
+
+    // export method as closure to make it available for all projects
+    getBuildVersion = this.&getBuildVersion
+}
