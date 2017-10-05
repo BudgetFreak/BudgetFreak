@@ -1,15 +1,12 @@
 package de.budgetfreak.budgetfreakapplication;
 
-/*@RunWith(SpringJUnit4ClassRunner.class)
-@TestExecutionListeners({DependencyInjectionTestExecutionListener.class,
-						 DirtiesContextTestExecutionListener.class,
-						 TransactionalTestExecutionListener.class,
-						 DbUnitTestExecutionListener.class})
-@DatabaseSetup("classpath:testdatabase.xml")*/
-public class BudgetfreakapplicationApplicationTests {
+import org.junit.Test;
 
-	//@Test
-	public void contextLoads() {
-	}
+public class BudgetfreakapplicationApplicationTests extends TestDatabaseContext {
 
+    @Test
+    public void name()
+            throws Exception {
+
+    }
 }
