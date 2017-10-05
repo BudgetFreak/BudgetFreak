@@ -1,40 +1,21 @@
-# Java Gradle CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-java/ for more details
-#
 version: 2
 jobs:
-  build:
+  java_build:
     docker:
-      # specify the version you desire here
       - image: circleci/openjdk:8-jdk
-      - image: circleci/node:6.10.3-browsers
-      
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/postgres:9.4
-
     working_directory: ~/repo
-
     environment:
-      # Customize the JVM maximum heap limit
       JVM_OPTS: -Xmx3200m
       TERM: dumb
-    
     steps:
       - checkout
-
-      # Download and cache dependencies
       - restore_cache:
           keys:
           - v2-dependencies-{{ checksum "gradle.properties" }}
       - restore_cache:
           keys:
           - v2-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
-          
       - run: ./gradlew resolveDependencies
-
       - save_cache:
           paths:
             - ~/.gradle/caches
@@ -43,6 +24,40 @@ jobs:
           paths:
             - ~/.gradle/wrapper
           key: v2-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
-
-      # run build
       - run: ./gradlew build
+  java_sonarqube:
+    docker:
+      - image: circleci/openjdk:8-jdk
+    working_directory: ~/repo
+    environment:
+      JVM_OPTS: -Xmx3200m
+      TERM: dumb
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - v2-dependencies-{{ checksum "gradle.properties" }}
+      - restore_cache:
+          keys:
+          - v2-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+      - run: ./gradlew resolveDependencies
+      - save_cache:
+          paths:
+            - ~/.gradle/caches
+          key: v2-dependencies-{{ checksum "gradle.properties" }}
+      - save_cache:
+          paths:
+            - ~/.gradle/wrapper
+          key: v2-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+      - run: ./gradlew sonarqube -Dsonar.organization=budgetfreak-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${SONAR_LOGIN}
+workflows:
+  version: 2
+  build_and_analze:
+    jobs:
+      - java_build
+      - java_sonarqube:
+          requires:
+            - java_build
+          filters:
+            branches:
+              only: master

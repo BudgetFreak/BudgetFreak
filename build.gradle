@@ -1,8 +1,12 @@
+plugins {
+    id "org.sonarqube" version "2.5"
+}
+
 ext {
-    majorVersion = '1'
-    minorVersion = '1'
-    patchVersion = '0'
-    baseVersion = "${majorVersion}.${minorVersion}.${patchVersion}"
+    // must be  "major.minor.patch"
+    // or       "major.minor.patch-prerelease"
+    // see http://semver.org/
+    baseVersion = '1.0.0-alpha'
 }
 
 // alle Skripte aus ./gradle.d in sortierter Reihenfolge einbinden
@@ -10,4 +14,8 @@ file('gradle.d').listFiles().sort().each {
     if (it =~ /.*\.gradle$/) {
         apply from: relativePath(it)
     }
+}
+
+allprojects {
+    version = getBuildVersion(baseVersion)
 }
