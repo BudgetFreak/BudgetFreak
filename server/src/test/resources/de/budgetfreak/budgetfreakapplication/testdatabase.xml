@@ -1,5 +1,0 @@
-<!DOCTYPE dataset SYSTEM "src/test/java/de/budgetfreak/budgetfreakapplication/testdatabase.dtd">
-<dataset>
-    <!-- Example Table
-    <table  ID="2501", ATTRIBUTE="FOO">
-    --></dataset>
