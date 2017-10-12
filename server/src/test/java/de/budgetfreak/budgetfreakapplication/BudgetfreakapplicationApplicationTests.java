@@ -5,8 +5,7 @@ import org.junit.Test;
 public class BudgetfreakapplicationApplicationTests extends TestDatabaseContext {
 
     @Test
-    public void name()
-            throws Exception {
-
+    public void name() throws Exception {
+        
     }
 }

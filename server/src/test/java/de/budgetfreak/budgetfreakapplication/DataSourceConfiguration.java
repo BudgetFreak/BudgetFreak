@@ -16,21 +16,10 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 @Configuration
-@EnableJpaRepositories(basePackages = {"de.budgetfreak.budgetfreakapplication.repositories"})
+@EnableJpaRepositories(basePackages = {"de.budgetfreak.budgetfreakapplication"})
 @ComponentScan(basePackages = "de.budgetfreak.budgetfreakapplication")
 @PropertySource("classpath:application-test.properties")
 public class DataSourceConfiguration {
-
-    @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-        LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
-        localContainerEntityManagerFactoryBean.setDataSource(dataSource());
-        localContainerEntityManagerFactoryBean.getJpaPropertyMap().put(Environment.HBM2DDL_AUTO, "update");
-        localContainerEntityManagerFactoryBean.getJpaPropertyMap().put(Environment.DIALECT, H2Dialect.class.getName());
-        localContainerEntityManagerFactoryBean.setPackagesToScan("de.budgetfreak.budgetfreakapplication.persistence");
-        localContainerEntityManagerFactoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
-        return localContainerEntityManagerFactoryBean;
-    }
 
     @Bean
     public DataSource dataSource() {
@@ -40,7 +29,6 @@ public class DataSourceConfiguration {
     @Bean
     public JpaTransactionManager transactionManager() {
         JpaTransactionManager jpaTransactionManager = new JpaTransactionManager();
-        jpaTransactionManager.setEntityManagerFactory(entityManagerFactory().getObject());
         return jpaTransactionManager;
     }
 
