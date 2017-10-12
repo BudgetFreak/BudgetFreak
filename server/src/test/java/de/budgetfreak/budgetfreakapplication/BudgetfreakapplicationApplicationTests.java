@@ -6,6 +6,6 @@ public class BudgetfreakapplicationApplicationTests extends TestDatabaseContext 
 
     @Test
     public void name() throws Exception {
-        
+
     }
 }
