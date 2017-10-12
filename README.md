@@ -1,6 +1,6 @@
 # BudgetFreak
 
-[![CircleCI](https://circleci.com/gh/BudgetFreak/BudgetFreak.svg?style=svg)](https://circleci.com/gh/BudgetFreak/BudgetFreak) [![Gradle Status](https://gradleupdate.appspot.com/BudgetFreak/BudgetFreak/status.svg)](https://gradleupdate.appspot.com/BudgetFreak/BudgetFreak/status)
+[![CircleCI](https://circleci.com/gh/BudgetFreak/BudgetFreak.svg?style=svg)](https://circleci.com/gh/BudgetFreak/BudgetFreak)
 
 ## Code Quality
 
