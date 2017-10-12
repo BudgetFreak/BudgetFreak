@@ -23,6 +23,19 @@ TBA :smirk:
 
 For the time being just run the server with `gradlew bootrun` and the web module using `ng serve`.
 
+## How to code
+
+### Writing database migrations
+
+We use Flyway to initialize and migrate our database.
+For your migration scripts use the following form 
+```
+V<MAJOR_VERSION>_<MINOR_VERSION>_<PATCH_VERSION>_<INCREMENTED_INDEX>__<DESCRIPTION>.sql
+```
+and check the `flyway.locations` property in `application.properties` to find the correct path and `root build.gradle` 
+for current versions.
+
+
 ## Styleguides
 
 The code style will be checked via our CI build at some point. Until then please take account of the following 
