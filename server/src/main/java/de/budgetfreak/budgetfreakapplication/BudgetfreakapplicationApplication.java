@@ -2,12 +2,11 @@ package de.budgetfreak.budgetfreakapplication;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Configuration;
 
 @SpringBootApplication
 public class BudgetfreakapplicationApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(BudgetfreakapplicationApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(BudgetfreakapplicationApplication.class, args);
+    }
 }
