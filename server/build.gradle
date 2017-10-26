@@ -17,13 +17,13 @@ dependencies {
 
     compileOnly(
             "org.hibernate:hibernate-jpamodelgen:${version_jpamodelgen}",
-
     )
 
     runtime(
             'org.springframework.boot:spring-boot-devtools',
             "org.hsqldb:hsqldb:${version_hsqldb}",
             'com.h2database:h2',
+            "org.springframework.hateoas:spring-hateoas:${version_spring_hateoas}"
     )
 
     testCompile(
