@@ -1,6 +1,0 @@
-/* You can add global styles to this file, and also import other style files */
-.table thead th.col-gap, .table tbody td.col-gap {
-  border-bottom: transparent;
-  border-top: transparent;
-  width: 10px;
-}
