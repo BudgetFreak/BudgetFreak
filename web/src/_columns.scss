@@ -5,6 +5,8 @@ $cell-padding: 0.54rem 1.5rem;
 $cell-control-padding: 0.2rem 0.8rem 0;
 $cell-font-weight: $font-weight-light;
 
+$toolbar-padding: 0.9rem 1.5rem 0.54rem;
+
 .column-container {
   @include make-container();
   padding: $column-container-padding;
@@ -61,36 +63,6 @@ $cell-font-weight: $font-weight-light;
 
   .average {
     @include make-col(2);
-  }
-
-  .toolbar {
-    @include make-row();
-
-    .toolbar-content {
-      border-left: $panel-border;
-      padding: $cell-padding;
-      padding-right: 0;
-      height: 100%;
-
-      h1, h2 {
-        color: $primary;
-        font-weight: $font-weight-light;
-        margin-bottom: 0;
-      }
-
-      h1 {
-        font-size: 1.5rem;
-      }
-      h2 {
-        font-size: 1.2rem;
-      }
-
-      p {
-        font-weight: $font-weight-light;
-        margin: 0;
-      }
-    }
-    margin-bottom: 10px;
   }
 
   .header-row {
@@ -154,6 +126,44 @@ $cell-font-weight: $font-weight-light;
       }
     }
 
+  }
+
+  &.toolbar-container {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    margin-bottom: 10px;
+
+    .toolbar {
+      @include make-row();
+
+      .categories, .average, .last-month, .current-month {
+        &:not(:first-child) {
+          border-left: $panel-border;
+        }
+      }
+
+      .toolbar-content {
+        padding: $toolbar-padding;
+        height: 100%;
+
+        h1, h2 {
+          color: $primary;
+          font-weight: $font-weight-light;
+          margin-bottom: 0;
+        }
+
+        h1 {
+          font-size: 1.8rem;
+        }
+        h2 {
+          font-size: 1.2rem;
+        }
+
+        p {
+          font-weight: $font-weight-light;
+          margin: 0;
+        }
+      }
+    }
   }
 
 }
