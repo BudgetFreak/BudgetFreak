@@ -6,6 +6,7 @@ $cell-control-padding: 0.2rem 0.8rem 0;
 $cell-font-weight: $font-weight-light;
 
 $toolbar-padding: 0.9rem 1.5rem 0.54rem;
+$toolbar-box-padding: 0 1.5rem;
 
 .column-container {
   @include make-container();
@@ -146,8 +147,8 @@ $toolbar-padding: 0.9rem 1.5rem 0.54rem;
         height: 100%;
 
         h1, h2 {
-          color: darken($primary, 5);
-          font-weight: $font-weight-light;
+          color: darken($dark, 5);
+          font-weight: $font-weight-base;
           margin-bottom: 0;
         }
 
@@ -162,6 +163,18 @@ $toolbar-padding: 0.9rem 1.5rem 0.54rem;
           font-weight: $font-weight-light;
           margin: 0;
         }
+      }
+
+      .toolbar-box {
+        padding: $toolbar-box-padding;
+        &:not(:first-child) {
+          border-left: 1px solid rgba($dark, 0.1);
+        }
+
+        &:last-child {
+          padding-right: 0;
+        }
+
       }
     }
   }
