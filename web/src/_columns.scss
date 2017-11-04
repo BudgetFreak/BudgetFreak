@@ -1,4 +1,3 @@
-
 $panel-border: $table-border-width solid $table-border-color;
 
 $column-container-padding: 0 10px;
@@ -64,11 +63,9 @@ $cell-font-weight: $font-weight-light;
     @include make-col(2);
   }
 
-
-
   .header-row {
     @include make-row();
-    font-weight: 600;
+    font-weight: $font-weight-bold;
     .categories, .average, .last-month, .current-month {
       .column-row {
         border: $panel-border;
@@ -84,7 +81,19 @@ $cell-font-weight: $font-weight-light;
     .column-row {
       border-left: $panel-border;
       border-right: $panel-border;
-      transition: background-color ease-in-out 0.15s;
+      transition: background-color ease-in-out 0.1s;
+
+      .btn-link {
+        opacity: 0;
+        transition: opacity ease-out 0.1s;
+      }
+
+      &:hover {
+        .btn-link {
+          opacity: 1;
+        }
+      }
+
     }
 
     &:last-child {
@@ -93,7 +102,11 @@ $cell-font-weight: $font-weight-light;
       }
     }
 
-    &.font-weight-bold:not(:first-child) {
+    &.category-group {
+      font-weight: $font-weight-bold;
+    }
+
+    &.category-group:not(:first-child) {
 
       .cell {
         border-top: $panel-border;
@@ -101,7 +114,7 @@ $cell-font-weight: $font-weight-light;
       }
 
       .current-month .cell:first-child {
-        border-top:none;
+        border-top: none;
       }
     }
 
