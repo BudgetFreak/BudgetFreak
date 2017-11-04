@@ -63,6 +63,36 @@ $cell-font-weight: $font-weight-light;
     @include make-col(2);
   }
 
+  .toolbar {
+    @include make-row();
+
+    .toolbar-content {
+      border-left: $panel-border;
+      padding: $cell-padding;
+      padding-right: 0;
+      height: 100%;
+
+      h1, h2 {
+        color: $primary;
+        font-weight: $font-weight-light;
+        margin-bottom: 0;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-weight: $font-weight-light;
+        margin: 0;
+      }
+    }
+    margin-bottom: 10px;
+  }
+
   .header-row {
     @include make-row();
     font-weight: $font-weight-bold;
@@ -85,7 +115,7 @@ $cell-font-weight: $font-weight-light;
 
       .btn-link {
         opacity: 0;
-        transition: opacity ease-out 0.1s;
+        transition: opacity ease 500ms;
       }
 
       &:hover {

@@ -3,9 +3,9 @@
   padding: 0;
   border-width: 0;
   font-weight: $font-weight-bold;
-  transition: color ease-in-out 0.2s;
+  transition: color ease 500ms;
   color: $primary;
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   &:hover {
     cursor: pointer;
     text-decoration: none;
