@@ -129,7 +129,7 @@ $toolbar-padding: 0.9rem 1.5rem 0.54rem;
   }
 
   &.toolbar-container {
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    box-shadow: $panel-shadow;
     margin-bottom: 10px;
 
     .toolbar {
@@ -146,7 +146,7 @@ $toolbar-padding: 0.9rem 1.5rem 0.54rem;
         height: 100%;
 
         h1, h2 {
-          color: $primary;
+          color: darken($primary, 5);
           font-weight: $font-weight-light;
           margin-bottom: 0;
         }
@@ -167,3 +167,4 @@ $toolbar-padding: 0.9rem 1.5rem 0.54rem;
   }
 
 }
+

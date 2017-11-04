@@ -1,7 +1,7 @@
 .nav.month-nav {
 
   border-bottom: 1px solid $light;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: $panel-shadow;
 
   a.nav-link {
     color: $body-color;
