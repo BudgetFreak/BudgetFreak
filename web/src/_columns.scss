@@ -1,6 +1,7 @@
 $panel-border: $table-border-width solid $table-border-color;
 
 $column-container-padding: 0 10px;
+$column-container-font-size: 0.85rem;
 $cell-padding: 0.54rem 1.5rem;
 $cell-control-padding: 0.2rem 0.8rem 0;
 $cell-font-weight: $font-weight-light;
@@ -10,6 +11,7 @@ $toolbar-box-padding: 0 1.5rem;
 
 .column-container {
   @include make-container();
+  font-size: $column-container-font-size;
   padding: $column-container-padding;
 
   .categories, .average, .last-month, .current-month {
@@ -29,9 +31,10 @@ $toolbar-box-padding: 0 1.5rem;
 
           .form-control {
             border-radius: 0;
-            border-color: transparent transparent lighten($border-color, 5%);
+            border-color: transparent transparent $border-color;
             box-shadow: none;
             background: transparent;
+            font-size: inherit;
             &:focus {
               border-bottom-color: $primary;
             }
@@ -43,11 +46,11 @@ $toolbar-box-padding: 0 1.5rem;
   }
 
   .categories {
-    @include make-col(3);
+    @include make-col(2);
   }
 
   .current-month {
-    @include make-col(4);
+    @include make-col(5);
 
     .cell {
       @include make-col(4);
