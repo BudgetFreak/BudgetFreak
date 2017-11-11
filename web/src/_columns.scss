@@ -6,68 +6,70 @@ $cell-padding: 0.54rem 1.5rem;
 $cell-control-padding: 0.2rem 0.8rem 0;
 $cell-font-weight: $font-weight-light;
 
-$toolbar-padding: 0.9rem 1.5rem 0.54rem;
-$toolbar-box-padding: 0 1.5rem;
+$metadata-padding: 0.9rem 1.5rem 0.54rem;
+$metadata-box-padding: 0 1.5rem;
 
-.column-container {
+.column-container, .metadata-header-container {
   @include make-container();
   font-size: $column-container-font-size;
   padding: $column-container-padding;
 
   .categories, .average, .last-month, .current-month {
     @include make-col-ready();
+  }
+}
 
-    .column-row {
-      @include make-row();
-      margin-left: 0;
-      margin-right: 0;
+.categories {
+  @include make-col(2);
+}
 
-      .cell {
-        @include make-col-ready();
-        padding: $cell-padding;
+.current-month {
+  @include make-col(5);
 
-        &.cell-input {
-          padding: $cell-control-padding;
+  .cell {
+    @include make-col(4);
+  }
+}
 
-          .form-control {
-            border-radius: 0;
-            border-color: transparent transparent $border-color;
-            box-shadow: none;
-            background: transparent;
-            font-size: inherit;
-            &:focus {
-              border-bottom-color: $primary;
-            }
-          }
+.last-month {
+  @include make-col(3);
+
+  .cell {
+    @include make-col(6);
+  }
+}
+
+.average {
+  @include make-col(2);
+}
+
+.column-row {
+  @include make-row();
+  margin-left: 0;
+  margin-right: 0;
+
+  .cell {
+    @include make-col-ready();
+    padding: $cell-padding;
+
+    &.cell-input {
+      padding: $cell-control-padding;
+
+      .form-control {
+        border-radius: 0;
+        border-color: transparent transparent $border-color;
+        box-shadow: none;
+        background: transparent;
+        font-size: inherit;
+        &:focus {
+          border-bottom-color: $primary;
         }
       }
     }
-
   }
+}
 
-  .categories {
-    @include make-col(2);
-  }
-
-  .current-month {
-    @include make-col(5);
-
-    .cell {
-      @include make-col(4);
-    }
-  }
-
-  .last-month {
-    @include make-col(3);
-
-    .cell {
-      @include make-col(6);
-    }
-  }
-
-  .average {
-    @include make-col(2);
-  }
+.column-container {
 
   .header-row {
     @include make-row();
@@ -132,55 +134,55 @@ $toolbar-box-padding: 0 1.5rem;
 
   }
 
-  &.toolbar-container {
-    box-shadow: $panel-shadow;
-    margin-bottom: 10px;
+}
 
-    .toolbar {
-      @include make-row();
+.metadata-header-container {
+  box-shadow: $panel-shadow;
+  margin-bottom: 10px;
 
-      .categories, .average, .last-month, .current-month {
-        &:not(:first-child) {
-          border-left: $panel-border;
-        }
-      }
+  .metadata-header {
+    @include make-row();
 
-      .toolbar-content {
-        padding: $toolbar-padding;
-        height: 100%;
-
-        h1, h2 {
-          color: darken($dark, 5);
-          font-weight: $font-weight-base;
-          margin-bottom: 0;
-        }
-
-        h1 {
-          font-size: 1.8rem;
-        }
-        h2 {
-          font-size: 1.2rem;
-        }
-
-        p {
-          font-weight: $font-weight-light;
-          margin: 0;
-        }
-      }
-
-      .toolbar-box {
-        padding: $toolbar-box-padding;
-        &:not(:first-child) {
-          border-left: 1px solid rgba($dark, 0.1);
-        }
-
-        &:last-child {
-          padding-right: 0;
-        }
-
+    .categories, .average, .last-month, .current-month {
+      &:not(:first-child) {
+        border-left: $panel-border;
       }
     }
-  }
 
+    .metadata-content {
+      padding: $metadata-padding;
+      height: 100%;
+
+      h1, h2 {
+        color: darken($dark, 5);
+        font-weight: $font-weight-base;
+        margin-bottom: 0;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-weight: $font-weight-light;
+        margin: 0;
+      }
+    }
+
+    .metadata-box {
+      padding: $metadata-box-padding;
+      &:not(:first-child) {
+        border-left: 1px solid rgba($dark, 0.1);
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+
+    }
+  }
 }
 
