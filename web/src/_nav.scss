@@ -4,7 +4,7 @@ $nav-link-line-height: 2px;
 
 .navbar.navbar-expand-md {
   padding: $main-nav-padding;
-  border-bottom: $nav-link-line-height solid darken($dark, 5);
+  border-bottom: $nav-link-line-height solid darken($dark, 4);
   a.nav-link {
     padding: $main-nav-link-padding;
 
@@ -55,8 +55,8 @@ a.nav-link {
 
 .nav.month-nav {
 
-  border-bottom: 1px solid $light;
-  box-shadow: $panel-shadow;
+  border-bottom: 2px solid $gray-200;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.03);
 
   a.nav-link {
     color: $body-color;

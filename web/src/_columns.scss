@@ -54,17 +54,6 @@ $metadata-box-padding: 0 1.5rem;
 
     &.cell-input {
       padding: $cell-control-padding;
-
-      .form-control {
-        border-radius: 0;
-        border-color: transparent transparent $border-color;
-        box-shadow: none;
-        background: transparent;
-        font-size: inherit;
-        &:focus {
-          border-bottom-color: $primary;
-        }
-      }
     }
   }
 }
