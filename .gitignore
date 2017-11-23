@@ -23,6 +23,7 @@ gradle-app.setting
 *.iws
 .idea
 .shelf
+.ideaDataSources
 
 # temp
 *.*~

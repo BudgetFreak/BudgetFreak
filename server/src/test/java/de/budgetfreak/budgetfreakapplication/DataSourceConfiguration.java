@@ -14,11 +14,12 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.test.context.ActiveProfiles;
 
 @Configuration
 @EnableJpaRepositories(basePackages = {"de.budgetfreak.budgetfreakapplication"})
 @ComponentScan(basePackages = "de.budgetfreak.budgetfreakapplication")
-@PropertySource("classpath:application-test.properties")
+@ActiveProfiles("test")
 public class DataSourceConfiguration {
 
     @Bean

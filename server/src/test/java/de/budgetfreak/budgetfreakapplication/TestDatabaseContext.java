@@ -3,6 +3,7 @@ package de.budgetfreak.budgetfreakapplication;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;
@@ -11,6 +12,8 @@ import org.springframework.test.context.support.DependencyInjectionTestExecution
 import org.springframework.test.context.support.DirtiesContextTestExecutionListener;
 import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {DataSourceConfiguration.class})
@@ -22,4 +25,8 @@ public abstract class TestDatabaseContext {
     @PersistenceContext
     protected EntityManager entityManager;
 
+    @Test
+    public void test() throws Exception {
+        assertThat(entityManager).isNotNull();
+    }
 }
