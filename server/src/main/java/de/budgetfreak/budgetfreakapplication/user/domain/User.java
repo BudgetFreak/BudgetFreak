@@ -1,4 +1,4 @@
-package de.budgetfreak.budgetfreakapplication.user;
+package de.budgetfreak.budgetfreakapplication.user.domain;
 
 import javax.persistence.*;
 
