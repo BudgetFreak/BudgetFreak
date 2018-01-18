@@ -21,17 +21,14 @@ dependencies {
     )
 
     runtime(
-            'org.springframework.boot:spring-boot-devtools',
-            "org.hsqldb:hsqldb:${version_hsqldb}",
-            'com.h2database:h2',
+            "org.springframework.boot:spring-boot-devtools",
+            "com.h2database:h2:${version_h2}",
     )
 
     testCompile(
             "org.springframework.boot:spring-boot-starter-test:${version_spring_boot}",
             "org.springframework.restdocs:spring-restdocs-mockmvc:${version_restdocs_mockmvc}",
             "org.springframework.security:spring-security-test:${version_spring_security_test}",
-            "com.github.springtestdbunit:spring-test-dbunit:${version_spring_dbunit}",
-            "org.dbunit:dbunit:${version_dbunit}",
             "org.assertj:assertj-core:${version_assertj}",
             "org.mockito:mockito-core:${version_mockito}",
             "org.flywaydb.flyway-test-extensions:flyway-spring-test:${version_flyway_spring_test}",
@@ -41,8 +38,8 @@ dependencies {
 bootRun {
     // default application configuration for running application via bootRun in development mode
     // (in production, these properties are defined in application.properties)
-    jvmArgs '-Xdebug',
-            '-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=9010',
-            '-Dspring.output.ansi.enabled=ALWAYS'
+    jvmArgs "-Xdebug",
+            "-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=9010",
+            "-Dspring.output.ansi.enabled=ALWAYS"
 
 }
