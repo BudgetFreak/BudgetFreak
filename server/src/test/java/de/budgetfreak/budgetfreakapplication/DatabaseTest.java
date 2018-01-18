@@ -6,11 +6,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;
+import org.springframework.test.context.jdbc.SqlConfig;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = BudgetfreakapplicationApplication.class)
 @ActiveProfiles("test")
 @DataJpaTest
+@SqlConfig(encoding = "UTF-8")
 public abstract class DatabaseTest {
 }
