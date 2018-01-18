@@ -8,24 +8,24 @@ import org.springframework.test.context.jdbc.Sql;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Sql("users.sql")
+@Sql(value = "users.sql")
 public class UserRepositoryTest extends DatabaseTest {
 
     @Autowired
     private UserRepository testSubject;
 
     @Test
-    public void shouldBeInitialized() throws Exception {
+    public void shouldBeInitialized() {
         assertThat(testSubject).isNotNull();
     }
 
     @Test
-    public void shouldNotBeEmpty() throws Exception {
+    public void shouldNotBeEmpty() {
         assertThat(testSubject.findAll()).hasSize(2);
     }
 
     @Test
-    public void maxShouldBeHere() throws Exception {
+    public void maxShouldBeHere() {
         final User max = testSubject.findByName("Max");
         assertThat(max).isNotNull();
         final SoftAssertions softly = new SoftAssertions();
@@ -35,7 +35,7 @@ public class UserRepositoryTest extends DatabaseTest {
     }
 
     @Test
-    public void mariaShouldBeHere() throws Exception {
+    public void mariaShouldBeHere() {
         final User maria = testSubject.findByName("Maria");
         assertThat(maria).isNotNull();
         final SoftAssertions softly = new SoftAssertions();
@@ -45,7 +45,7 @@ public class UserRepositoryTest extends DatabaseTest {
     }
 
     @Test
-    public void shouldSaveNewEntites() throws Exception {
+    public void shouldSaveNewEntites() {
         final User manuel = new User("Manuel", "€");
         testSubject.saveAndFlush(manuel);
         assertThat(testSubject.findAll()).hasSize(3);
