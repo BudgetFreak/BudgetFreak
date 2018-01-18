@@ -22,21 +22,11 @@ gradle-app.setting
 *.ipr
 *.iws
 .idea
-
-!doc/codestyle/settings.jar
+.shelf
+.ideaDataSources
 
 # temp
 *.*~
 
 # Mac OS X
 .DS_Store
-
-# local module cache
-node_modules
-nodejs
-bower_components
-typings
-!typings/jquery-simple.d.ts
-
-# repacked client
-quartermaster/src/main/webapp
