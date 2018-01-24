@@ -1,0 +1,33 @@
+$fixed-panel-background-color: #fff;
+
+.month-nav, .banner, .budget-headers, .budget-headers {
+  background: $fixed-panel-background-color;
+  position: fixed;
+  right: 0;
+  left: 0;
+}
+
+.month-nav {
+  top: 52px;
+  z-index: 1030;
+}
+
+.banner {
+  top: 72px;
+  z-index: 1020;
+
+}
+
+.budget-headers {
+  top: 165px;
+  z-index: 1010;
+  &:before {
+    content: "";
+    height: 10px;
+    display: block;
+  }
+}
+
+.budget-rows {
+  margin-top: 214px;
+}

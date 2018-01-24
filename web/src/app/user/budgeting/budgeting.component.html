@@ -1,3 +1,647 @@
-<p>
-  budgeting works!
-</p>
+<ul class="month-nav nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link" href="#">Januar</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Februar</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">März</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Mai</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">April</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Mai</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Juni</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Juli</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">August</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">September</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Oktober</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="#">November</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Dezember</a>
+  </li>
+</ul>
+
+<div class="banner mt-3">
+  <div class="row d-flex align-items-end">
+    <div class="categories">
+      <div class="column-row">
+        <h1>Haushalt Budget</h1>
+        <p>November 2017</p>
+      </div>
+    </div>
+    <div class="current-month">
+      <div class="column-row d-flex justify-content-between">
+        <div>
+          <h2>November</h2>
+          <p class="text-secondary">Gesamtplanung des aktuellen Monats</p>
+        </div>
+        <div class="text-right d-flex justify-content-end align-items-end">
+          <div class="metadata-box">
+            <p class="text-secondary">Budget</p>
+            <div class="font-weight-bold text-success">2856,00 EUR</div>
+          </div>
+          <div class="metadata-box">
+            <p class="text-secondary">Übertrag</p>
+            <div class="font-weight-bold">156,00 EUR</div>
+          </div>
+          <div class="metadata-box">
+            <p class="text-secondary">Einnahmen</p>
+            <div class="font-weight-bold">2700,00 EUR</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="last-month">
+      <div class="column-row">
+        <div>
+          <h2>September</h2>
+          <p class="text-secondary">Budgetierung des letzten Monats</p>
+        </div>
+      </div>
+    </div>
+    <div class="average">
+      <div class="column-row">
+        <div>
+          <h2>Durchschnitt</h2>
+          <p class="text-secondary">Ausgaben der letzten 12 Monate</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="column-container budget-headers">
+  <div class="header-row">
+    <div class="categories">
+      <div class="column-row">
+        <div class="cell d-flex justify-content-between ">
+          Kategorien
+          <button type="button" class="btn btn-link">Neue Gruppe</button>
+        </div>
+      </div>
+    </div>
+    <div class="current-month">
+      <div class="column-row">
+        <div class="cell">Geplant</div>
+        <div class="cell">Ausgegeben</div>
+        <div class="cell">Budget</div>
+      </div>
+    </div>
+    <div class="last-month">
+      <div class="column-row">
+        <div class="cell">Geplant</div>
+        <div class="cell">Ausgegeben</div>
+      </div>
+    </div>
+    <div class="average">
+      <div class="column-row">
+        <div class="cell">Ausgegeben</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="column-container budget-rows">
+  <div class="content-row category-group">
+    <div class="categories">
+      <div class="column-row">
+        <div class="cell d-flex justify-content-between ">
+          Wohnen
+          <button type="button" class="btn btn-link">Neue Unterkategorie</button>
+        </div>
+      </div>
+    </div>
+    <div class="current-month">
+      <div class="column-row">
+        <div class="cell">
+          0,00 €
+        </div>
+        <div class="cell">0,00 €</div>
+        <div class="cell">0,00 €</div>
+      </div>
+    </div>
+    <div class="last-month">
+      <div class="column-row">
+        <div class="cell">880,00 €</div>
+        <div class="cell">880,00 €</div>
+      </div>
+    </div>
+    <div class="average">
+      <div class="column-row">
+        <div class="cell">880,00 €</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-row">
+    <div class="categories">
+      <div class="column-row">
+        <div class="cell d-flex justify-content-between ">
+          Miete
+          <button type="button" class="btn btn-link">Bearbeiten</button>
+        </div>
+      </div>
+    </div>
+    <div class="current-month">
+      <div class="column-row">
+        <div class="cell cell-input">
+          <input class="form-control" placeholder="0,00">
+        </div>
+        <div class="cell">0,00 €</div>
+        <div class="cell">0,00 €</div>
+      </div>
+    </div>
+    <div class="last-month">
+      <div class="column-row">
+        <div class="cell">650,00 €</div>
+        <div class="cell">650,00 €</div>
+      </div>
+    </div>
+    <div class="average">
+      <div class="column-row">
+        <div class="cell">650,00 €</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-row">
+    <div class="categories">
+      <div class="column-row">
+        <div class="cell">Strom</div>
+      </div>
+    </div>
+    <div class="current-month">
+      <div class="column-row">
+        <div class="cell cell-input">
+          <input class="form-control" placeholder="0,00">
+        </div>
+        <div class="cell">0,00 €</div>
+        <div class="cell">0,00 €</div>
+      </div>
+    </div>
+    <div class="last-month">
+      <div class="column-row">
+        <div class="cell">50,00 €</div>
+        <div class="cell">50,00 €</div>
+      </div>
+    </div>
+    <div class="average">
+      <div class="column-row">
+        <div class="cell">50,00 €</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-row">
+    <div class="categories">
+      <div class="column-row">
+        <div class="cell">Internet</div>
+      </div>
+    </div>
+    <div class="current-month">
+      <div class="column-row">
+        <div class="cell cell-input">
+          <input class="form-control" placeholder="0,00">
+        </div>
+        <div class="cell">0,00 €</div>
+        <div class="cell">0,00 €</div>
+      </div>
+    </div>
+    <div class="last-month">
+      <div class="column-row">
+        <div class="cell">50,00 €</div>
+        <div class="cell">50,00 €</div>
+      </div>
+    </div>
+    <div class="average">
+      <div class="column-row">
+        <div class="cell">50,00 €</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-row">
+    <div class="categories">
+      <div class="column-row">
+        <div class="cell">Nebenkosten</div>
+      </div>
+    </div>
+    <div class="current-month">
+      <div class="column-row">
+        <div class="cell cell-input">
+          <input class="form-control" placeholder="0,00">
+        </div>
+        <div class="cell">0,00 €</div>
+        <div class="cell">0,00 €</div>
+      </div>
+    </div>
+    <div class="last-month">
+      <div class="column-row">
+        <div class="cell">130,00 €</div>
+        <div class="cell">130,00 €</div>
+      </div>
+    </div>
+    <div class="average">
+      <div class="column-row">
+        <div class="cell">130,00 €</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-row category-group">
+    <div class="categories">
+      <div class="column-row">
+        <div class="cell d-flex justify-content-between ">
+          Auto
+          <button type="button" class="btn btn-link">Neue Unterkategorie</button>
+        </div>
+      </div>
+    </div>
+    <div class="current-month">
+      <div class="column-row">
+        <div class="cell">
+          0,00 €
+        </div>
+        <div class="cell">0,00 €</div>
+        <div class="cell">0,00 €</div>
+      </div>
+    </div>
+    <div class="last-month">
+      <div class="column-row">
+        <div class="cell">200,00 €</div>
+        <div class="cell">165,00 €</div>
+      </div>
+    </div>
+    <div class="average">
+      <div class="column-row">
+        <div class="cell">182,49 €</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-row">
+    <div class="categories">
+      <div class="column-row">
+        <div class="cell">Benzin</div>
+      </div>
+    </div>
+    <div class="current-month">
+      <div class="column-row">
+        <div class="cell cell-input">
+          <input class="form-control" placeholder="0,00">
+        </div>
+        <div class="cell">0,00 €</div>
+        <div class="cell">0,00 €</div>
+      </div>
+    </div>
+    <div class="last-month">
+      <div class="column-row">
+        <div class="cell">120,00 €</div>
+        <div class="cell">85,00 €</div>
+      </div>
+    </div>
+    <div class="average">
+      <div class="column-row">
+        <div class="cell">102,49 €</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-row">
+    <div class="categories">
+      <div class="column-row">
+        <div class="cell">Versicherung</div>
+      </div>
+    </div>
+    <div class="current-month">
+      <div class="column-row">
+        <div class="cell cell-input">
+          <input class="form-control" placeholder="0,00">
+        </div>
+        <div class="cell">0,00 €</div>
+        <div class="cell">0,00 €</div>
+      </div>
+    </div>
+    <div class="last-month">
+      <div class="column-row">
+        <div class="cell">80,00 €</div>
+        <div class="cell">80,00 €</div>
+      </div>
+    </div>
+    <div class="average">
+      <div class="column-row">
+        <div class="cell">80,00 €</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-row category-group">
+    <div class="categories">
+      <div class="column-row">
+        <div class="cell d-flex justify-content-between ">
+          Essen
+          <button type="button" class="btn btn-link">Neue Unterkategorie</button>
+        </div>
+      </div>
+    </div>
+    <div class="current-month">
+      <div class="column-row">
+        <div class="cell">
+          0,00 €
+        </div>
+        <div class="cell">0,00 €</div>
+        <div class="cell">0,00 €</div>
+      </div>
+    </div>
+    <div class="last-month">
+      <div class="column-row">
+        <div class="cell">200,00 €</div>
+        <div class="cell">135,00 €</div>
+      </div>
+    </div>
+    <div class="average">
+      <div class="column-row">
+        <div class="cell">185,00 €</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-row">
+    <div class="categories">
+      <div class="column-row">
+        <div class="cell">Frühstück</div>
+      </div>
+    </div>
+    <div class="current-month">
+      <div class="column-row">
+        <div class="cell cell-input">
+          <input class="form-control" placeholder="0,00">
+        </div>
+        <div class="cell">0,00 €</div>
+        <div class="cell">0,00 €</div>
+      </div>
+    </div>
+    <div class="last-month">
+      <div class="column-row">
+        <div class="cell">30,00 €</div>
+        <div class="cell">30,00 €</div>
+      </div>
+    </div>
+    <div class="average">
+      <div class="column-row">
+        <div class="cell">30,00 €</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-row">
+    <div class="categories">
+      <div class="column-row">
+        <div class="cell">Mittagessen</div>
+      </div>
+    </div>
+    <div class="current-month">
+      <div class="column-row">
+        <div class="cell cell-input">
+          <input class="form-control" placeholder="0,00">
+        </div>
+        <div class="cell">0,00 €</div>
+        <div class="cell">0,00 €</div>
+      </div>
+    </div>
+    <div class="last-month">
+      <div class="column-row">
+        <div class="cell">100,00 €</div>
+        <div class="cell">85,00 €</div>
+      </div>
+    </div>
+    <div class="average">
+      <div class="column-row">
+        <div class="cell">85,00 €</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-row">
+    <div class="categories">
+      <div class="column-row">
+        <div class="cell">Abendessen</div>
+      </div>
+    </div>
+    <div class="current-month">
+      <div class="column-row">
+        <div class="cell cell-input">
+          <input class="form-control" placeholder="0,00">
+        </div>
+        <div class="cell">0,00 €</div>
+        <div class="cell">0,00 €</div>
+      </div>
+    </div>
+    <div class="last-month">
+      <div class="column-row">
+        <div class="cell">30,00 €</div>
+        <div class="cell">30,00 €</div>
+      </div>
+    </div>
+    <div class="average">
+      <div class="column-row">
+        <div class="cell">30,00 €</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-row">
+    <div class="categories">
+      <div class="column-row">
+        <div class="cell">Lebensmittel</div>
+      </div>
+    </div>
+    <div class="current-month">
+      <div class="column-row">
+        <div class="cell cell-input">
+          <input class="form-control" placeholder="0,00">
+        </div>
+        <div class="cell">0,00 €</div>
+        <div class="cell">0,00 €</div>
+      </div>
+    </div>
+    <div class="last-month">
+      <div class="column-row">
+        <div class="cell">30,00 €</div>
+        <div class="cell">30,00 €</div>
+      </div>
+    </div>
+    <div class="average">
+      <div class="column-row">
+        <div class="cell">30,00 €</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-row category-group">
+    <div class="categories">
+      <div class="column-row">
+        <div class="cell d-flex justify-content-between ">
+          Bekleidung
+          <button type="button" class="btn btn-link">Neue Unterkategorie</button>
+        </div>
+      </div>
+    </div>
+    <div class="current-month">
+      <div class="column-row">
+        <div class="cell">
+          0,00 €
+        </div>
+        <div class="cell">0,00 €</div>
+        <div class="cell">0,00 €</div>
+      </div>
+    </div>
+    <div class="last-month">
+      <div class="column-row">
+        <div class="cell">200,00 €</div>
+        <div class="cell">135,00 €</div>
+      </div>
+    </div>
+    <div class="average">
+      <div class="column-row">
+        <div class="cell">185,00 €</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-row">
+    <div class="categories">
+      <div class="column-row">
+        <div class="cell">Hemden</div>
+      </div>
+    </div>
+    <div class="current-month">
+      <div class="column-row">
+        <div class="cell cell-input">
+          <input class="form-control" placeholder="0,00">
+        </div>
+        <div class="cell">0,00 €</div>
+        <div class="cell">0,00 €</div>
+      </div>
+    </div>
+    <div class="last-month">
+      <div class="column-row">
+        <div class="cell">30,00 €</div>
+        <div class="cell">30,00 €</div>
+      </div>
+    </div>
+    <div class="average">
+      <div class="column-row">
+        <div class="cell">30,00 €</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-row">
+    <div class="categories">
+      <div class="column-row">
+        <div class="cell">Hosen</div>
+      </div>
+    </div>
+    <div class="current-month">
+      <div class="column-row">
+        <div class="cell cell-input">
+          <input class="form-control" placeholder="0,00">
+        </div>
+        <div class="cell">0,00 €</div>
+        <div class="cell">0,00 €</div>
+      </div>
+    </div>
+    <div class="last-month">
+      <div class="column-row">
+        <div class="cell">100,00 €</div>
+        <div class="cell">85,00 €</div>
+      </div>
+    </div>
+    <div class="average">
+      <div class="column-row">
+        <div class="cell">85,00 €</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-row">
+    <div class="categories">
+      <div class="column-row">
+        <div class="cell">Schuhe</div>
+      </div>
+    </div>
+    <div class="current-month">
+      <div class="column-row">
+        <div class="cell cell-input">
+          <input class="form-control" placeholder="0,00">
+        </div>
+        <div class="cell">0,00 €</div>
+        <div class="cell">0,00 €</div>
+      </div>
+    </div>
+    <div class="last-month">
+      <div class="column-row">
+        <div class="cell">30,00 €</div>
+        <div class="cell">30,00 €</div>
+      </div>
+    </div>
+    <div class="average">
+      <div class="column-row">
+        <div class="cell">30,00 €</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-row">
+    <div class="categories">
+      <div class="column-row">
+        <div class="cell">T-Shirts</div>
+      </div>
+    </div>
+    <div class="current-month">
+      <div class="column-row">
+        <div class="cell cell-input">
+          <input class="form-control" placeholder="0,00">
+        </div>
+        <div class="cell">0,00 €</div>
+        <div class="cell">0,00 €</div>
+      </div>
+    </div>
+    <div class="last-month">
+      <div class="column-row">
+        <div class="cell">30,00 €</div>
+        <div class="cell">30,00 €</div>
+      </div>
+    </div>
+    <div class="average">
+      <div class="column-row">
+        <div class="cell">30,00 €</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
