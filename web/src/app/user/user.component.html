@@ -1,21 +1,24 @@
-<div class="main-container">
-  <header class="header header-6">
-    <div class="branding">
-      <a routerLink="/" class="nav-link">
-        <clr-icon shape="savings" class="is-white is-solid"></clr-icon>
-        <span class="title">Budget<strong>Freak</strong></span>
-      </a>
-    </div>
-    <div class="header-nav">
-      <a routerLink="/budgeting" class="nav-link nav-text">Budgetierung</a>
-      <a routerLink="/accounts" class="nav-link nav-text">Konten</a>
-    </div>
-  </header>
-  <!-- <nav class="subnav"></nav> -->
-  <div class="content-container">
-    <div class="content-area">
-      <router-outlet></router-outlet>
-    </div>
-    <!-- <nav class="sidenav"></nav> -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a routerLink="/" class="navbar-brand">BUDGET<strong>FREAK</strong></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+          aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav text-uppercase">
+      <li class="nav-item">
+        <a routerLink="/budgeting" class="nav-link active">Budgetierung</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/accounts" class="nav-link">Konten</a>
+      </li>
+    </ul>
   </div>
-</div>
+</nav>
+
+<main role="main">
+
+  <router-outlet></router-outlet>
+
+</main>
+

@@ -1,0 +1,13 @@
+.form-control {
+  border-radius: 0;
+  border-color: transparent transparent $border-color;
+  box-shadow: none;
+  background: transparent;
+  font-size: inherit;
+  transition: all ease 500ms;
+  &:focus {
+    box-shadow: none;
+    background: transparent;
+    border-color: transparent transparent $primary;
+  }
+}
