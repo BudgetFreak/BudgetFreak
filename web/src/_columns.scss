@@ -125,20 +125,18 @@ $metadata-box-padding: 0 1.5rem;
 
 }
 
-.metadata-header-container {
+.banner {
   box-shadow: $panel-shadow;
   margin-bottom: 10px;
 
-  .metadata-header {
-    @include make-row();
-
-    .categories, .average, .last-month, .current-month {
+  .row {
+    .categories, .average, .last-month, .current-month, .selected-account {
       &:not(:first-child) {
         border-left: $panel-border;
       }
     }
 
-    .metadata-content {
+    .column-row {
       padding: $metadata-padding;
       height: 100%;
 
@@ -173,5 +171,22 @@ $metadata-box-padding: 0 1.5rem;
 
     }
   }
+}
+
+.selected-account, .accounts-nav {
+  @include make-col-ready();
+}
+
+.accounts-nav {
+  @include make-col(2);
+}
+
+.selected-account {
+  @include make-col(10);
+}
+
+.panel-content {
+  border: $panel-border;
+  padding: $cell-padding;
 }
 

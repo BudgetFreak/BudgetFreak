@@ -1,4 +1,4 @@
-<ul class="nav month-nav justify-content-center">
+<ul class="month-nav nav justify-content-center">
   <li class="nav-item">
     <a class="nav-link" href="#">Januar</a>
   </li>
@@ -40,16 +40,16 @@
   </li>
 </ul>
 
-<div class="metadata-header-container mt-3">
-  <div class="metadata-header d-flex align-items-end">
+<div class="banner mt-3">
+  <div class="row d-flex align-items-end">
     <div class="categories">
-      <div class="metadata-content">
+      <div class="column-row">
         <h1>Haushalt Budget</h1>
         <p>November 2017</p>
       </div>
     </div>
     <div class="current-month">
-      <div class="metadata-content d-flex justify-content-between">
+      <div class="column-row d-flex justify-content-between">
         <div>
           <h2>November</h2>
           <p class="text-secondary">Gesamtplanung des aktuellen Monats</p>
@@ -71,21 +71,25 @@
       </div>
     </div>
     <div class="last-month">
-      <div class="metadata-content">
-        <h2>September</h2>
-        <p class="text-secondary">Budgetierung des letzten Monats</p>
+      <div class="column-row">
+        <div>
+          <h2>September</h2>
+          <p class="text-secondary">Budgetierung des letzten Monats</p>
+        </div>
       </div>
     </div>
     <div class="average">
-      <div class="metadata-content">
-        <h2>Durchschnitt</h2>
-        <p class="text-secondary">Ausgaben der letzten 12 Monate</p>
+      <div class="column-row">
+        <div>
+          <h2>Durchschnitt</h2>
+          <p class="text-secondary">Ausgaben der letzten 12 Monate</p>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="column-container ">
+<div class="column-container budget-headers">
   <div class="header-row">
     <div class="categories">
       <div class="column-row">
@@ -114,7 +118,9 @@
       </div>
     </div>
   </div>
+</div>
 
+<div class="column-container budget-rows">
   <div class="content-row category-group">
     <div class="categories">
       <div class="column-row">
