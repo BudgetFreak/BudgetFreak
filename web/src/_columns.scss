@@ -1,0 +1,192 @@
+$panel-border: $table-border-width solid $table-border-color;
+
+$column-container-padding: 0 10px;
+$column-container-font-size: 0.85rem;
+$cell-padding: 0.54rem 1.5rem;
+$cell-control-padding: 0.2rem 0.8rem 0;
+$cell-font-weight: $font-weight-light;
+
+$metadata-padding: 0.9rem 1.5rem 0.54rem;
+$metadata-box-padding: 0 1.5rem;
+
+.column-container, .metadata-header-container {
+  @include make-container();
+  font-size: $column-container-font-size;
+  padding: $column-container-padding;
+
+  .categories, .average, .last-month, .current-month {
+    @include make-col-ready();
+  }
+}
+
+.categories {
+  @include make-col(2);
+}
+
+.current-month {
+  @include make-col(5);
+
+  .cell {
+    @include make-col(4);
+  }
+}
+
+.last-month {
+  @include make-col(3);
+
+  .cell {
+    @include make-col(6);
+  }
+}
+
+.average {
+  @include make-col(2);
+}
+
+.column-row {
+  @include make-row();
+  margin-left: 0;
+  margin-right: 0;
+
+  .cell {
+    @include make-col-ready();
+    padding: $cell-padding;
+
+    &.cell-input {
+      padding: $cell-control-padding;
+    }
+  }
+}
+
+.column-container {
+
+  .header-row {
+    @include make-row();
+    font-weight: $font-weight-bold;
+    .categories, .average, .last-month, .current-month {
+      .column-row {
+        border: $panel-border;
+      }
+    }
+
+  }
+
+  .content-row {
+    @include make-row();
+    font-weight: $cell-font-weight;
+
+    .column-row {
+      border-left: $panel-border;
+      border-right: $panel-border;
+      transition: background-color ease-in-out 0.1s;
+
+      .btn-link {
+        opacity: 0;
+        transition: opacity ease 500ms;
+      }
+
+      &:hover {
+        .btn-link {
+          opacity: 1;
+        }
+      }
+
+    }
+
+    &:last-child {
+      .column-row .cell {
+        border-bottom: $panel-border;
+      }
+    }
+
+    &.category-group {
+      font-weight: $font-weight-bold;
+    }
+
+    &.category-group:not(:first-child) {
+
+      .cell {
+        border-top: $panel-border;
+        margin-top: -1px;
+      }
+
+      .current-month .cell:first-child {
+        border-top: none;
+      }
+    }
+
+    &:hover {
+      .column-row {
+        background: $light;
+      }
+    }
+
+  }
+
+}
+
+.banner {
+  box-shadow: $panel-shadow;
+  margin-bottom: 10px;
+
+  .row {
+    .categories, .average, .last-month, .current-month, .selected-account {
+      &:not(:first-child) {
+        border-left: $panel-border;
+      }
+    }
+
+    .column-row {
+      padding: $metadata-padding;
+      height: 100%;
+
+      h1, h2 {
+        color: darken($dark, 5);
+        font-weight: $font-weight-base;
+        margin-bottom: 0;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-weight: $font-weight-light;
+        margin: 0;
+      }
+    }
+
+    .metadata-box {
+      padding: $metadata-box-padding;
+      &:not(:first-child) {
+        border-left: 1px solid rgba($dark, 0.1);
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+
+    }
+  }
+}
+
+.selected-account, .accounts-nav {
+  @include make-col-ready();
+}
+
+.accounts-nav {
+  @include make-col(2);
+}
+
+.selected-account {
+  @include make-col(10);
+}
+
+.panel-content {
+  border: $panel-border;
+  padding: $cell-padding;
+}
+

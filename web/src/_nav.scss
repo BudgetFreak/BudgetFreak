@@ -1,0 +1,71 @@
+$main-nav-link-padding: 0.8rem 1rem;
+$main-nav-padding: 0 1rem;
+$nav-link-line-height: 2px;
+
+.navbar.navbar-expand-md {
+  padding: $main-nav-padding;
+  border-bottom: $nav-link-line-height solid darken($dark, 4);
+  a.nav-link {
+    padding: $main-nav-link-padding;
+
+    &.active, &:hover {
+      background: fade_out(white, 0.97);
+    }
+  }
+
+}
+
+a.nav-link {
+  position: relative;
+  height: 100%;
+  &:after {
+    content: "";
+    position: absolute;
+    height: $nav-link-line-height;
+    background: $white;
+    width: 0;
+    left: 50%;
+    top: 100%;
+    transition: all ease 250ms;
+  }
+  &.active, &:hover {
+
+    &:after {
+      width: 100%;
+      left: 0;
+    }
+  }
+
+  &.active {
+
+    &:after {
+      background: $primary;
+    }
+  }
+
+  &:hover {
+    color: $dark;
+
+    &:after {
+      background: lighten($primary, 20);
+    }
+  }
+}
+
+
+.nav.month-nav {
+
+  border-bottom: 2px solid $gray-200;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.03);
+
+  a.nav-link {
+    color: $body-color;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+
+    &.active {
+      color: $primary;
+    }
+  }
+
+}

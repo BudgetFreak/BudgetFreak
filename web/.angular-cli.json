@@ -19,13 +19,12 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "../node_modules/clarity-icons/clarity-icons.min.css",
-        "../node_modules/clarity-ui/clarity-ui.min.css",
-        "styles.css"
+        "styles.scss"
       ],
       "scripts": [
-        "../node_modules/@webcomponents/custom-elements/custom-elements.min.js",
-        "../node_modules/clarity-icons/clarity-icons.min.js"
+        "../node_modules/jquery/dist/jquery.js",
+        "../node_modules/popper.js/dist/umd/popper.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
@@ -56,7 +55,8 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
-    "component": {}
+    "styleExt": "scss",
+    "component": {
+    }
   }
 }
