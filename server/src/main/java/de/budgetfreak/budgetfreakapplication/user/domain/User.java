@@ -1,4 +1,4 @@
-package de.budgetfreak.budgetfreakapplication.user;
+package de.budgetfreak.budgetfreakapplication.user.domain;
 
 import javax.persistence.*;
 
@@ -28,23 +28,26 @@ public class User {
         return id;
     }
 
-    public void setId(Long id) {
+    public User setId(Long id) {
         this.id = id;
+        return this;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public User setName(String name) {
         this.name = name;
+        return this;
     }
 
     public String getCurrency() {
         return currency;
     }
 
-    public void setCurrency(String currency) {
+    public User setCurrency(String currency) {
         this.currency = currency;
+        return this;
     }
 }
