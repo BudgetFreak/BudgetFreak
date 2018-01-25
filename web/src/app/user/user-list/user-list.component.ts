@@ -18,7 +18,8 @@ export class UserListComponent implements OnInit {
   getAllUsers() {
     this.userService.findAll().subscribe(
       users => {
-        this.users = this.users;
+        this.users = users;
+        console.dir(users);
       },
       err => {
         console.log(err);
@@ -27,8 +28,7 @@ export class UserListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   // this.getAllUsers();
-    console.log("erfolg?")
+    this.getAllUsers();
   }
 
 }

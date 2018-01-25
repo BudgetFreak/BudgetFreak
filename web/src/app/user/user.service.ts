@@ -16,7 +16,7 @@ export class UserService {
 
   findAll(): Observable<User[]> {
     return this.http.get(this.apiUrl)
-      .map((response: Response) => response.json())
+      .map((response: Response) => response.json()._embedded.userResources)
       .catch((err: any) => Observable.throw(err.json().error || 'Server error'));
   }
 
