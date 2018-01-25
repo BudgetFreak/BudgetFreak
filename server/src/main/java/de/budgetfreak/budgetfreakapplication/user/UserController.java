@@ -1,12 +1,15 @@
 package de.budgetfreak.budgetfreakapplication.user;
 
 import de.budgetfreak.budgetfreakapplication.user.domain.User;
+import de.budgetfreak.budgetfreakapplication.user.domain.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Link;
+import org.springframework.hateoas.Resource;
 import org.springframework.hateoas.Resources;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,5 +35,12 @@ public class UserController {
         List<UserResource> resources = userResourceAssembler.toResources(users);
         final Link selfRel = linkTo(methodOn(UserController.class).list()).withSelfRel();
         return new Resources<>(resources, selfRel);
+    }
+
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<UserResource> create(@RequestBody UserResource userResource) {
+        User user = userService.create(userResource.getName(), userResource.getCurrency());
+        final UserResource createdUserResource = userResourceAssembler.toResource(user);
+        return new ResponseEntity<>(createdUserResource, HttpStatus.OK);
     }
 }

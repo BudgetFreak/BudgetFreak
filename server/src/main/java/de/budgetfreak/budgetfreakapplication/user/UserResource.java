@@ -8,7 +8,9 @@ public class UserResource extends ResourceSupport {
     private String name;
     private String currency;
 
-//   TODO @JsonCreator
+    public UserResource() {
+    }
+
     public UserResource(String name, String currency) {
         this.name = name;
         this.currency = currency;
