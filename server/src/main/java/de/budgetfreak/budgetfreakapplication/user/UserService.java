@@ -23,6 +23,6 @@ public class UserService {
 
     public User create(String name, String currency) {
         final User user = new User(name, currency);
-        return userRepository.saveAndFlush(user);
+        return userRepository.save(user);
     }
 }

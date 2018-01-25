@@ -5,7 +5,6 @@ import de.budgetfreak.budgetfreakapplication.JsonHelper;
 import de.budgetfreak.budgetfreakapplication.user.domain.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.invocation.InvocationOnMock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -20,9 +19,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
-
-import java.util.Arrays;
-import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.anyString;
@@ -46,7 +42,7 @@ public class UserControllerTest {
 
     @Test
     public void shoudListAllUser() throws Exception {
-        when(userServiceMock.list()).thenAnswer(this::createUsers);
+        when(userServiceMock.list()).thenAnswer(invocation -> UserTestUtils.createBobAndJane());
 
         final MockHttpServletRequestBuilder requestBuilder = get("/users").accept(MediaType.APPLICATION_JSON);
         final MvcResult mvcResult = mockMvc.perform(requestBuilder).andReturn();
@@ -80,10 +76,4 @@ public class UserControllerTest {
         verify(userServiceMock).create("Martha", "€");
     }
 
-    private List<User> createUsers(InvocationOnMock invocationOnMock) {
-        return Arrays.asList(
-                new User().setId(1L).setName("Bob").setCurrency("€"),
-                new User().setId(2L).setName("Jane").setCurrency("$")
-        );
-    }
 }
