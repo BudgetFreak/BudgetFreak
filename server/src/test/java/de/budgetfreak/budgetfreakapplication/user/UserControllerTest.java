@@ -41,7 +41,7 @@ public class UserControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    public void shoudListAllUser() throws Exception {
+    public void shouldListAllUser() throws Exception {
         when(userServiceMock.list()).thenAnswer(invocation -> UserTestUtils.createBobAndJane());
 
         final MockHttpServletRequestBuilder requestBuilder = get("/users").accept(MediaType.APPLICATION_JSON);
