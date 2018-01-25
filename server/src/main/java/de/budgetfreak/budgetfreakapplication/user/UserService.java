@@ -21,14 +21,14 @@ public class UserService {
     }
 
     /**
-     * Lists all users in no given order.
+     * List all users in no given order.
      */
     public List<User> list() {
         return userRepository.findAll();
     }
 
     /**
-     * Creates and saves an user.
+     * Create and saves an user.
      *
      * @return The created entity.
      */
