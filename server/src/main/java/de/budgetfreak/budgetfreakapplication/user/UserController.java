@@ -1,10 +1,8 @@
 package de.budgetfreak.budgetfreakapplication.user;
 
 import de.budgetfreak.budgetfreakapplication.user.domain.User;
-import de.budgetfreak.budgetfreakapplication.user.domain.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Link;
-import org.springframework.hateoas.Resource;
 import org.springframework.hateoas.Resources;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -16,6 +14,9 @@ import java.util.List;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 
+/**
+ * Controller for accessing users.
+ */
 @RestController
 @RequestMapping("/users")
 public class UserController {
@@ -29,6 +30,9 @@ public class UserController {
         this.userResourceAssembler = userResourceAssembler;
     }
 
+    /**
+     * Lists all users in no given order.
+     */
     @GetMapping
     public Resources<UserResource> list() {
         List<User> users = userService.list();
@@ -37,8 +41,12 @@ public class UserController {
         return new Resources<>(resources, selfRel);
     }
 
+    /**
+     * Creates an user.
+     */
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<UserResource> create(@RequestBody UserResource userResource) {
+        // TODO: Validate UserResource before processing
         User user = userService.create(userResource.getName(), userResource.getCurrency());
         final UserResource createdUserResource = userResourceAssembler.toResource(user);
         return new ResponseEntity<>(createdUserResource, HttpStatus.OK);

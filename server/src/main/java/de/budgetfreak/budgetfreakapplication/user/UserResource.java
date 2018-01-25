@@ -1,6 +1,5 @@
 package de.budgetfreak.budgetfreakapplication.user;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import org.springframework.hateoas.ResourceSupport;
 
 public class UserResource extends ResourceSupport {

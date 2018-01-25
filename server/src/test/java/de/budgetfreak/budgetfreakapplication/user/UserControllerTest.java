@@ -56,7 +56,9 @@ public class UserControllerTest {
 
     @Test
     public void shouldCreateUser() throws Exception {
-        final UserResource userResource = new UserResource("Martha", "€");
+        final String name = "Martha";
+        final String currency = "€";
+        final UserResource userResource = new UserResource(name, currency);
         when(userServiceMock.create(anyString(), anyString())).thenAnswer(invocation ->
                 new User().setId(1L)
                     .setName(invocation.getArgument(0))
@@ -70,10 +72,10 @@ public class UserControllerTest {
 
         assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
         final UserResource result = JsonHelper.fromJson(response.getContentAsString(), UserResource.class);
-        assertThat(result.getName()).isEqualTo("Martha");
-        assertThat(result.getCurrency()).isEqualTo("€");
+        assertThat(result.getName()).isEqualTo(name);
+        assertThat(result.getCurrency()).isEqualTo(currency);
 
-        verify(userServiceMock).create("Martha", "€");
+        verify(userServiceMock).create(name, currency);
     }
 
 }
