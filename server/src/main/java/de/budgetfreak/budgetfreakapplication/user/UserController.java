@@ -31,7 +31,7 @@ public class UserController {
     }
 
     /**
-     * Lists all users in no given order.
+     * List all users in no given order.
      */
     @GetMapping
     public Resources<UserResource> list() {
@@ -42,7 +42,7 @@ public class UserController {
     }
 
     /**
-     * Creates an user.
+     * Create an user.
      */
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<UserResource> create(@RequestBody UserResource userResource) {
