@@ -1,6 +1,8 @@
 package de.budgetfreak.budgetfreakapplication.user;
 
 import de.budgetfreak.budgetfreakapplication.DatabaseTest;
+import de.budgetfreak.budgetfreakapplication.user.domain.User;
+import de.budgetfreak.budgetfreakapplication.user.domain.UserRepository;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
