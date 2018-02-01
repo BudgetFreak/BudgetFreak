@@ -31,3 +31,22 @@ $fixed-panel-background-color: #fff;
 .budget-rows {
   margin-top: 214px;
 }
+
+.main-title {
+  font-size: 2.3rem;
+  font-weight: 300;
+  margin-bottom: 0;
+
+  b {
+    font-weight: 400;
+  }
+
+  & ~ p.lead {
+    font-size: 1rem;
+  }
+}
+
+
+.jumbotron ~ .container {
+  margin-top: 10rem;
+}
