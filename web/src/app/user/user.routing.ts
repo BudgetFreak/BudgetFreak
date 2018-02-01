@@ -4,7 +4,7 @@ import {BudgetingComponent} from "./budgeting/budgeting.component";
 import {AccountsComponent} from "./accounts/accounts.component";
 
 export const USER_ROUTES: Routes = [{
-  path: '', component: UserComponent,
+  path: 'user', component: UserComponent,
   children: [
     {path: 'budgeting', component: BudgetingComponent},
     {path: 'accounts', component: AccountsComponent}
