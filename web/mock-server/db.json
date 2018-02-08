@@ -1,0 +1,17 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Gemeinsames Budget",
+      "currency": "Euro"
+    },{
+      "id": 2,
+      "name": "Mein Budget",
+      "currency": "Euro"
+    },{
+      "id": 3,
+      "name": "Kinder",
+      "currency": "Euro"
+    }
+  ]
+}
