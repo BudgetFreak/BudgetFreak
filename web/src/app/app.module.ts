@@ -8,6 +8,7 @@ import {UserListComponent} from "./user/user-list/user-list.component";
 import {UserManagementComponent} from "./user-management/user-management.component";
 import { CreateUserComponent } from './user-management/create-user/create-user.component';
 import { SelectUserComponent } from './user-management/select-user/select-user.component';
+import {UserService} from "./user.service";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { SelectUserComponent } from './user-management/select-user/select-user.c
     APP_ROUTING,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    UserService
+  ],
   bootstrap: [AppComponent],
   schemas: []
 })
