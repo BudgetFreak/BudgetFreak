@@ -3,18 +3,19 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {APP_ROUTING, ROUTING_COMPONENTS} from "./app.routing";
-import {UserManagementComponent} from "./user-management/user-management.component";
-import { CreateUserComponent } from './user-management/create-user/create-user.component';
-import { SelectUserComponent } from './user-management/select-user/select-user.component';
+import {UserListComponent} from "./user/user-list/user-list.component";
+import {HttpModule} from "@angular/http";
 
 @NgModule({
   declarations: [
     AppComponent,
-    ROUTING_COMPONENTS,
+    UserListComponent,
+    ROUTING_COMPONENTS
   ],
   imports: [
     BrowserModule,
-    APP_ROUTING
+    APP_ROUTING,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent],
