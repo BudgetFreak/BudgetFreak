@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Http} from "@angular/http";
 import {Observable} from "rxjs/Observable";
-import {User} from "./model/model-interfaces";
+import {User} from "../model/model-interfaces";
 
 const BASE_URL = 'http://localhost:3000/api/users/';
 

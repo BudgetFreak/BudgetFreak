@@ -5,4 +5,14 @@ export interface User {
   id?: number;
   name?: string;
   currency?: string;
+  _links?: UserLinks
+}
+
+export interface UserLinks {
+  self: string;
+  accounts: string;
+}
+
+export interface Account {
+  name?: string;
 }

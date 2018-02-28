@@ -5,10 +5,8 @@ import {AppComponent} from './app.component';
 import {APP_ROUTING, ROUTING_COMPONENTS} from "./app.routing";
 import {HttpModule} from "@angular/http";
 import {UserListComponent} from "./user/user-list/user-list.component";
-import {UserManagementComponent} from "./user-management/user-management.component";
-import { CreateUserComponent } from './user-management/create-user/create-user.component';
-import { SelectUserComponent } from './user-management/select-user/select-user.component';
-import {UserService} from "./user.service";
+import {UserService} from "./user-management/user.service";
+import {LoginService} from "./login.service";
 
 @NgModule({
   declarations: [
@@ -22,7 +20,8 @@ import {UserService} from "./user.service";
     HttpModule
   ],
   providers: [
-    UserService
+    UserService,
+    LoginService
   ],
   bootstrap: [AppComponent],
   schemas: []

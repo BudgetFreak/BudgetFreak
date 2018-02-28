@@ -1,7 +1,3 @@
-<p>
-  Auswahl eines Budgets
-</p>
-
-<div *ngFor="let user of users">
-  <div>{{user.name}}</div>
+<div class="list-group">
+    <a *ngFor="let user of users" (click)="onUserSelect(user)" routerLink="/user/accounts" class="list-group-item list-group-item-action">{{user.name}}</a>
 </div>
