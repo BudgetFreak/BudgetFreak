@@ -1,6 +1,6 @@
 package de.budgetfreak.budgetfreakapplication.user;
 
-import de.budgetfreak.budgetfreakapplication.BudgetfreakapplicationApplication;
+import de.budgetfreak.budgetfreakapplication.BudgetfreakApplication;
 import de.budgetfreak.budgetfreakapplication.JsonHelper;
 import de.budgetfreak.budgetfreakapplication.user.domain.User;
 import org.junit.Test;
@@ -28,7 +28,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = BudgetfreakapplicationApplication.class)
+@ContextConfiguration(classes = BudgetfreakApplication.class)
 @ActiveProfiles("test")
 @WebMvcTest(value = UserController.class)
 @Import(value = UserResourceAssembler.class)
