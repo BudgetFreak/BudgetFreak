@@ -3,6 +3,7 @@ package de.budgetfreak.budgetfreakapplication.user;
 import de.budgetfreak.budgetfreakapplication.user.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Link;
+import org.springframework.hateoas.Resource;
 import org.springframework.hateoas.Resources;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -42,11 +43,22 @@ public class UserController {
     }
 
     /**
+     * Get one user.
+     */
+    @GetMapping("/{id}")
+    public Resource<UserResource> get(@PathVariable("id") long id) {
+        User user = userService.get(id);
+        final UserResource userResource = userResourceAssembler.toResource(user);
+        final Link selfRel = linkTo(methodOn(UserController.class).get(id)).withSelfRel();
+        final Link usersRel = linkTo(methodOn(UserController.class).list()).withRel("users");
+        return new Resource<>(userResource, selfRel, usersRel);
+    }
+
+    /**
      * Create an user.
      */
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<UserResource> create(@RequestBody UserResource userResource) {
-        // TODO: Validate UserResource before processing
         User user = userService.create(userResource.getName(), userResource.getCurrency());
         final UserResource createdUserResource = userResourceAssembler.toResource(user);
         return new ResponseEntity<>(createdUserResource, HttpStatus.OK);

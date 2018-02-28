@@ -21,6 +21,7 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -52,6 +53,20 @@ public class UserControllerTest {
         final PagedResources<UserResource> userResources = JsonHelper.fromPagedResourceJson(response.getContentAsString(), UserResource.class);
         assertThat(userResources).hasSize(2);
         assertThat(userResources).extracting("name").containsExactly("Bob", "Jane");
+    }
+
+    @Test
+    public void shouldGetOneUser() throws Exception {
+        when(userServiceMock.get(anyLong())).thenReturn(UserTestUtils.createBob());
+
+        final MockHttpServletRequestBuilder requestBuilder = get("/users/{id}", 1L).accept(MediaType.APPLICATION_JSON);
+        final MvcResult mvcResult = mockMvc.perform(requestBuilder).andReturn();
+        final MockHttpServletResponse response = mvcResult.getResponse();
+
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        final UserResource userResource = JsonHelper.fromJson(response.getContentAsString(), UserResource.class);
+        assertThat(userResource.getName()).isEqualTo("Bob");
+        assertThat(userResource.getCurrency()).isEqualTo("€");
     }
 
     @Test

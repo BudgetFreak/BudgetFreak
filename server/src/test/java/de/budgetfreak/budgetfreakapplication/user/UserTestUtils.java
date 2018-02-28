@@ -12,8 +12,20 @@ class UserTestUtils {
 
     static List<User> createBobAndJane() {
         return Arrays.asList(
-                new User().setId(1L).setName("Bob").setCurrency("€"),
-                new User().setId(2L).setName("Jane").setCurrency("$")
+                createBob(),
+                createJane()
         );
+    }
+
+    private static User createJane() {
+        return createUser(2L, "Jane", "$");
+    }
+
+    static User createBob() {
+        return createUser(1L, "Bob", "€");
+    }
+
+    static User createUser(long id, String name, String currency) {
+        return new User().setId(id).setName(name).setCurrency(currency);
     }
 }
