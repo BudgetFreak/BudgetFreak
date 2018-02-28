@@ -8,8 +8,10 @@ import org.springframework.hateoas.Resources;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
@@ -24,6 +26,13 @@ public class UserController {
 
     private UserService userService;
     private UserResourceAssembler userResourceAssembler;
+
+    @InitBinder
+    protected void initBinder(WebDataBinder binder) {
+        // TODO Maybe define global validators?
+        binder.setValidator(new UserResourceValidator());
+    }
+
 
     @Autowired
     public UserController(UserService userService, UserResourceAssembler userResourceAssembler) {
@@ -49,16 +58,14 @@ public class UserController {
     public Resource<UserResource> get(@PathVariable("id") long id) {
         User user = userService.get(id);
         final UserResource userResource = userResourceAssembler.toResource(user);
-        final Link selfRel = linkTo(methodOn(UserController.class).get(id)).withSelfRel();
-        final Link usersRel = linkTo(methodOn(UserController.class).list()).withRel("users");
-        return new Resource<>(userResource, selfRel, usersRel);
+        return new Resource<>(userResource);
     }
 
     /**
      * Create an user.
      */
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<UserResource> create(@RequestBody UserResource userResource) {
+    public ResponseEntity<UserResource> create(@RequestBody @Valid UserResource userResource) {
         User user = userService.create(userResource.getName(), userResource.getCurrency());
         final UserResource createdUserResource = userResourceAssembler.toResource(user);
         return new ResponseEntity<>(createdUserResource, HttpStatus.OK);
