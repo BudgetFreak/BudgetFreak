@@ -1,12 +1,11 @@
 <form>
   <div class="row">
     <div class="col">
-      <input class="form-control" value="" name="usernameInput" id="id4"
-             placeholder="Gib deinem Budget einen Namen ...">
+      <input class="form-control" value="" name="usernameInput" id="id4" required #username>
       <div class="invalid-feedback"></div>
     </div>
     <div class="col-auto">
-      <button class="btn btn-outline-primary" name="loginSubmitButton" id="id2">
+      <button type='button' class="btn btn-outline-primary" name="loginSubmitButton" id="id2" (click)="createUser(username.value)">
         Anlegen
       </button>
     </div>
