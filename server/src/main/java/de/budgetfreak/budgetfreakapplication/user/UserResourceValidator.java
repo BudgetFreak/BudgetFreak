@@ -19,6 +19,6 @@ public class UserResourceValidator implements Validator {
     @Override
     public void validate(Object target, Errors errors) {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "name.empty");
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "currency", "name.empty");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "currency", "currency.empty");
     }
 }
