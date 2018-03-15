@@ -13,7 +13,6 @@ export class UserService {
   private apiUrl = 'http://localhost:8080/users';
 
   constructor(private http: Http) {
-
   }
 
   findAll(): Observable<User[]> {
@@ -26,13 +25,6 @@ export class UserService {
   findById(id: Number): Observable<User> {
     //TODO rukl@all implement
     return null;
-  }
-
-  create(user: User): Observable<User> {
-    return this.http
-      .post(this.apiUrl, JSON.stringify(user))
-      .map((response: Response) => response.json()._embedded.userResources)
-      .catch((err: any) => Observable.throw(err.json().error || 'Server error'));
   }
 
   deleteUser(user: User): Observable<User> {

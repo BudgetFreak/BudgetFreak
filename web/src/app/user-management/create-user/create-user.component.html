@@ -1,13 +1,43 @@
-<form>
-  <div class="row">
-    <div class="col">
-      <input class="form-control" value="" name="usernameInput" id="id4" required #username>
+<div *ngIf="!name; else forminfo">
+  <form [formGroup]="userCreationForm" (ngSubmit)="addPost(userCreationForm.value)">
+    <div class="row">
+
+      <div class="col-7">
+        <input class="form-control" name="usernameInput" formControlName="usernameInput"
+               placeholder="Gib deinem Budget einen Namen ...">
+        <div class="alert"
+             *ngIf="!userCreationForm.controls['usernameInput'].valid && userCreationForm.controls['usernameInput'].touched">
+          {{usernameInputAlert}}
+        </div>
+      </div>
+
+      <div class="col-3">
+        <input class="form-control" name="currencyInput" formControlName="currencyInput" placeholder="Währung">
+        <div class="alert"
+             *ngIf="!userCreationForm.controls['currencyInput'].valid && userCreationForm.controls['currencyInput'].touched">
+          {{currencyInputAlert}}
+        </div>
+      </div>
+
+      <div class="col-2">
+        <button type="submit" class="btn btn-outline-primary" name="loginSubmitButton"
+                [disabled]="!userCreationForm.valid">
+          Anlegen
+        </button>
+      </div>
+    </div>
+    <div class="row">
       <div class="invalid-feedback"></div>
     </div>
-    <div class="col-auto">
-      <button type='button' class="btn btn-outline-primary" name="loginSubmitButton" id="id2" (click)="createUser(username.value)">
-        Anlegen
-      </button>
+  </form>
+</div>
+
+<ng-template #forminfo>
+  <div class="form-container">
+    <div class="row columns">
+      <h1>{{ usernameInput }}</h1>
+
+      <p>{{ usernameInput }}</p>
     </div>
   </div>
-</form>
+</ng-template>
