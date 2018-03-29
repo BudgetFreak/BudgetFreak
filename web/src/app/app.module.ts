@@ -7,7 +7,8 @@ import {UserService} from "./user-management/user.service";
 import {LoginService} from "./login.service";
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-
+import {CommonModule} from "@angular/common";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [

@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {UserService} from "../../user.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {User} from "../../model/model-interfaces";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-create-user',
@@ -10,13 +11,12 @@ import {User} from "../../model/model-interfaces";
 export class CreateUserComponent {
 
   userCreationForm: FormGroup;
-  formSubmited: boolean = false;
   username: string = "";
   currency: string = "";
   usernameInputAlert: string = "Geben Sie einen Namen mit mindestens 4 Zeichen ein";
   currencyInputAlert: string = "Geben Sie ein Zeichen für die gewünschte Währung ein";
 
-  constructor(private userService: UserService, private formBuilder: FormBuilder) {
+  constructor(private userService: UserService, private formBuilder: FormBuilder,  private router: Router) {
   }
 
   ngOnInit() {
@@ -25,7 +25,6 @@ export class CreateUserComponent {
       'currencyInput': [null, Validators.compose([Validators.required, Validators.minLength(1), Validators.maxLength(1)])],
       'validate': ''
     });
-    this.formSubmited = false;
   }
 
   createUser() {
@@ -34,7 +33,7 @@ export class CreateUserComponent {
       currency: this.currency
     };
     this.userService.create(newUser).subscribe();
-    this.formSubmited = true;
+    this.router.navigate(['/budgeting']);
   }
 
   addPost(post) {
