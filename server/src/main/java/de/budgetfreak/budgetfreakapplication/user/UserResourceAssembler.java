@@ -17,7 +17,7 @@ public class UserResourceAssembler extends ResourceAssemblerSupport<User, UserRe
     @Override
     public UserResource toResource(User entity) {
         final UserResource userResource = new UserResource(entity.getName(), entity.getCurrency());
-        userResource.add(linkTo(methodOn(UserController.class).list()).withSelfRel());
+        userResource.add(linkTo(methodOn(UserController.class).get(entity.getId())).withSelfRel());
         return userResource;
     }
 }

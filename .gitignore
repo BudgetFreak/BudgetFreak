@@ -30,3 +30,6 @@ gradle-app.setting
 
 # Mac OS X
 .DS_Store
+
+# JRebel
+**/rebel.xml
