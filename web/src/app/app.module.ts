@@ -4,14 +4,14 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {APP_ROUTING, ROUTING_COMPONENTS} from "./app.routing";
 import {HttpModule} from "@angular/http";
-import {UserListComponent} from "./user/user-list/user-list.component";
 import {UserService} from "./user-management/user.service";
 import {LoginService} from "./login.service";
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserListComponent,
     ROUTING_COMPONENTS
   ],
   imports: [

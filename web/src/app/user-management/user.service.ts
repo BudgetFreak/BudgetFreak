@@ -1,7 +1,9 @@
-import {Injectable} from '@angular/core';
-import {Http} from "@angular/http";
-import {Observable} from "rxjs/Observable";
+import {Injectable} from '@angular/core';
+import {Http, Response} from "@angular/http";
 import {User} from "../model/model-interfaces";
+import {UserResourceResolver} from "../user-resource.resolver";
+import {Observable} from 'rxjs/Observable';
+
 
 const BASE_URL = 'http://localhost:8080/users/';
 
@@ -12,7 +14,7 @@ export class UserService {
   }
 
   findAll(): Observable<User[]> {
-    return this.http.get(BASE_URL).map(response => response.json());
+    return this.http.get(BASE_URL).map((response: Response) => UserResourceResolver.resolveCollection(response));
   }
 
 }
