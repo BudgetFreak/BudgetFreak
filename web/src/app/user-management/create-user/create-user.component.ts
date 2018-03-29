@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
-import {UserService} from "../../user.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {User} from "../../model/model-interfaces";
 import {Router} from "@angular/router";
+import {UserService} from "../user.service";
 
 @Component({
   selector: 'app-create-user',
@@ -16,7 +16,7 @@ export class CreateUserComponent {
   usernameInputAlert: string = "Geben Sie einen Namen mit mindestens 4 Zeichen ein";
   currencyInputAlert: string = "Geben Sie ein Zeichen für die gewünschte Währung ein";
 
-  constructor(private userService: UserService, private formBuilder: FormBuilder,  private router: Router) {
+  constructor(private userService: UserService, private formBuilder: FormBuilder, private router: Router) {
   }
 
   ngOnInit() {
