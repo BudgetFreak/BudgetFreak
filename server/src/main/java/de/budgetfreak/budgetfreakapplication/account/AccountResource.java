@@ -7,6 +7,9 @@ public class AccountResource extends ResourceSupport {
     private String description;
     private boolean onBudget;
 
+    public AccountResource() {
+    }
+
     public AccountResource(String description, boolean onBudget) {
         this.description = description;
         this.onBudget = onBudget;

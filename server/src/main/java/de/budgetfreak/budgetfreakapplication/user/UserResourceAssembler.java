@@ -1,5 +1,6 @@
 package de.budgetfreak.budgetfreakapplication.user;
 
+import de.budgetfreak.budgetfreakapplication.account.AccountController;
 import de.budgetfreak.budgetfreakapplication.user.domain.User;
 import org.springframework.hateoas.mvc.ResourceAssemblerSupport;
 import org.springframework.stereotype.Component;
@@ -18,6 +19,7 @@ public class UserResourceAssembler extends ResourceAssemblerSupport<User, UserRe
     public UserResource toResource(User entity) {
         final UserResource userResource = new UserResource(entity.getName(), entity.getCurrency());
         userResource.add(linkTo(methodOn(UserController.class).get(entity.getId())).withSelfRel());
+        userResource.add(linkTo(methodOn(AccountController.class).list(entity.getId())).withRel("accounts"));
         return userResource;
     }
 }

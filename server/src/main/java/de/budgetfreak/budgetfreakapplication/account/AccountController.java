@@ -21,7 +21,7 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
  * Controller for accessing users.
  */
 @RestController
-@RequestMapping("/accounts")
+@RequestMapping("/users/{userId}/accounts")
 public class AccountController {
 
     private AccountService accountService;
@@ -43,10 +43,10 @@ public class AccountController {
      * List all accounts in no given order.
      */
     @GetMapping
-    public Resources<AccountResource> list() {
-        List<Account> accounts = accountService.list();
+    public Resources<AccountResource> list(@PathVariable("userId") long userId) {
+        List<Account> accounts = accountService.list(userId);
         List<AccountResource> resources = accountResourceAssembler.toResources(accounts);
-        final Link selfRel = linkTo(methodOn(AccountController.class).list()).withSelfRel();
+        final Link selfRel = linkTo(methodOn(AccountController.class).list(userId)).withSelfRel();
         return new Resources<>(resources, selfRel);
     }
 
@@ -54,7 +54,7 @@ public class AccountController {
      * Get one account.
      */
     @GetMapping("/{id}")
-    public Resource<AccountResource> get(@PathVariable("id") long id) {
+    public Resource<AccountResource> get(@PathVariable("userId") long userId, @PathVariable("id") long id) {
         Account account = accountService.get(id);
         final AccountResource accountResource = accountResourceAssembler.toResource(account);
         return new Resource<>(accountResource);
@@ -64,8 +64,8 @@ public class AccountController {
      * Create an account.
      */
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<AccountResource> create(@RequestBody @Valid AccountResource accountResource) {
-        Account account = accountService.create(accountResource.getDescription(), accountResource.isOnBudget());
+    public ResponseEntity<AccountResource> create(@PathVariable("userId") long userId, @RequestBody @Valid AccountResource accountResource) {
+        Account account = accountService.create(userId, accountResource.getDescription(), accountResource.isOnBudget());
         final AccountResource createdAccountResource = accountResourceAssembler.toResource(account);
         return new ResponseEntity<>(createdAccountResource, HttpStatus.OK);
     }

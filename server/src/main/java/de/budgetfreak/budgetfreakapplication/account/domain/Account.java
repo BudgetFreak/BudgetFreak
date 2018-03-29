@@ -1,5 +1,7 @@
 package de.budgetfreak.budgetfreakapplication.account.domain;
 
+import de.budgetfreak.budgetfreakapplication.user.domain.User;
+
 import javax.persistence.*;
 
 /**
@@ -19,12 +21,17 @@ public class Account {
     @Column(name = "on_budget")
     private boolean onBudget;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "USER_ID")
+    private User user;
+
     public Account() {
     }
 
-    public Account(String description, boolean onBudget) {
+    public Account(String description, boolean onBudget, User user) {
         this.description = description;
         this.onBudget = onBudget;
+        this.user = user;
     }
 
     public Long getId() {
@@ -49,5 +56,13 @@ public class Account {
 
     public void setOnBudget(boolean onBudget) {
         this.onBudget = onBudget;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
