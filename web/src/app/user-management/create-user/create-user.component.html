@@ -1,4 +1,4 @@
-<div *ngIf="!name; else forminfo">
+<div *ngIf="formSubmited != true; else succesfullySubmited">
   <form [formGroup]="userCreationForm" (ngSubmit)="addPost(userCreationForm.value)">
     <div class="row">
 
@@ -32,12 +32,10 @@
   </form>
 </div>
 
-<ng-template #forminfo>
+<ng-template #succesfullySubmited>
   <div class="form-container">
     <div class="row columns">
-      <h1>{{ usernameInput }}</h1>
-
-      <p>{{ usernameInput }}</p>
+      <h1>{{ username }} wurde erfolgreich angelegt</h1>
     </div>
   </div>
 </ng-template>

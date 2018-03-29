@@ -10,6 +10,7 @@ import {User} from "../../model/model-interfaces";
 export class CreateUserComponent {
 
   userCreationForm: FormGroup;
+  formSubmited: boolean = false;
   username: string = "";
   currency: string = "";
   usernameInputAlert: string = "Geben Sie einen Namen mit mindestens 4 Zeichen ein";
@@ -24,13 +25,16 @@ export class CreateUserComponent {
       'currencyInput': [null, Validators.compose([Validators.required, Validators.minLength(1), Validators.maxLength(1)])],
       'validate': ''
     });
+    this.formSubmited = false;
   }
 
   createUser() {
-    let newUser: User = new User();
-    newUser.name = this.username;
-    newUser.currency = this.currency;
+    let newUser: User = {
+      name: this.username,
+      currency: this.currency
+    };
     this.userService.create(newUser).subscribe();
+    this.formSubmited = true;
   }
 
   addPost(post) {
