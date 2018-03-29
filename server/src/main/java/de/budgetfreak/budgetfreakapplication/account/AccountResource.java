@@ -8,12 +8,12 @@ import org.springframework.hateoas.ResourceSupport;
 public class AccountResource extends ResourceSupport {
 
     private String description;
-    private boolean onBudget;
+    private Boolean onBudget;
 
     public AccountResource() {
     }
 
-    public AccountResource(String description, boolean onBudget) {
+    public AccountResource(String description, Boolean onBudget) {
         this.description = description;
         this.onBudget = onBudget;
     }
@@ -22,7 +22,7 @@ public class AccountResource extends ResourceSupport {
         return description;
     }
 
-    public boolean isOnBudget() {
+    public Boolean getOnBudget() {
         return onBudget;
     }
 }

@@ -3,9 +3,17 @@ package de.budgetfreak.budgetfreakapplication.account;
 import de.budgetfreak.budgetfreakapplication.account.domain.Account;
 import de.budgetfreak.budgetfreakapplication.user.domain.User;
 
+import java.util.List;
+
+import static java.util.Arrays.asList;
+
 public class AccountTestUtils {
 
     private AccountTestUtils() {
+    }
+
+    public static List<Account> createAccounts(User user) {
+        return asList(createCheckingsAccount(user), createSavingsAccount(user));
     }
 
     public static Account createCheckingsAccount(User user) {

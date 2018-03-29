@@ -65,7 +65,7 @@ public class AccountController {
      */
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<AccountResource> create(@PathVariable("userId") long userId, @RequestBody @Valid AccountResource accountResource) {
-        Account account = accountService.create(userId, accountResource.getDescription(), accountResource.isOnBudget());
+        Account account = accountService.create(userId, accountResource.getDescription(), accountResource.getOnBudget());
         final AccountResource createdAccountResource = accountResourceAssembler.toResource(account);
         return new ResponseEntity<>(createdAccountResource, HttpStatus.OK);
     }
