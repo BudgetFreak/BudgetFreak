@@ -9,6 +9,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Service for managing accounts.
+ */
 @Service
 public class AccountService {
 
@@ -23,7 +26,8 @@ public class AccountService {
 
     /**
      * Lists all accounts.
-     * @param userId
+     *
+     * @param userId The id of the user who's account we want to access.
      */
     public List<Account> list(long userId) {
         return accountRepository.findByUserId(userId);
@@ -31,6 +35,7 @@ public class AccountService {
 
     /**
      * Returns one account by id.
+     * @param id The id of the account.
      */
     public Account get(long id) {
         return accountRepository.findOne(id);
@@ -38,6 +43,10 @@ public class AccountService {
 
     /**
      * Creates an account.
+     *
+     * @param userId      The user the account will belong to.
+     * @param description The description.
+     * @param onBudget    Whether the account will have an effect on the budget.
      */
     public Account create(long userId, String description, boolean onBudget) {
         User user = userRepository.getOne(userId);

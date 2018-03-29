@@ -18,7 +18,7 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 
 /**
- * Controller for accessing users.
+ * Controller for accessing accounts.
  */
 @RestController
 @RequestMapping("/users/{userId}/accounts")

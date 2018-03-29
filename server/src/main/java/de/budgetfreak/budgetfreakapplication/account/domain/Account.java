@@ -38,31 +38,35 @@ public class Account {
         return id;
     }
 
-    public void setId(Long id) {
+    public Account setId(Long id) {
         this.id = id;
+        return this;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    public Account setDescription(String description) {
         this.description = description;
+        return this;
     }
 
     public boolean isOnBudget() {
         return onBudget;
     }
 
-    public void setOnBudget(boolean onBudget) {
+    public Account setOnBudget(boolean onBudget) {
         this.onBudget = onBudget;
+        return this;
     }
 
     public User getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public Account setUser(User user) {
         this.user = user;
+        return this;
     }
 }

@@ -7,7 +7,7 @@ import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 /**
- * Validator for {@link UserResource}.
+ * Validator for {@link AccountResource}.
  */
 @Component
 public class AccountResourceValidator implements Validator {

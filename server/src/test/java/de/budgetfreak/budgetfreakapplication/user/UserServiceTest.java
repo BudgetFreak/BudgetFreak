@@ -12,18 +12,17 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.isA;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-@RunWith(MockitoJUnitRunner.class)
 public class UserServiceTest {
 
-    @Mock
-    private UserRepository userRepositoryMock;
-
     private UserService testSubject;
+    private UserRepository userRepositoryMock;
 
     @Before
     public void setUp() throws Exception {
+        userRepositoryMock = mock(UserRepository.class);
         testSubject = new UserService(userRepositoryMock);
     }
 
