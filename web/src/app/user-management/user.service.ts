@@ -3,7 +3,7 @@ import {Http} from "@angular/http";
 import {Observable} from "rxjs/Observable";
 import {User} from "../model/model-interfaces";
 
-const BASE_URL = 'http://localhost:3000/api/users/';
+const BASE_URL = 'http://localhost:8080/users/';
 
 @Injectable()
 export class UserService {
