@@ -4,10 +4,10 @@ import {AccountsComponent} from "./accounts/accounts.component";
 import {BudgetingComponent} from "./budgeting/budgeting.component";
 
 export const USER_ROUTES: Routes = [{
-  path: 'user', component: UserComponent,
+  path: '', component: UserComponent,
   children: [
     {path: 'accounts', component: AccountsComponent},
-    {path: 'budgeting', component: BudgetingComponent},
+    {path: 'budgeting', component: BudgetingComponent}
   ]
 }];
 

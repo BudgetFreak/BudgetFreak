@@ -3,11 +3,10 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {APP_ROUTING, ROUTING_COMPONENTS} from "./app.routing";
 import {HttpModule} from "@angular/http";
-import {CommonModule} from "@angular/common";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {UserService} from "./user.service";
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
+import {UserService} from "./user-management/user.service";
+import {LoginService} from "./login.service";
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 
 
 @NgModule({
@@ -24,7 +23,8 @@ import 'rxjs/add/operator/catch';
     APP_ROUTING
   ],
   providers: [
-    UserService
+    UserService,
+    LoginService
   ],
   bootstrap: [AppComponent],
   schemas: []

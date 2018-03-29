@@ -1,6 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import {User} from "../../model/model-interfaces";
-import {UserService} from "../../user.service";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-select-user',
@@ -10,7 +8,9 @@ export class SelectUserComponent implements OnInit {
 
   users: User[];
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService,
+              private loginService: LoginService,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -19,4 +19,8 @@ export class SelectUserComponent implements OnInit {
     });
   }
 
+  onUserSelect(user: User) {
+    this.loginService.setCurrentUser(user);
+    this.router.navigate(['/budgeting']);
+  }
 }
