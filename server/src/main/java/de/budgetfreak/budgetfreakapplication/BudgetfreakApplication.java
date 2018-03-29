@@ -8,10 +8,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @SpringBootApplication
-public class BudgetfreakapplicationApplication {
+public class BudgetfreakApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(BudgetfreakapplicationApplication.class, args);
+        SpringApplication.run(BudgetfreakApplication.class, args);
     }
 
     //TODO change that to custom mapping (not globaly!)

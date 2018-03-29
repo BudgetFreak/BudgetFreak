@@ -36,4 +36,12 @@ public class UserService {
         final User user = new User(name, currency);
         return userRepository.save(user);
     }
+
+    /**
+     * Get one user by id.
+     */
+    public User get(long id) {
+        return userRepository.findOne(id);
+    }
+
 }
