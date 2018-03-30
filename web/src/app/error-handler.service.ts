@@ -2,6 +2,10 @@ import {User} from "./model/model-interfaces";
 import {Response} from "@angular/http";
 import {Observable} from "rxjs/Observable";
 
+/**
+ * Service for central error handling
+ * ToDo: Discuss a method in team to pass on errors to the surface and apply code here
+ */
 export class ErrorHandlerService {
 
   constructor() { }
