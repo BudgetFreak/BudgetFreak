@@ -78,5 +78,4 @@ workflows:
             branches:
               only:
                 - master
-                - measure-code-coverage
       - angular_check
