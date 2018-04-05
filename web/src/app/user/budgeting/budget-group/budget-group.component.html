@@ -1,0 +1,31 @@
+<div class="content-row category-group">
+  <div class="categories">
+    <div class="column-row">
+      <div class="cell d-flex justify-content-between ">
+        {{ groupName }}
+        <button type="button" class="btn btn-link">Neue Unterkategorie</button>
+      </div>
+    </div>
+  </div>
+  <div class="current-month">
+    <div class="column-row">
+      <div class="cell">{{ currentMonthBudgetSum }}</div>
+      <div class="cell">{{ currentMonthTotalExpenses }}</div>
+      <div class="cell">{{ currentMonthDifference }}</div>
+    </div>
+  </div>
+  <div class="last-month">
+    <div class="column-row">
+      <div class="cell">880,00 €</div>
+      <div class="cell">880,00 €</div>
+    </div>
+  </div>
+  <div class="average">
+    <div class="column-row">
+      <div class="cell">880,00 €</div>
+    </div>
+  </div>
+</div>
+
+<app-budget-category></app-budget-category>
+
