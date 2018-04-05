@@ -2,11 +2,13 @@ import {UserComponent} from "./user.component";
 import {Routes} from "@angular/router";
 import {AccountsComponent} from "./accounts/accounts.component";
 import {BudgetingComponent} from "./budgeting/budgeting.component";
-import {BudgetingOverviewHeaderComponent} from "./budgeting/budgeting-overview-header/budgeting-overview-header.component";
-import {BudgetingMonthNavComponent} from "./budgeting/budgeting-month-nav/budgeting-month-nav.component";
+import {BudgetingBannerComponent} from "./budgeting/budgeting-banner/budgeting-banner.component";
+import {MonthNavComponent} from "./budgeting/month-nav/month-nav.component";
 import {BudgetHeadersComponent} from "./budgeting/budget-headers/budget-headers.component";
-import {BudgetGroupComponent} from "./budgeting/budget-group/budget-group.component";
-import {BudgetCategoryComponent} from "./budgeting/budget-group/budget-category/budget-category.component";
+import {BudgetGroupsComponent} from "./budgeting/budget-groups/budget-groups.component";
+import {BudgetGroupComponent} from "./budgeting/budget-groups/budget-group/budget-group.component";
+import {BudgetEntriesComponent} from "./budgeting/budget-groups/budget-group/budget-entries/budget-entries.component";
+import {BudgetEntryComponent} from "./budgeting/budget-groups/budget-group/budget-entries/budget-entry/budget-entry.component";
 
 export const USER_ROUTES: Routes = [{
   path: '', component: UserComponent,
@@ -20,9 +22,11 @@ export const USER_ROUTING_COMPONENTS = [
   UserComponent,
   BudgetingComponent,
   AccountsComponent,
-  BudgetingOverviewHeaderComponent,
-  BudgetingMonthNavComponent,
+  BudgetingBannerComponent,
+  MonthNavComponent,
   BudgetHeadersComponent,
+  BudgetGroupsComponent,
   BudgetGroupComponent,
-  BudgetCategoryComponent
+  BudgetEntriesComponent,
+  BudgetEntryComponent
 ];

@@ -2,16 +2,16 @@
   <div class="categories">
     <div class="column-row">
       <div class="cell d-flex justify-content-between ">
-        {{ groupName }}
+        {{ budgetGroup.name }}
         <button type="button" class="btn btn-link">Neue Unterkategorie</button>
       </div>
     </div>
   </div>
   <div class="current-month">
     <div class="column-row">
-      <div class="cell">{{ currentMonthBudgetSum }}</div>
-      <div class="cell">{{ currentMonthTotalExpenses }}</div>
-      <div class="cell">{{ currentMonthDifference }}</div>
+      <div class="cell">{{ budget }}</div>
+      <div class="cell">{{ expenses }}</div>
+      <div class="cell">{{ difference }}</div>
     </div>
   </div>
   <div class="last-month">
@@ -27,5 +27,5 @@
   </div>
 </div>
 
-<app-budget-category></app-budget-category>
+<app-budget-entries [budgetEntries]="budgetGroup.entries"></app-budget-entries>
 

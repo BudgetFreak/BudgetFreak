@@ -23,12 +23,16 @@ export interface Account {
 }
 
 export interface BudgetGroup {
-  name: string,
-  categories: BudgetCategory[]
+  name?: string,
+  entries?: BudgetEntry[]
 }
 
 export interface BudgetCategory {
-  name: string,
-  budget: number,
-  expenses: number
+  name?: string;
+}
+
+export interface BudgetEntry {
+  category?: BudgetCategory,
+  budget?: number,
+  expenses?: number
 }
