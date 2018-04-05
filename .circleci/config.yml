@@ -76,5 +76,6 @@ workflows:
             - java_build
           filters:
             branches:
-              only: master
+              only:
+                - master
       - angular_check
