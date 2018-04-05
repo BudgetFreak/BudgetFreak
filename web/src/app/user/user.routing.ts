@@ -2,6 +2,7 @@ import {UserComponent} from "./user.component";
 import {Routes} from "@angular/router";
 import {AccountsComponent} from "./accounts/accounts.component";
 import {BudgetingComponent} from "./budgeting/budgeting.component";
+import {BudgetingHeaderComponent} from "./budgeting/budgeting-header/budgeting-header.component";
 
 export const USER_ROUTES: Routes = [{
   path: '', component: UserComponent,
@@ -11,4 +12,4 @@ export const USER_ROUTES: Routes = [{
   ]
 }];
 
-export const USER_ROUTING_COMPONENTS = [UserComponent, BudgetingComponent, AccountsComponent];
+export const USER_ROUTING_COMPONENTS = [UserComponent, BudgetingComponent, AccountsComponent, BudgetingHeaderComponent];
