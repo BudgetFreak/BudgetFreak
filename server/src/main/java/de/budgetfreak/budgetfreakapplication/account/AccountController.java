@@ -53,9 +53,9 @@ public class AccountController {
     /**
      * Get one account.
      */
-    @GetMapping("/{id}")
-    public Resource<AccountResource> get(@PathVariable("userId") long userId, @PathVariable("id") long id) {
-        Account account = accountService.get(id);
+    @GetMapping("/{accountId}")
+    public Resource<AccountResource> get(@PathVariable("userId") long userId, @PathVariable("accountId") long accountId) {
+        Account account = accountService.get(accountId);
         final AccountResource accountResource = accountResourceAssembler.toResource(account);
         return new Resource<>(accountResource);
     }
