@@ -16,5 +16,11 @@ public class IssueService {
             throw new RuntimeException("No one should do this");
         }
     }
+    public void moreIssue() {
+        boolean variable_with_naming_issue = true;
+        if (!variable_with_naming_issue) {
+            throw new RuntimeException("No one should do this");
+        }
+    }
 
 }
