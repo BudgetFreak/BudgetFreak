@@ -38,7 +38,7 @@ jobs:
               echo "CIRCLE_PULL_REQUEST: $CIRCLE_PULL_REQUEST"
               echo 'export CIRCLE_PR_NUMBER="${CIRCLE_PR_NUMBER:-${CIRCLE_PULL_REQUEST##*/}}"' >> $BASH_ENV
               source $BASH_ENV
-              echo $CIRCLE_PR_NUMBER
+              echo "CIRCLE_PR_NUMBER: $CIRCLE_PR_NUMBER"
       - checkout
       - restore_cache:
           key: v2-dependencies-{{ checksum "gradle.properties" }}
