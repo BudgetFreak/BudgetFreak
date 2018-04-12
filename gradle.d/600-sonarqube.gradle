@@ -8,8 +8,8 @@ sonarqube {
         }
         property "sonar.host.url", "https://sonarcloud.io"
         property "sonar.login", "${System.env.SONAR_LOGIN}"
-        property "sonar.github.oauth", "${System.env.ROBOT_ACCOUNT_TOKEN}"
-        property "sonar.github.repository", "BudgetFreak/BudgetFreak"
-        property "sonar.github.pullRequest", "${System.env.CIRCLE_PR_NUMBER}"
+//        property "sonar.github.oauth", "${System.env.ROBOT_ACCOUNT_TOKEN}"
+//        property "sonar.github.repository", "BudgetFreak/BudgetFreak"
+//        property "sonar.github.pullRequest", "${System.env.CIRCLE_PR_NUMBER}"
     }
 }
