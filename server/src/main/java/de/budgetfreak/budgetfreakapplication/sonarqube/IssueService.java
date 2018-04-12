@@ -4,12 +4,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
 import java.nio.file.Files;
 
 @Service
 public class IssueService {
-    private static final Logger log = LoggerFactory.getLogger(IssueService.class);
+    private static final Logger my_logger = LoggerFactory.getLogger(IssueService.class);
 
     public void issue() {
         boolean variable_with_naming_issue = true;
@@ -21,8 +20,14 @@ public class IssueService {
     public void moreIssues() {
         try {
             Files.createTempFile("testing", "tmp");
-        } catch (IOException e) {
-            log.error("Could not create temp file.");
+            throw new IllegalStateException("testing");
+        } catch (Throwable e) {
+            my_logger.error("Could not create temp file.");
         }
+
+        System.out.println("testing");
+        System.out.println("testing");
+        System.out.println("testing");
+        System.out.println("testing");
     }
 }
