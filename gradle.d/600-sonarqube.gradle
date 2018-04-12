@@ -1,9 +1,12 @@
 sonarqube {
     properties {
-        property "sonar.projectName", "BudgetFreak-${System.env.CIRCLE_BRANCH}"
-        property "sonar.projectKey", "de.budgetfreak:budgetfreak-${System.env.CIRCLE_BRANCH}"
+        property "sonar.projectName", "BudgetFreak"
+        property "sonar.projectKey", "de.budgetfreak:budgetfreak"
         property "sonar.organization", "budgetfreak-github"
+        if (!"master".equals(System.env.CIRCLE_BRANCH)) {
+            property "sonar.branch.name", "${System.env.CIRCLE_BRANCH}"
+        }
         property "sonar.host.url", "https://sonarcloud.io"
-        property "sonar.login", "${System.getenv().SONAR_LOGIN}"
+        property "sonar.login", "${System.env.SONAR_LOGIN}"
     }
 }
