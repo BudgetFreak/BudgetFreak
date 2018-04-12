@@ -7,7 +7,7 @@ export const USER_ROUTES: Routes = [{
   path: '', component: UserComponent,
   children: [
     {path: 'accounts', component: AccountsComponent},
-    {path: 'budgeting', component: BudgetingComponent}
+    {path: 'budget', component: BudgetingComponent}
   ]
 }];
 
