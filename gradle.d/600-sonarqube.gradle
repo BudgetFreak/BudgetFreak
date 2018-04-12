@@ -10,7 +10,9 @@ sonarqube {
         property "sonar.login", "${System.env.SONAR_LOGIN}"
 
         // GitHub integration
+        println "GitHub PR is #${System.env.CIRCLE_PR_NUMBER}"
         if (System.env.CIRCLE_PR_NUMBER != null) {
+            println "GitHub SonarQube integration active"
             property "sonar.github.oauth", "${System.env.ROBOT_ACCOUNT_TOKEN}"
             property "sonar.github.repository", "BudgetFreak/BudgetFreak"
             property "sonar.github.pullRequest", "${System.env.CIRCLE_PR_NUMBER}"
