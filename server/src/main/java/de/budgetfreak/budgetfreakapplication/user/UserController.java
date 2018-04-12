@@ -54,9 +54,9 @@ public class UserController {
     /**
      * Get one user.
      */
-    @GetMapping("/{id}")
-    public Resource<UserResource> get(@PathVariable("id") long id) {
-        User user = userService.get(id);
+    @GetMapping("/{userId}")
+    public Resource<UserResource> get(@PathVariable("userId") long userId) {
+        User user = userService.get(userId);
         final UserResource userResource = userResourceAssembler.toResource(user);
         return new Resource<>(userResource);
     }
