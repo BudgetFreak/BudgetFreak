@@ -23,6 +23,9 @@ jobs:
             - ~/.gradle/wrapper
           key: v2-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
       - run: ./gradlew build
+      - persist_to_workspace:
+          root: .
+          paths: ./*
   java_sonarqube:
     docker:
       - image: circleci/openjdk:8-jdk
@@ -31,13 +34,46 @@ jobs:
       JVM_OPTS: -Xmx3200m
       TERM: dumb
     steps:
-      - checkout
+      - run:
+          name: Set PR number (fix for missing envorinment variable)
+          command: |
+              echo "CIRCLE_PR_NUMBER: $CIRCLE_PR_NUMBER"
+              echo "CIRCLE_PULL_REQUEST: $CIRCLE_PULL_REQUEST"
+              echo 'export CIRCLE_PR_NUMBER="${CIRCLE_PR_NUMBER:-${CIRCLE_PULL_REQUEST##*/}}"' >> $BASH_ENV
+              source $BASH_ENV
+              echo "CIRCLE_PR_NUMBER: $CIRCLE_PR_NUMBER"
+      - attach_workspace:
+          at: .
       - restore_cache:
           key: v2-dependencies-{{ checksum "gradle.properties" }}
       - restore_cache:
           key: v2-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
       - run: ./gradlew resolveDependencies
       - run: ./gradlew sonarqube
+  java_sonarqube_update_pr:
+    docker:
+      - image: circleci/openjdk:8-jdk
+    working_directory: ~/repo
+    environment:
+      JVM_OPTS: -Xmx3200m
+      TERM: dumb
+    steps:
+      - run:
+          name: Set PR number (fix for missing envorinment variable)
+          command: |
+              echo "CIRCLE_PR_NUMBER: $CIRCLE_PR_NUMBER"
+              echo "CIRCLE_PULL_REQUEST: $CIRCLE_PULL_REQUEST"
+              echo 'export CIRCLE_PR_NUMBER="${CIRCLE_PR_NUMBER:-${CIRCLE_PULL_REQUEST##*/}}"' >> $BASH_ENV
+              source $BASH_ENV
+              echo "CIRCLE_PR_NUMBER: $CIRCLE_PR_NUMBER"
+      - attach_workspace:
+          at: .
+      - restore_cache:
+          key: v2-dependencies-{{ checksum "gradle.properties" }}
+      - restore_cache:
+          key: v2-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+      - run: ./gradlew resolveDependencies
+      - run: ./gradlew sonarqube -PsonarAnalyzePR
   angular_check:
       working_directory: ~/repo
       docker:
@@ -66,8 +102,10 @@ workflows:
       - java_sonarqube:
           requires:
             - java_build
+      - java_sonarqube_update_pr:
+          requires:
+            - java_build
           filters:
             branches:
-              only:
-                - master
+              ignore: master
       - angular_check
