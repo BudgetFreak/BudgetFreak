@@ -23,6 +23,10 @@ jobs:
             - ~/.gradle/wrapper
           key: v2-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
       - run: ./gradlew build
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - *
   java_sonarqube:
     docker:
       - image: circleci/openjdk:8-jdk
@@ -39,12 +43,8 @@ jobs:
               echo 'export CIRCLE_PR_NUMBER="${CIRCLE_PR_NUMBER:-${CIRCLE_PULL_REQUEST##*/}}"' >> $BASH_ENV
               source $BASH_ENV
               echo "CIRCLE_PR_NUMBER: $CIRCLE_PR_NUMBER"
-      - checkout
-      - restore_cache:
-          key: v2-dependencies-{{ checksum "gradle.properties" }}
-      - restore_cache:
-          key: v2-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
-      - run: ./gradlew resolveDependencies
+      - attach_workspace:
+          at: ~/repo
       - run: ./gradlew sonarqube
   java_sonarqube_update_pr:
     docker:
@@ -62,12 +62,8 @@ jobs:
               echo 'export CIRCLE_PR_NUMBER="${CIRCLE_PR_NUMBER:-${CIRCLE_PULL_REQUEST##*/}}"' >> $BASH_ENV
               source $BASH_ENV
               echo "CIRCLE_PR_NUMBER: $CIRCLE_PR_NUMBER"
-      - checkout
-      - restore_cache:
-          key: v2-dependencies-{{ checksum "gradle.properties" }}
-      - restore_cache:
-          key: v2-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
-      - run: ./gradlew resolveDependencies
+      - attach_workspace:
+          at: ~/repo
       - run: ./gradlew sonarqube -PsonarAnalyzePR
   angular_check:
       working_directory: ~/repo
