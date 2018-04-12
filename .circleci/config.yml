@@ -44,6 +44,11 @@ jobs:
               echo "CIRCLE_PR_NUMBER: $CIRCLE_PR_NUMBER"
       - attach_workspace:
           at: .
+      - restore_cache:
+          key: v2-dependencies-{{ checksum "gradle.properties" }}
+      - restore_cache:
+          key: v2-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+      - run: ./gradlew resolveDependencies
       - run: ./gradlew sonarqube
   java_sonarqube_update_pr:
     docker:
@@ -63,6 +68,11 @@ jobs:
               echo "CIRCLE_PR_NUMBER: $CIRCLE_PR_NUMBER"
       - attach_workspace:
           at: .
+      - restore_cache:
+          key: v2-dependencies-{{ checksum "gradle.properties" }}
+      - restore_cache:
+          key: v2-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+      - run: ./gradlew resolveDependencies
       - run: ./gradlew sonarqube -PsonarAnalyzePR
   angular_check:
       working_directory: ~/repo
