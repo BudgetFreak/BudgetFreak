@@ -24,8 +24,8 @@ jobs:
           key: v2-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
       - run: ./gradlew build
       - persist_to_workspace:
-          root: ~/repo
-          paths: *
+          root: $CIRCLE_WORKING_DIRECTORY
+          paths:
   java_sonarqube:
     docker:
       - image: circleci/openjdk:8-jdk
@@ -43,7 +43,7 @@ jobs:
               source $BASH_ENV
               echo "CIRCLE_PR_NUMBER: $CIRCLE_PR_NUMBER"
       - attach_workspace:
-          at: ~/repo
+          at: $CIRCLE_WORKING_DIRECTORY
       - run: ./gradlew sonarqube
   java_sonarqube_update_pr:
     docker:
@@ -62,7 +62,7 @@ jobs:
               source $BASH_ENV
               echo "CIRCLE_PR_NUMBER: $CIRCLE_PR_NUMBER"
       - attach_workspace:
-          at: ~/repo
+          at: $CIRCLE_WORKING_DIRECTORY
       - run: ./gradlew sonarqube -PsonarAnalyzePR
   angular_check:
       working_directory: ~/repo
