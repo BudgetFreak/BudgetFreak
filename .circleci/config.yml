@@ -37,7 +37,7 @@ jobs:
       - restore_cache:
           key: v2-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
       - run: ./gradlew resolveDependencies
-      - run: ./gradlew sonarqube -Dsonar.organization=budgetfreak-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${SONAR_LOGIN}
+      - run: ./gradlew sonarqube
   angular_check:
       working_directory: ~/repo
       docker:

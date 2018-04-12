@@ -3,7 +3,9 @@ sonarqube {
         property "sonar.projectName", "BudgetFreak"
         property "sonar.projectKey", "de.budgetfreak:budgetfreak"
         property "sonar.organization", "budgetfreak-github"
-        property "sonar.branch.name", "${System.env.CIRCLE_BRANCH}"
+        if (!"master".equals(System.env.CIRCLE_BRANCH)) {
+            property "sonar.branch.name", "${System.env.CIRCLE_BRANCH}"
+        }
         property "sonar.host.url", "https://sonarcloud.io"
         property "sonar.login", "${System.env.SONAR_LOGIN}"
         property "sonar.github.oauth", "${System.env.ROBOT_ACCOUNT_TOKEN}"
