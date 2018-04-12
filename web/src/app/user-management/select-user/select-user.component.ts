@@ -25,6 +25,6 @@ export class SelectUserComponent implements OnInit {
 
   onUserSelect(user: User) {
     this.loginService.setCurrentUser(user);
-    this.router.navigate(['/budgeting']);
+    this.router.navigate(['/budget']);
   }
 }
