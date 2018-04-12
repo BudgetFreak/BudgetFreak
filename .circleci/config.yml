@@ -66,8 +66,4 @@ workflows:
       - java_sonarqube:
           requires:
             - java_build
-          filters:
-            branches:
-              only:
-                - master
       - angular_check
