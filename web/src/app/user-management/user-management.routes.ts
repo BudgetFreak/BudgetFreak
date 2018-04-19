@@ -4,10 +4,10 @@ import {CreateUserComponent} from "./create-user/create-user.component";
 import {SelectUserComponent} from "./select-user/select-user.component";
 
 export const USER_MANAGEMENT_ROUTES: Routes = [{
-  path: 'user-management', component: UserManagementComponent,
+  path: 'login', component: UserManagementComponent,
   children: [
-    {path: 'create', component: CreateUserComponent},
-    {path: 'select', component: SelectUserComponent}
+    {path: '', component: SelectUserComponent},
+    {path: 'create', component: CreateUserComponent}
   ]
 }];
 
