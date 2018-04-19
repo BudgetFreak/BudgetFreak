@@ -24,7 +24,7 @@ jobs:
           key: v2-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
       - run: ./gradlew build
       - store_test_results:
-          path: server\build\test-results
+          path: server/build/test-results
       - persist_to_workspace:
           root: .
           paths: ./*
