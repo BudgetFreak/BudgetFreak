@@ -42,6 +42,9 @@ jobs:
               echo 'export CIRCLE_PR_NUMBER="${CIRCLE_PR_NUMBER:-${CIRCLE_PULL_REQUEST##*/}}"' >> $BASH_ENV
               source $BASH_ENV
               echo "CIRCLE_PR_NUMBER: $CIRCLE_PR_NUMBER"
+      - run:
+          name: Print environment
+          command: env|sort
       - attach_workspace:
           at: .
       - restore_cache:
@@ -66,6 +69,9 @@ jobs:
               echo 'export CIRCLE_PR_NUMBER="${CIRCLE_PR_NUMBER:-${CIRCLE_PULL_REQUEST##*/}}"' >> $BASH_ENV
               source $BASH_ENV
               echo "CIRCLE_PR_NUMBER: $CIRCLE_PR_NUMBER"
+      - run:
+          name: Print environment
+          command: env|sort
       - attach_workspace:
           at: .
       - restore_cache:
