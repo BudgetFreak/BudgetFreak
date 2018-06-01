@@ -1,0 +1,36 @@
+plugins {
+    id "java"
+    id "jacoco"
+    id "org.springframework.boot" version "1.5.7.RELEASE"
+}
+
+dependencies {
+    compile(
+            project(':server:persistence'),
+
+            "org.springframework.data:spring-data-rest-hal-browser:${version_spring_hal_browser}",
+            'org.springframework.hateoas:spring-hateoas:0.24.0.RELEASE',
+            'org.apache.commons:commons-lang3:3.7',
+    )
+
+    runtime(
+            "org.springframework.boot:spring-boot-devtools",
+    )
+
+    testCompile(
+            "org.springframework.boot:spring-boot-starter-test:${version_spring_boot}",
+            "org.springframework.restdocs:spring-restdocs-mockmvc:${version_restdocs_mockmvc}",
+            "org.springframework.security:spring-security-test:${version_spring_security_test}",
+            "org.assertj:assertj-core:${version_assertj}",
+            "org.mockito:mockito-core:${version_mockito}",
+    )
+}
+
+bootRun {
+    // default application configuration for running application via bootRun in development mode
+    // (in production, these properties are defined in application.properties)
+    jvmArgs "-Xdebug",
+            "-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=9010",
+            "-Dspring.output.ansi.enabled=ALWAYS"
+
+}
