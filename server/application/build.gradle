@@ -18,6 +18,8 @@ dependencies {
     )
 
     testCompile(
+            project(':server:persistence-test'),
+
             "org.springframework.boot:spring-boot-starter-test:${version_spring_boot}",
             "org.springframework.restdocs:spring-restdocs-mockmvc:${version_restdocs_mockmvc}",
             "org.springframework.security:spring-security-test:${version_spring_security_test}",

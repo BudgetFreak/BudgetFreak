@@ -1,16 +1,19 @@
 package de.budgetfreak.budgetfreakapplication.user;
 
-import de.budgetfreak.budgetfreakapplication.DatabaseTest;
+import de.budgetfreak.budgetfreakapplication.BudgetfreakApplication;
 import de.budgetfreak.budgetfreakapplication.user.domain.User;
 import de.budgetfreak.budgetfreakapplication.user.domain.UserRepository;
+import de.budgetfreak.persistencetest.DatabaseTest;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.jdbc.Sql;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Sql(value = "users.sql")
+@ContextConfiguration(classes = BudgetfreakApplication.class)
 public class UserRepositoryTest extends DatabaseTest {
 
     @Autowired
