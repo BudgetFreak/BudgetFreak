@@ -1,6 +1,5 @@
 package de.budgetfreak.budgetfreakapplication.account;
 
-import de.budgetfreak.budgetfreakapplication.user.UserResource;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
