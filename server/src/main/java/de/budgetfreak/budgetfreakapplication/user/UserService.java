@@ -5,6 +5,8 @@ import de.budgetfreak.budgetfreakapplication.user.domain.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,11 +52,11 @@ public class UserService {
     }
 
 
-//    private void bar() throws Throwable {
-//        try {
-//            new FileInputStream(new File("foo"));
-//        } catch (Throwable e) {
-//            throw new Exception(e.getMessage());
-//        }
-//    }
+    private void bar() throws Throwable {
+        try {
+            new FileInputStream(new File("foo"));
+        } catch (Throwable e) {
+            throw new Exception(e.getMessage());
+        }
+    }
 }
