@@ -5,11 +5,7 @@ import de.budgetfreak.budgetfreakapplication.user.domain.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -42,10 +38,6 @@ public class UserService {
      * @return The created entity.
      */
     public User create(String name, String currency) {
-        if (false) {
-            // TODO remove me
-        }
-
         final User user = new User(name, currency);
         return userRepository.save(user);
     }
@@ -58,11 +50,11 @@ public class UserService {
     }
 
 
-    private void bar() throws Throwable {
-        try {
-            new FileInputStream(new File("foo"));
-        } catch (Throwable e) {
-            throw new Exception(e.getMessage());
-        }
-    }
+//    private void bar() throws Throwable {
+//        try {
+//            new FileInputStream(new File("foo"));
+//        } catch (Throwable e) {
+//            throw new Exception(e.getMessage());
+//        }
+//    }
 }
