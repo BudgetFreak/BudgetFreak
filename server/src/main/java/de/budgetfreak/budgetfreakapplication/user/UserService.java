@@ -5,6 +5,8 @@ import de.budgetfreak.budgetfreakapplication.user.domain.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
