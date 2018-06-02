@@ -33,6 +33,10 @@ public class UserService {
      * @return The created entity.
      */
     public User create(String name, String currency) {
+        if (false) {
+            // TODO remove me
+        }
+
         final User user = new User(name, currency);
         return userRepository.save(user);
     }
