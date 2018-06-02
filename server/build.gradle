@@ -13,8 +13,8 @@ dependencies {
             "org.springframework.boot:spring-boot-starter-data-jpa:${version_spring_boot}",
             "org.springframework.boot:spring-boot-starter-data-rest:${version_spring_boot}",
             "org.springframework.data:spring-data-rest-hal-browser:${version_spring_hal_browser}",
-            'org.springframework.hateoas:spring-hateoas:0.24.0.RELEASE',
-            'org.apache.commons:commons-lang3:3.7',
+            "org.springframework.hateoas:spring-hateoas:${version_spring_hatoas}",
+            "org.apache.commons:commons-lang3:${version_commons_lang}",
             "org.flywaydb:flyway-core:${version_flyway}",
     )
 
