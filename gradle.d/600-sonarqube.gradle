@@ -10,13 +10,13 @@ sonarqube {
         property "sonar.login", "${System.env.SONAR_LOGIN}"
 
         // GitHub integration
-        if (project.hasProperty("sonarAnalyzePR") && System.env.CIRCLE_PR_NUMBER != null && System.env.CIRCLE_PR_NUMBER != "") {
-            println "GitHub PR is #${System.env.CIRCLE_PR_NUMBER}"
-            property "sonar.github.oauth", "${System.env.ROBOT_ACCOUNT_TOKEN}"
-            property "sonar.github.repository", "BudgetFreak/BudgetFreak"
-            property "sonar.github.pullRequest", "${System.env.CIRCLE_PR_NUMBER}"
-            property "sonar.github.disableInlineComments", "true"
-            property "sonar.analysis.mode", "issues"
-        }
+//        if (project.hasProperty("sonarAnalyzePR") && System.env.CIRCLE_PR_NUMBER != null && System.env.CIRCLE_PR_NUMBER != "") {
+////            println "GitHub PR is #${System.env.CIRCLE_PR_NUMBER}"
+////            property "sonar.github.oauth", "${System.env.ROBOT_ACCOUNT_TOKEN}"
+////            property "sonar.github.repository", "BudgetFreak/BudgetFreak"
+////            property "sonar.github.pullRequest", "${System.env.CIRCLE_PR_NUMBER}"
+////            property "sonar.github.disableInlineComments", "true"
+////            property "sonar.analysis.mode", "issues"
+////        }
     }
 }
