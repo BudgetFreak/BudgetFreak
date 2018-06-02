@@ -10,18 +10,18 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: v2-dependencies-{{ checksum "gradle.properties" }}
+          key: {{ .Environment.CACHE_TOKEN }}-dependencies-{{ checksum "gradle.properties" }}
       - restore_cache:
-          key: v2-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+          key: {{ .Environment.CACHE_TOKEN }}-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
       - run: ./gradlew resolveDependencies
       - save_cache:
           paths:
             - ~/.gradle/caches
-          key: v2-dependencies-{{ checksum "gradle.properties" }}
+          key: {{ .Environment.CACHE_TOKEN }}-dependencies-{{ checksum "gradle.properties" }}
       - save_cache:
           paths:
             - ~/.gradle/wrapper
-          key: v2-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+          key: {{ .Environment.CACHE_TOKEN }}-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
       - run: ./gradlew build
       - store_test_results:
           path: server/build/test-results
@@ -47,9 +47,9 @@ jobs:
       - attach_workspace:
           at: .
       - restore_cache:
-          key: v2-dependencies-{{ checksum "gradle.properties" }}
+          key: {{ .Environment.CACHE_TOKEN }}-dependencies-{{ checksum "gradle.properties" }}
       - restore_cache:
-          key: v2-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+          key: {{ .Environment.CACHE_TOKEN }}-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
       - run: ./gradlew resolveDependencies
       - run: ./gradlew sonarqube
   angular_check:
