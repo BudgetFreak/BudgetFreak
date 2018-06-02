@@ -3,9 +3,6 @@ sonarqube {
         property "sonar.projectName", "BudgetFreak"
         property "sonar.projectKey", "de.budgetfreak:budgetfreak"
         property "sonar.organization", "budgetfreak-github"
-        if (!"master".equals(System.env.CIRCLE_BRANCH)) {
-            property "sonar.branch.name", "${System.env.CIRCLE_BRANCH}"
-        }
         property "sonar.host.url", "https://sonarcloud.io"
         property "sonar.login", "${System.env.SONAR_LOGIN}"
 
@@ -13,6 +10,8 @@ sonarqube {
             property "sonar.pullrequest.base", "master"
             property "sonar.pullrequest.branch", "${System.env.CIRCLE_BRANCH}"
             property "sonar.pullrequest.key", "${System.env.CIRCLE_PR_NUMBER}"
+        } else if (!"master".equals(System.env.CIRCLE_BRANCH)) {
+            property "sonar.branch.name", "${System.env.CIRCLE_BRANCH}"
         }
     }
 }
