@@ -10,18 +10,18 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: {{ .Environment.CACHE_TOKEN }}-dependencies-{{ checksum "gradle.properties" }}
+          key: v{{ .Environment.CACHE_TOKEN }}-dependencies-{{ checksum "gradle.properties" }}
       - restore_cache:
-          key: {{ .Environment.CACHE_TOKEN }}-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+          key: v{{ .Environment.CACHE_TOKEN }}-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
       - run: ./gradlew resolveDependencies
       - save_cache:
           paths:
             - ~/.gradle/caches
-          key: {{ .Environment.CACHE_TOKEN }}-dependencies-{{ checksum "gradle.properties" }}
+          key: v{{ .Environment.CACHE_TOKEN }}-dependencies-{{ checksum "gradle.properties" }}
       - save_cache:
           paths:
             - ~/.gradle/wrapper
-          key: {{ .Environment.CACHE_TOKEN }}-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+          key: v{{ .Environment.CACHE_TOKEN }}-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
       - run: ./gradlew build
       - store_test_results:
           path: server/build/test-results
@@ -47,9 +47,9 @@ jobs:
       - attach_workspace:
           at: .
       - restore_cache:
-          key: {{ .Environment.CACHE_TOKEN }}-dependencies-{{ checksum "gradle.properties" }}
+          key: v{{ .Environment.CACHE_TOKEN }}-dependencies-{{ checksum "gradle.properties" }}
       - restore_cache:
-          key: {{ .Environment.CACHE_TOKEN }}-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+          key: v{{ .Environment.CACHE_TOKEN }}-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
       - run: ./gradlew resolveDependencies
       - run: ./gradlew sonarqube
   angular_check:
@@ -59,12 +59,12 @@ jobs:
       steps:
         - checkout
         - restore_cache:
-            key: v3-node-dependencies-{{ checksum "web/package.json" }}-{{ checksum "web/package-lock.json" }}
+            key: v{{ .Environment.CACHE_TOKEN }}-node-dependencies-{{ checksum "web/package.json" }}-{{ checksum "web/package-lock.json" }}
         - run:
             command: npm install
             working_directory: ~/repo/web
         - save_cache:
-            key: v3-node-dependencies-{{ checksum "web/package.json" }}-{{ checksum "web/package-lock.json" }}
+            key: v{{ .Environment.CACHE_TOKEN }}-node-dependencies-{{ checksum "web/package.json" }}-{{ checksum "web/package-lock.json" }}
             paths: web/node_modules
         - run:
             command: xvfb-run -a npm run test -- --single-run --no-progress --browser=ChromeNoSandbox
