@@ -2,6 +2,8 @@ package de.budgetfreak.budgetfreakapplication.user;
 
 import org.springframework.hateoas.ResourceSupport;
 
+import java.nio.file.Files;
+
 public class UserResource extends ResourceSupport {
 
     private String name;

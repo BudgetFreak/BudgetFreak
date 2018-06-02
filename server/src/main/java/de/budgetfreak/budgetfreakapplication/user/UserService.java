@@ -5,6 +5,11 @@ import de.budgetfreak.budgetfreakapplication.user.domain.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -13,11 +18,15 @@ import java.util.List;
 @Service
 public class UserService {
 
+    public final static List<String> CONST_ISSUE = new ArrayList<>();
+
     private UserRepository userRepository;
 
     @Autowired
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
+        CONST_ISSUE.add("foo");
+        CONST_ISSUE.add("bar");
     }
 
     /**
@@ -33,6 +42,10 @@ public class UserService {
      * @return The created entity.
      */
     public User create(String name, String currency) {
+        if (false) {
+            // TODO remove me
+        }
+
         final User user = new User(name, currency);
         return userRepository.save(user);
     }
@@ -44,4 +57,12 @@ public class UserService {
         return userRepository.findOne(id);
     }
 
+
+    private void bar() throws Throwable {
+        try {
+            new FileInputStream(new File("foo"));
+        } catch (Throwable e) {
+            throw new Exception(e.getMessage());
+        }
+    }
 }
