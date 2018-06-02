@@ -62,7 +62,7 @@ public class UserService {
         try {
             new FileInputStream(new File("foo"));
         } catch (Throwable e) {
-
+            throw new Exception(e.getMessage());
         }
     }
 }
