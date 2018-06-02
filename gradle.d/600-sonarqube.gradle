@@ -7,13 +7,13 @@ sonarqube {
         property "sonar.login", "${System.env.SONAR_LOGIN}"
 
         if (System.env.CIRCLE_PR_NUMBER != null && System.env.CIRCLE_PR_NUMBER != "") {
-            println "Analyzing branch ${System.env.CIRCLE_BRANCH} with PR #${System.env.CIRCLE_PR_NUMBER}"
+            println "Analyzing branch '${System.env.CIRCLE_BRANCH}' with PR #${System.env.CIRCLE_PR_NUMBER}"
             property "sonar.pullrequest.provider", "GitHub"
             property "sonar.pullrequest.github.repository", "BudgetFreak/BudgetFreak"
             property "sonar.pullrequest.branch", "${System.env.CIRCLE_BRANCH}"
             property "sonar.pullrequest.key", "${System.env.CIRCLE_PR_NUMBER}"
         } else if (!"master".equals(System.env.CIRCLE_BRANCH)) {
-            println "Analyzing branch ${System.env.CIRCLE_BRANCH} without PR"
+            println "Analyzing branch '${System.env.CIRCLE_BRANCH}' without PR"
             property "sonar.branch.name", "${System.env.CIRCLE_BRANCH}"
         }
     }
