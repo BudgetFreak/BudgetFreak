@@ -1,7 +1,7 @@
 package de.budgetfreak.application.account;
 
 import de.budgetfreak.application.account.domain.Account;
-import de.budgetfreak.application.user.domain.User;
+import de.budgetfreak.usermanagement.domain.User;
 
 import java.util.List;
 

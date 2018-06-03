@@ -1,7 +1,7 @@
 package de.budgetfreak.application.account;
 
 import de.budgetfreak.application.account.domain.Account;
-import de.budgetfreak.application.user.UserController;
+import de.budgetfreak.usermanagement.UserController;
 import org.springframework.hateoas.mvc.ResourceAssemblerSupport;
 import org.springframework.stereotype.Component;
 

@@ -1,14 +1,14 @@
 package de.budgetfreak.application.account;
 
-import static de.budgetfreak.application.user.UserTestUtils.createBob;
+import static de.budgetfreak.application.account.UserTestUtils.*;
 import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 
 import de.budgetfreak.application.account.domain.Account;
 import de.budgetfreak.application.account.domain.AccountRepository;
-import de.budgetfreak.application.user.domain.User;
-import de.budgetfreak.application.user.domain.UserRepository;
+import de.budgetfreak.usermanagement.domain.User;
+import de.budgetfreak.usermanagement.domain.UserRepository;
 import org.junit.Before;
 import org.junit.Test;
 

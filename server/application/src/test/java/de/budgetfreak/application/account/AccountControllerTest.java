@@ -3,7 +3,7 @@ package de.budgetfreak.application.account;
 import de.budgetfreak.application.BudgetfreakApplication;
 import de.budgetfreak.application.JsonHelper;
 import de.budgetfreak.application.account.domain.Account;
-import de.budgetfreak.application.user.domain.User;
+import de.budgetfreak.usermanagement.domain.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 
 import static de.budgetfreak.application.account.AccountTestUtils.createAccounts;
 import static de.budgetfreak.application.account.AccountTestUtils.createSavingsAccount;
-import static de.budgetfreak.application.user.UserTestUtils.createBob;
+import static de.budgetfreak.application.account.UserTestUtils.*;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;

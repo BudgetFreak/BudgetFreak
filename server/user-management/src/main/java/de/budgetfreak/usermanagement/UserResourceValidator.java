@@ -1,4 +1,4 @@
-package de.budgetfreak.application.user;
+package de.budgetfreak.usermanagement;
 
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;

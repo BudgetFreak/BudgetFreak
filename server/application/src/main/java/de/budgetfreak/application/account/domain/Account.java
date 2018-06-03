@@ -1,6 +1,6 @@
 package de.budgetfreak.application.account.domain;
 
-import de.budgetfreak.application.user.domain.User;
+import de.budgetfreak.usermanagement.domain.User;
 
 import javax.persistence.*;
 

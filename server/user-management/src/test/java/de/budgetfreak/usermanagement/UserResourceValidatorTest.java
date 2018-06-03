@@ -1,4 +1,4 @@
-package de.budgetfreak.application.user;
+package de.budgetfreak.usermanagement;
 
 import static org.assertj.core.api.Assertions.*;
 

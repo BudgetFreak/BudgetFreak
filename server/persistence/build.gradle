@@ -6,7 +6,7 @@ plugins {
 dependencies {
     compile(
             "org.springframework.boot:spring-boot-starter-data-jpa:${version_spring_boot}",
-            "org.springframework.boot:spring-boot-starter-data-rest:${version_spring_boot}",
+//            "org.springframework.boot:spring-boot-starter-data-rest:${version_spring_boot}",
             "org.flywaydb:flyway-core:${version_flyway}",
     )
 

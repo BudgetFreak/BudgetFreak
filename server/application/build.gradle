@@ -7,10 +7,15 @@ plugins {
 dependencies {
     compile(
             project(':server:persistence'),
+            project(':server:user-management'),
 
             "org.springframework.data:spring-data-rest-hal-browser:${version_spring_hal_browser}",
             "org.springframework.hateoas:spring-hateoas:${version_spring_hatoas}",
             "org.apache.commons:commons-lang3:${version_commons_lang}",
+    )
+
+    compileOnly(
+            "javax.validation:validation-api:${version_validation_api}"
     )
 
     runtime(

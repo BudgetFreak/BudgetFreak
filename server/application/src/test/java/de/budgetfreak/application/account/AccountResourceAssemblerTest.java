@@ -1,7 +1,7 @@
 package de.budgetfreak.application.account;
 
-import static de.budgetfreak.application.account.AccountTestUtils.createCheckingsAccount;
-import static de.budgetfreak.application.user.UserTestUtils.createBob;
+import static de.budgetfreak.application.account.AccountTestUtils.*;
+import static de.budgetfreak.application.account.UserTestUtils.*;
 import static org.assertj.core.api.Assertions.*;
 
 import de.budgetfreak.application.account.domain.Account;

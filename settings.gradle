@@ -1,5 +1,6 @@
 include 'web'
 include 'server'
 include 'server:application'
+include 'server:user-management'
 include 'server:persistence'
 include 'server:persistence-test'

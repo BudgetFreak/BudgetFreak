@@ -1,6 +1,6 @@
-package de.budgetfreak.application.user;
+package de.budgetfreak.application.account;
 
-import de.budgetfreak.application.user.domain.User;
+import de.budgetfreak.usermanagement.domain.User;
 
 import java.util.Arrays;
 import java.util.List;

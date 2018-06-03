@@ -1,7 +1,7 @@
-package de.budgetfreak.application.user;
+package de.budgetfreak.usermanagement;
 
-import de.budgetfreak.application.user.domain.User;
-import de.budgetfreak.application.user.domain.UserRepository;
+import de.budgetfreak.usermanagement.domain.User;
+import de.budgetfreak.usermanagement.domain.UserRepository;
 import org.junit.Before;
 import org.junit.Test;
 

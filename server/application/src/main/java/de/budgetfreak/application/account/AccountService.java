@@ -2,8 +2,8 @@ package de.budgetfreak.application.account;
 
 import de.budgetfreak.application.account.domain.Account;
 import de.budgetfreak.application.account.domain.AccountRepository;
-import de.budgetfreak.application.user.domain.User;
-import de.budgetfreak.application.user.domain.UserRepository;
+import de.budgetfreak.usermanagement.domain.User;
+import de.budgetfreak.usermanagement.domain.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

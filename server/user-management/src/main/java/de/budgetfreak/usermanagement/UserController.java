@@ -1,6 +1,6 @@
-package de.budgetfreak.application.user;
+package de.budgetfreak.usermanagement;
 
-import de.budgetfreak.application.user.domain.User;
+import de.budgetfreak.usermanagement.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Link;
 import org.springframework.hateoas.Resource;

@@ -1,8 +1,7 @@
-package de.budgetfreak.application.user;
+package de.budgetfreak.usermanagement;
 
-import de.budgetfreak.application.BudgetfreakApplication;
-import de.budgetfreak.application.user.domain.User;
-import de.budgetfreak.application.user.domain.UserRepository;
+import de.budgetfreak.usermanagement.domain.User;
+import de.budgetfreak.usermanagement.domain.UserRepository;
 import de.budgetfreak.persistencetest.DatabaseTest;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.Test;
@@ -13,7 +12,7 @@ import org.springframework.test.context.jdbc.Sql;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Sql(value = "users.sql")
-@ContextConfiguration(classes = BudgetfreakApplication.class)
+@ContextConfiguration(classes = UserManagementConfiguration.class)
 public class UserRepositoryTest extends DatabaseTest {
 
     @Autowired
