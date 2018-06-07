@@ -1,0 +1,11 @@
+plugins {
+    id "java"
+    id "jacoco"
+}
+
+dependencies {
+    compile(
+            "org.springframework.boot:spring-boot-starter-test:${version_spring_boot}",
+            "org.flywaydb.flyway-test-extensions:flyway-spring-test:${version_flyway_spring_test}",
+    )
+}

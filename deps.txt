@@ -1,0 +1,1478 @@
+Parallel execution is an incubating feature.
+:server:application:dependencies
+
+------------------------------------------------------------
+Project :server:application
+------------------------------------------------------------
+
+apiElements - API elements for main. (n)
+No dependencies
+
+archives - Configuration for archive artifacts.
+No dependencies
+
+compile - Dependencies for source set 'main' (deprecated, use 'implementation ' instead).
++--- project :server:persistence
+|    +--- org.springframework.boot:spring-boot-starter-data-jpa:1.5.1.RELEASE -> 1.5.7.RELEASE
+|    |    +--- org.springframework.boot:spring-boot-starter:1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot:1.5.7.RELEASE
+|    |    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |    \--- org.springframework:spring-context:4.3.11.RELEASE
+|    |    |    |         +--- org.springframework:spring-aop:4.3.11.RELEASE
+|    |    |    |         |    +--- org.springframework:spring-beans:4.3.11.RELEASE
+|    |    |    |         |    |    \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |         |    \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |         +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    |         +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |         \--- org.springframework:spring-expression:4.3.11.RELEASE
+|    |    |    |              \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-autoconfigure:1.5.7.RELEASE
+|    |    |    |    \--- org.springframework.boot:spring-boot:1.5.7.RELEASE (*)
+|    |    |    +--- org.springframework.boot:spring-boot-starter-logging:1.5.7.RELEASE
+|    |    |    |    +--- ch.qos.logback:logback-classic:1.1.11
+|    |    |    |    |    +--- ch.qos.logback:logback-core:1.1.11
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.22 -> 1.7.25
+|    |    |    |    +--- org.slf4j:jcl-over-slf4j:1.7.25
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.25
+|    |    |    |    +--- org.slf4j:jul-to-slf4j:1.7.25
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.25
+|    |    |    |    \--- org.slf4j:log4j-over-slf4j:1.7.25
+|    |    |    |         \--- org.slf4j:slf4j-api:1.7.25
+|    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    \--- org.yaml:snakeyaml:1.17
+|    |    +--- org.springframework.boot:spring-boot-starter-aop:1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-starter:1.5.7.RELEASE (*)
+|    |    |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|    |    |    \--- org.aspectj:aspectjweaver:1.8.10
+|    |    +--- org.springframework.boot:spring-boot-starter-jdbc:1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-starter:1.5.7.RELEASE (*)
+|    |    |    +--- org.apache.tomcat:tomcat-jdbc:8.5.20
+|    |    |    |    \--- org.apache.tomcat:tomcat-juli:8.5.20
+|    |    |    \--- org.springframework:spring-jdbc:4.3.11.RELEASE
+|    |    |         +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |         +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |         \--- org.springframework:spring-tx:4.3.11.RELEASE
+|    |    |              +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |              \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    +--- org.hibernate:hibernate-core:5.0.12.Final
+|    |    |    +--- org.jboss.logging:jboss-logging:3.3.0.Final -> 3.3.1.Final
+|    |    |    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    |    |    +--- org.javassist:javassist:3.18.1-GA -> 3.21.0-GA
+|    |    |    +--- antlr:antlr:2.7.7
+|    |    |    +--- org.jboss:jandex:2.0.0.Final
+|    |    |    +--- dom4j:dom4j:1.6.1
+|    |    |    \--- org.hibernate.common:hibernate-commons-annotations:5.0.1.Final
+|    |    |         \--- org.jboss.logging:jboss-logging:3.3.0.Final -> 3.3.1.Final
+|    |    +--- org.hibernate:hibernate-entitymanager:5.0.12.Final
+|    |    |    +--- org.jboss.logging:jboss-logging:3.3.0.Final -> 3.3.1.Final
+|    |    |    +--- org.hibernate:hibernate-core:5.0.12.Final (*)
+|    |    |    +--- dom4j:dom4j:1.6.1
+|    |    |    +--- org.hibernate.common:hibernate-commons-annotations:5.0.1.Final (*)
+|    |    |    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    |    |    \--- org.javassist:javassist:3.18.1-GA -> 3.21.0-GA
+|    |    +--- javax.transaction:javax.transaction-api:1.2
+|    |    +--- org.springframework.data:spring-data-jpa:1.11.7.RELEASE
+|    |    |    +--- org.springframework.data:spring-data-commons:1.13.7.RELEASE
+|    |    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    |    |    +--- org.springframework:spring-orm:4.3.11.RELEASE
+|    |    |    |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |    +--- org.springframework:spring-jdbc:4.3.11.RELEASE (*)
+|    |    |    |    \--- org.springframework:spring-tx:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-context:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-tx:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    |    \--- org.springframework:spring-aspects:4.3.11.RELEASE
+|    |         \--- org.aspectj:aspectjweaver:1.8.9 -> 1.8.10
+|    +--- org.flywaydb:flyway-core:4.2.0 -> 3.2.1
+|    \--- com.h2database:h2:1.4.192 -> 1.4.196
++--- project :server:user-management
+|    +--- project :server:persistence (*)
+|    \--- org.springframework.hateoas:spring-hateoas:0.24.0.RELEASE
+|         +--- org.springframework:spring-aop:4.3.12.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-beans:4.3.12.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-context:4.3.12.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-core:4.3.12.RELEASE -> 4.3.11.RELEASE
+|         +--- org.springframework:spring-web:4.3.12.RELEASE -> 4.3.11.RELEASE
+|         |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-context:4.3.11.RELEASE (*)
+|         |    \--- org.springframework:spring-core:4.3.11.RELEASE
+|         +--- org.springframework:spring-webmvc:4.3.12.RELEASE -> 4.3.11.RELEASE
+|         |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-context:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|         |    +--- org.springframework:spring-expression:4.3.11.RELEASE (*)
+|         |    \--- org.springframework:spring-web:4.3.11.RELEASE (*)
+|         \--- org.slf4j:slf4j-api:1.7.25
++--- org.springframework.data:spring-data-rest-hal-browser:2.6.7.RELEASE
+|    +--- org.springframework.data:spring-data-rest-webmvc:2.6.7.RELEASE
+|    |    +--- org.springframework.data:spring-data-rest-core:2.6.7.RELEASE
+|    |    |    +--- org.springframework:spring-tx:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework.hateoas:spring-hateoas:0.23.0.RELEASE -> 0.24.0.RELEASE (*)
+|    |    |    +--- org.springframework.data:spring-data-commons:1.13.7.RELEASE (*)
+|    |    |    +--- org.springframework.plugin:spring-plugin-core:1.2.0.RELEASE
+|    |    |    |    +--- org.springframework:spring-beans:4.0.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    |    |    +--- org.springframework:spring-context:4.0.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    |    |    +--- org.springframework:spring-aop:4.0.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    |    |    \--- org.slf4j:slf4j-api:1.7.10 -> 1.7.25
+|    |    |    +--- org.atteo:evo-inflector:1.2.2
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.8.10 -> 2.8.0
+|    |    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    |    +--- org.springframework:spring-webmvc:4.3.11.RELEASE (*)
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.8.10
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.8.0
+|    |    |    \--- com.fasterxml.jackson.core:jackson-core:2.8.10
+|    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.8.10 -> 2.8.0
+|    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    +--- org.slf4j:slf4j-api:1.7.25
+|    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
++--- org.springframework.hateoas:spring-hateoas:0.24.0.RELEASE (*)
+\--- org.apache.commons:commons-lang3:3.7
+
+compileClasspath - Compile classpath for source set 'main'.
++--- project :server:persistence
+|    +--- org.springframework.boot:spring-boot-starter-data-jpa:1.5.1.RELEASE -> 1.5.7.RELEASE
+|    |    +--- org.springframework.boot:spring-boot-starter:1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot:1.5.7.RELEASE
+|    |    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |    \--- org.springframework:spring-context:4.3.11.RELEASE
+|    |    |    |         +--- org.springframework:spring-aop:4.3.11.RELEASE
+|    |    |    |         |    +--- org.springframework:spring-beans:4.3.11.RELEASE
+|    |    |    |         |    |    \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |         |    \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |         +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    |         +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |         \--- org.springframework:spring-expression:4.3.11.RELEASE
+|    |    |    |              \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-autoconfigure:1.5.7.RELEASE
+|    |    |    |    \--- org.springframework.boot:spring-boot:1.5.7.RELEASE (*)
+|    |    |    +--- org.springframework.boot:spring-boot-starter-logging:1.5.7.RELEASE
+|    |    |    |    +--- ch.qos.logback:logback-classic:1.1.11
+|    |    |    |    |    +--- ch.qos.logback:logback-core:1.1.11
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.22 -> 1.7.25
+|    |    |    |    +--- org.slf4j:jcl-over-slf4j:1.7.25
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.25
+|    |    |    |    +--- org.slf4j:jul-to-slf4j:1.7.25
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.25
+|    |    |    |    \--- org.slf4j:log4j-over-slf4j:1.7.25
+|    |    |    |         \--- org.slf4j:slf4j-api:1.7.25
+|    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    \--- org.yaml:snakeyaml:1.17
+|    |    +--- org.springframework.boot:spring-boot-starter-aop:1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-starter:1.5.7.RELEASE (*)
+|    |    |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|    |    |    \--- org.aspectj:aspectjweaver:1.8.10
+|    |    +--- org.springframework.boot:spring-boot-starter-jdbc:1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-starter:1.5.7.RELEASE (*)
+|    |    |    +--- org.apache.tomcat:tomcat-jdbc:8.5.20
+|    |    |    |    \--- org.apache.tomcat:tomcat-juli:8.5.20
+|    |    |    \--- org.springframework:spring-jdbc:4.3.11.RELEASE
+|    |    |         +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |         +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |         \--- org.springframework:spring-tx:4.3.11.RELEASE
+|    |    |              +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |              \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    +--- org.hibernate:hibernate-core:5.0.12.Final
+|    |    |    +--- org.jboss.logging:jboss-logging:3.3.0.Final -> 3.3.1.Final
+|    |    |    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    |    |    +--- org.javassist:javassist:3.18.1-GA -> 3.21.0-GA
+|    |    |    +--- antlr:antlr:2.7.7
+|    |    |    +--- org.jboss:jandex:2.0.0.Final
+|    |    |    +--- dom4j:dom4j:1.6.1
+|    |    |    \--- org.hibernate.common:hibernate-commons-annotations:5.0.1.Final
+|    |    |         \--- org.jboss.logging:jboss-logging:3.3.0.Final -> 3.3.1.Final
+|    |    +--- org.hibernate:hibernate-entitymanager:5.0.12.Final
+|    |    |    +--- org.jboss.logging:jboss-logging:3.3.0.Final -> 3.3.1.Final
+|    |    |    +--- org.hibernate:hibernate-core:5.0.12.Final (*)
+|    |    |    +--- dom4j:dom4j:1.6.1
+|    |    |    +--- org.hibernate.common:hibernate-commons-annotations:5.0.1.Final (*)
+|    |    |    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    |    |    \--- org.javassist:javassist:3.18.1-GA -> 3.21.0-GA
+|    |    +--- javax.transaction:javax.transaction-api:1.2
+|    |    +--- org.springframework.data:spring-data-jpa:1.11.7.RELEASE
+|    |    |    +--- org.springframework.data:spring-data-commons:1.13.7.RELEASE
+|    |    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    |    |    +--- org.springframework:spring-orm:4.3.11.RELEASE
+|    |    |    |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |    +--- org.springframework:spring-jdbc:4.3.11.RELEASE (*)
+|    |    |    |    \--- org.springframework:spring-tx:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-context:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-tx:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    |    \--- org.springframework:spring-aspects:4.3.11.RELEASE
+|    |         \--- org.aspectj:aspectjweaver:1.8.9 -> 1.8.10
+|    +--- org.flywaydb:flyway-core:4.2.0 -> 3.2.1
+|    \--- com.h2database:h2:1.4.192 -> 1.4.196
++--- project :server:user-management
+|    +--- project :server:persistence (*)
+|    \--- org.springframework.hateoas:spring-hateoas:0.24.0.RELEASE
+|         +--- org.springframework:spring-aop:4.3.12.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-beans:4.3.12.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-context:4.3.12.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-core:4.3.12.RELEASE -> 4.3.11.RELEASE
+|         +--- org.springframework:spring-web:4.3.12.RELEASE -> 4.3.11.RELEASE
+|         |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-context:4.3.11.RELEASE (*)
+|         |    \--- org.springframework:spring-core:4.3.11.RELEASE
+|         +--- org.springframework:spring-webmvc:4.3.12.RELEASE -> 4.3.11.RELEASE
+|         |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-context:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|         |    +--- org.springframework:spring-expression:4.3.11.RELEASE (*)
+|         |    \--- org.springframework:spring-web:4.3.11.RELEASE (*)
+|         \--- org.slf4j:slf4j-api:1.7.25
++--- org.springframework.data:spring-data-rest-hal-browser:2.6.7.RELEASE
+|    +--- org.springframework.data:spring-data-rest-webmvc:2.6.7.RELEASE
+|    |    +--- org.springframework.data:spring-data-rest-core:2.6.7.RELEASE
+|    |    |    +--- org.springframework:spring-tx:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework.hateoas:spring-hateoas:0.23.0.RELEASE -> 0.24.0.RELEASE (*)
+|    |    |    +--- org.springframework.data:spring-data-commons:1.13.7.RELEASE (*)
+|    |    |    +--- org.springframework.plugin:spring-plugin-core:1.2.0.RELEASE
+|    |    |    |    +--- org.springframework:spring-beans:4.0.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    |    |    +--- org.springframework:spring-context:4.0.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    |    |    +--- org.springframework:spring-aop:4.0.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    |    |    \--- org.slf4j:slf4j-api:1.7.10 -> 1.7.25
+|    |    |    +--- org.atteo:evo-inflector:1.2.2
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.8.10 -> 2.8.0
+|    |    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    |    +--- org.springframework:spring-webmvc:4.3.11.RELEASE (*)
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.8.10
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.8.0
+|    |    |    \--- com.fasterxml.jackson.core:jackson-core:2.8.10
+|    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.8.10 -> 2.8.0
+|    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    +--- org.slf4j:slf4j-api:1.7.25
+|    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
++--- org.springframework.hateoas:spring-hateoas:0.24.0.RELEASE (*)
+\--- org.apache.commons:commons-lang3:3.7
+
+compileOnly - Compile only dependencies for source set 'main'.
+No dependencies
+
+default - Configuration for default artifacts.
++--- project :server:persistence
+|    +--- org.springframework.boot:spring-boot-starter-data-jpa:1.5.1.RELEASE -> 1.5.7.RELEASE
+|    |    +--- org.springframework.boot:spring-boot-starter:1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot:1.5.7.RELEASE
+|    |    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |    \--- org.springframework:spring-context:4.3.11.RELEASE
+|    |    |    |         +--- org.springframework:spring-aop:4.3.11.RELEASE
+|    |    |    |         |    +--- org.springframework:spring-beans:4.3.11.RELEASE
+|    |    |    |         |    |    \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |         |    \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |         +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    |         +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |         \--- org.springframework:spring-expression:4.3.11.RELEASE
+|    |    |    |              \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-autoconfigure:1.5.7.RELEASE
+|    |    |    |    \--- org.springframework.boot:spring-boot:1.5.7.RELEASE (*)
+|    |    |    +--- org.springframework.boot:spring-boot-starter-logging:1.5.7.RELEASE
+|    |    |    |    +--- ch.qos.logback:logback-classic:1.1.11
+|    |    |    |    |    +--- ch.qos.logback:logback-core:1.1.11
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.22 -> 1.7.25
+|    |    |    |    +--- org.slf4j:jcl-over-slf4j:1.7.25
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.25
+|    |    |    |    +--- org.slf4j:jul-to-slf4j:1.7.25
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.25
+|    |    |    |    \--- org.slf4j:log4j-over-slf4j:1.7.25
+|    |    |    |         \--- org.slf4j:slf4j-api:1.7.25
+|    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    \--- org.yaml:snakeyaml:1.17
+|    |    +--- org.springframework.boot:spring-boot-starter-aop:1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-starter:1.5.7.RELEASE (*)
+|    |    |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|    |    |    \--- org.aspectj:aspectjweaver:1.8.10
+|    |    +--- org.springframework.boot:spring-boot-starter-jdbc:1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-starter:1.5.7.RELEASE (*)
+|    |    |    +--- org.apache.tomcat:tomcat-jdbc:8.5.20
+|    |    |    |    \--- org.apache.tomcat:tomcat-juli:8.5.20
+|    |    |    \--- org.springframework:spring-jdbc:4.3.11.RELEASE
+|    |    |         +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |         +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |         \--- org.springframework:spring-tx:4.3.11.RELEASE
+|    |    |              +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |              \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    +--- org.hibernate:hibernate-core:5.0.12.Final
+|    |    |    +--- org.jboss.logging:jboss-logging:3.3.0.Final -> 3.3.1.Final
+|    |    |    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    |    |    +--- org.javassist:javassist:3.18.1-GA -> 3.21.0-GA
+|    |    |    +--- antlr:antlr:2.7.7
+|    |    |    +--- org.jboss:jandex:2.0.0.Final
+|    |    |    +--- dom4j:dom4j:1.6.1
+|    |    |    \--- org.hibernate.common:hibernate-commons-annotations:5.0.1.Final
+|    |    |         \--- org.jboss.logging:jboss-logging:3.3.0.Final -> 3.3.1.Final
+|    |    +--- org.hibernate:hibernate-entitymanager:5.0.12.Final
+|    |    |    +--- org.jboss.logging:jboss-logging:3.3.0.Final -> 3.3.1.Final
+|    |    |    +--- org.hibernate:hibernate-core:5.0.12.Final (*)
+|    |    |    +--- dom4j:dom4j:1.6.1
+|    |    |    +--- org.hibernate.common:hibernate-commons-annotations:5.0.1.Final (*)
+|    |    |    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    |    |    \--- org.javassist:javassist:3.18.1-GA -> 3.21.0-GA
+|    |    +--- javax.transaction:javax.transaction-api:1.2
+|    |    +--- org.springframework.data:spring-data-jpa:1.11.7.RELEASE
+|    |    |    +--- org.springframework.data:spring-data-commons:1.13.7.RELEASE
+|    |    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    |    |    +--- org.springframework:spring-orm:4.3.11.RELEASE
+|    |    |    |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |    +--- org.springframework:spring-jdbc:4.3.11.RELEASE (*)
+|    |    |    |    \--- org.springframework:spring-tx:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-context:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-tx:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    |    \--- org.springframework:spring-aspects:4.3.11.RELEASE
+|    |         \--- org.aspectj:aspectjweaver:1.8.9 -> 1.8.10
+|    +--- org.flywaydb:flyway-core:4.2.0 -> 3.2.1
+|    \--- com.h2database:h2:1.4.192 -> 1.4.196
++--- project :server:user-management
+|    +--- project :server:persistence (*)
+|    \--- org.springframework.hateoas:spring-hateoas:0.24.0.RELEASE
+|         +--- org.springframework:spring-aop:4.3.12.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-beans:4.3.12.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-context:4.3.12.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-core:4.3.12.RELEASE -> 4.3.11.RELEASE
+|         +--- org.springframework:spring-web:4.3.12.RELEASE -> 4.3.11.RELEASE
+|         |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-context:4.3.11.RELEASE (*)
+|         |    \--- org.springframework:spring-core:4.3.11.RELEASE
+|         +--- org.springframework:spring-webmvc:4.3.12.RELEASE -> 4.3.11.RELEASE
+|         |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-context:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|         |    +--- org.springframework:spring-expression:4.3.11.RELEASE (*)
+|         |    \--- org.springframework:spring-web:4.3.11.RELEASE (*)
+|         \--- org.slf4j:slf4j-api:1.7.25
++--- org.springframework.data:spring-data-rest-hal-browser:2.6.7.RELEASE
+|    +--- org.springframework.data:spring-data-rest-webmvc:2.6.7.RELEASE
+|    |    +--- org.springframework.data:spring-data-rest-core:2.6.7.RELEASE
+|    |    |    +--- org.springframework:spring-tx:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework.hateoas:spring-hateoas:0.23.0.RELEASE -> 0.24.0.RELEASE (*)
+|    |    |    +--- org.springframework.data:spring-data-commons:1.13.7.RELEASE (*)
+|    |    |    +--- org.springframework.plugin:spring-plugin-core:1.2.0.RELEASE
+|    |    |    |    +--- org.springframework:spring-beans:4.0.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    |    |    +--- org.springframework:spring-context:4.0.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    |    |    +--- org.springframework:spring-aop:4.0.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    |    |    \--- org.slf4j:slf4j-api:1.7.10 -> 1.7.25
+|    |    |    +--- org.atteo:evo-inflector:1.2.2
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.8.10 -> 2.8.0
+|    |    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    |    +--- org.springframework:spring-webmvc:4.3.11.RELEASE (*)
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.8.10
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.8.0
+|    |    |    \--- com.fasterxml.jackson.core:jackson-core:2.8.10
+|    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.8.10 -> 2.8.0
+|    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    +--- org.slf4j:slf4j-api:1.7.25
+|    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
++--- org.springframework.hateoas:spring-hateoas:0.24.0.RELEASE (*)
++--- org.apache.commons:commons-lang3:3.7
+\--- org.springframework.boot:spring-boot-devtools: -> 1.5.7.RELEASE
+     +--- org.springframework.boot:spring-boot:1.5.7.RELEASE (*)
+     \--- org.springframework.boot:spring-boot-autoconfigure:1.5.7.RELEASE (*)
+
+implementation - Implementation only dependencies for source set 'main'. (n)
+No dependencies
+
+jacocoAgent - The Jacoco agent to use to get coverage data.
+\--- org.jacoco:org.jacoco.agent:0.7.9
+
+jacocoAnt - The Jacoco ant tasks to use to get execute Gradle tasks.
+\--- org.jacoco:org.jacoco.ant:0.7.9
+     +--- org.jacoco:org.jacoco.core:0.7.9
+     |    \--- org.ow2.asm:asm-debug-all:5.2
+     +--- org.jacoco:org.jacoco.report:0.7.9
+     |    +--- org.jacoco:org.jacoco.core:0.7.9 (*)
+     |    \--- org.ow2.asm:asm-debug-all:5.2
+     \--- org.jacoco:org.jacoco.agent:0.7.9
+
+runtime - Runtime dependencies for source set 'main' (deprecated, use 'runtimeOnly ' instead).
++--- project :server:persistence
+|    +--- org.springframework.boot:spring-boot-starter-data-jpa:1.5.1.RELEASE -> 1.5.7.RELEASE
+|    |    +--- org.springframework.boot:spring-boot-starter:1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot:1.5.7.RELEASE
+|    |    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |    \--- org.springframework:spring-context:4.3.11.RELEASE
+|    |    |    |         +--- org.springframework:spring-aop:4.3.11.RELEASE
+|    |    |    |         |    +--- org.springframework:spring-beans:4.3.11.RELEASE
+|    |    |    |         |    |    \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |         |    \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |         +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    |         +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |         \--- org.springframework:spring-expression:4.3.11.RELEASE
+|    |    |    |              \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-autoconfigure:1.5.7.RELEASE
+|    |    |    |    \--- org.springframework.boot:spring-boot:1.5.7.RELEASE (*)
+|    |    |    +--- org.springframework.boot:spring-boot-starter-logging:1.5.7.RELEASE
+|    |    |    |    +--- ch.qos.logback:logback-classic:1.1.11
+|    |    |    |    |    +--- ch.qos.logback:logback-core:1.1.11
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.22 -> 1.7.25
+|    |    |    |    +--- org.slf4j:jcl-over-slf4j:1.7.25
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.25
+|    |    |    |    +--- org.slf4j:jul-to-slf4j:1.7.25
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.25
+|    |    |    |    \--- org.slf4j:log4j-over-slf4j:1.7.25
+|    |    |    |         \--- org.slf4j:slf4j-api:1.7.25
+|    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    \--- org.yaml:snakeyaml:1.17
+|    |    +--- org.springframework.boot:spring-boot-starter-aop:1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-starter:1.5.7.RELEASE (*)
+|    |    |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|    |    |    \--- org.aspectj:aspectjweaver:1.8.10
+|    |    +--- org.springframework.boot:spring-boot-starter-jdbc:1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-starter:1.5.7.RELEASE (*)
+|    |    |    +--- org.apache.tomcat:tomcat-jdbc:8.5.20
+|    |    |    |    \--- org.apache.tomcat:tomcat-juli:8.5.20
+|    |    |    \--- org.springframework:spring-jdbc:4.3.11.RELEASE
+|    |    |         +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |         +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |         \--- org.springframework:spring-tx:4.3.11.RELEASE
+|    |    |              +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |              \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    +--- org.hibernate:hibernate-core:5.0.12.Final
+|    |    |    +--- org.jboss.logging:jboss-logging:3.3.0.Final -> 3.3.1.Final
+|    |    |    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    |    |    +--- org.javassist:javassist:3.18.1-GA -> 3.21.0-GA
+|    |    |    +--- antlr:antlr:2.7.7
+|    |    |    +--- org.jboss:jandex:2.0.0.Final
+|    |    |    +--- dom4j:dom4j:1.6.1
+|    |    |    \--- org.hibernate.common:hibernate-commons-annotations:5.0.1.Final
+|    |    |         \--- org.jboss.logging:jboss-logging:3.3.0.Final -> 3.3.1.Final
+|    |    +--- org.hibernate:hibernate-entitymanager:5.0.12.Final
+|    |    |    +--- org.jboss.logging:jboss-logging:3.3.0.Final -> 3.3.1.Final
+|    |    |    +--- org.hibernate:hibernate-core:5.0.12.Final (*)
+|    |    |    +--- dom4j:dom4j:1.6.1
+|    |    |    +--- org.hibernate.common:hibernate-commons-annotations:5.0.1.Final (*)
+|    |    |    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    |    |    \--- org.javassist:javassist:3.18.1-GA -> 3.21.0-GA
+|    |    +--- javax.transaction:javax.transaction-api:1.2
+|    |    +--- org.springframework.data:spring-data-jpa:1.11.7.RELEASE
+|    |    |    +--- org.springframework.data:spring-data-commons:1.13.7.RELEASE
+|    |    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    |    |    +--- org.springframework:spring-orm:4.3.11.RELEASE
+|    |    |    |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |    +--- org.springframework:spring-jdbc:4.3.11.RELEASE (*)
+|    |    |    |    \--- org.springframework:spring-tx:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-context:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-tx:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    |    \--- org.springframework:spring-aspects:4.3.11.RELEASE
+|    |         \--- org.aspectj:aspectjweaver:1.8.9 -> 1.8.10
+|    +--- org.flywaydb:flyway-core:4.2.0 -> 3.2.1
+|    \--- com.h2database:h2:1.4.192 -> 1.4.196
++--- project :server:user-management
+|    +--- project :server:persistence (*)
+|    \--- org.springframework.hateoas:spring-hateoas:0.24.0.RELEASE
+|         +--- org.springframework:spring-aop:4.3.12.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-beans:4.3.12.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-context:4.3.12.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-core:4.3.12.RELEASE -> 4.3.11.RELEASE
+|         +--- org.springframework:spring-web:4.3.12.RELEASE -> 4.3.11.RELEASE
+|         |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-context:4.3.11.RELEASE (*)
+|         |    \--- org.springframework:spring-core:4.3.11.RELEASE
+|         +--- org.springframework:spring-webmvc:4.3.12.RELEASE -> 4.3.11.RELEASE
+|         |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-context:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|         |    +--- org.springframework:spring-expression:4.3.11.RELEASE (*)
+|         |    \--- org.springframework:spring-web:4.3.11.RELEASE (*)
+|         \--- org.slf4j:slf4j-api:1.7.25
++--- org.springframework.data:spring-data-rest-hal-browser:2.6.7.RELEASE
+|    +--- org.springframework.data:spring-data-rest-webmvc:2.6.7.RELEASE
+|    |    +--- org.springframework.data:spring-data-rest-core:2.6.7.RELEASE
+|    |    |    +--- org.springframework:spring-tx:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework.hateoas:spring-hateoas:0.23.0.RELEASE -> 0.24.0.RELEASE (*)
+|    |    |    +--- org.springframework.data:spring-data-commons:1.13.7.RELEASE (*)
+|    |    |    +--- org.springframework.plugin:spring-plugin-core:1.2.0.RELEASE
+|    |    |    |    +--- org.springframework:spring-beans:4.0.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    |    |    +--- org.springframework:spring-context:4.0.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    |    |    +--- org.springframework:spring-aop:4.0.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    |    |    \--- org.slf4j:slf4j-api:1.7.10 -> 1.7.25
+|    |    |    +--- org.atteo:evo-inflector:1.2.2
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.8.10 -> 2.8.0
+|    |    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    |    +--- org.springframework:spring-webmvc:4.3.11.RELEASE (*)
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.8.10
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.8.0
+|    |    |    \--- com.fasterxml.jackson.core:jackson-core:2.8.10
+|    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.8.10 -> 2.8.0
+|    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    +--- org.slf4j:slf4j-api:1.7.25
+|    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
++--- org.springframework.hateoas:spring-hateoas:0.24.0.RELEASE (*)
++--- org.apache.commons:commons-lang3:3.7
+\--- org.springframework.boot:spring-boot-devtools: -> 1.5.7.RELEASE
+     +--- org.springframework.boot:spring-boot:1.5.7.RELEASE (*)
+     \--- org.springframework.boot:spring-boot-autoconfigure:1.5.7.RELEASE (*)
+
+runtimeClasspath - Runtime classpath of source set 'main'.
++--- project :server:persistence
+|    +--- org.springframework.boot:spring-boot-starter-data-jpa:1.5.1.RELEASE -> 1.5.7.RELEASE
+|    |    +--- org.springframework.boot:spring-boot-starter:1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot:1.5.7.RELEASE
+|    |    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |    \--- org.springframework:spring-context:4.3.11.RELEASE
+|    |    |    |         +--- org.springframework:spring-aop:4.3.11.RELEASE
+|    |    |    |         |    +--- org.springframework:spring-beans:4.3.11.RELEASE
+|    |    |    |         |    |    \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |         |    \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |         +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    |         +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |         \--- org.springframework:spring-expression:4.3.11.RELEASE
+|    |    |    |              \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-autoconfigure:1.5.7.RELEASE
+|    |    |    |    \--- org.springframework.boot:spring-boot:1.5.7.RELEASE (*)
+|    |    |    +--- org.springframework.boot:spring-boot-starter-logging:1.5.7.RELEASE
+|    |    |    |    +--- ch.qos.logback:logback-classic:1.1.11
+|    |    |    |    |    +--- ch.qos.logback:logback-core:1.1.11
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.22 -> 1.7.25
+|    |    |    |    +--- org.slf4j:jcl-over-slf4j:1.7.25
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.25
+|    |    |    |    +--- org.slf4j:jul-to-slf4j:1.7.25
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.25
+|    |    |    |    \--- org.slf4j:log4j-over-slf4j:1.7.25
+|    |    |    |         \--- org.slf4j:slf4j-api:1.7.25
+|    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    \--- org.yaml:snakeyaml:1.17
+|    |    +--- org.springframework.boot:spring-boot-starter-aop:1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-starter:1.5.7.RELEASE (*)
+|    |    |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|    |    |    \--- org.aspectj:aspectjweaver:1.8.10
+|    |    +--- org.springframework.boot:spring-boot-starter-jdbc:1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-starter:1.5.7.RELEASE (*)
+|    |    |    +--- org.apache.tomcat:tomcat-jdbc:8.5.20
+|    |    |    |    \--- org.apache.tomcat:tomcat-juli:8.5.20
+|    |    |    \--- org.springframework:spring-jdbc:4.3.11.RELEASE
+|    |    |         +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |         +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |         \--- org.springframework:spring-tx:4.3.11.RELEASE
+|    |    |              +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |              \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    +--- org.hibernate:hibernate-core:5.0.12.Final
+|    |    |    +--- org.jboss.logging:jboss-logging:3.3.0.Final -> 3.3.1.Final
+|    |    |    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    |    |    +--- org.javassist:javassist:3.18.1-GA -> 3.21.0-GA
+|    |    |    +--- antlr:antlr:2.7.7
+|    |    |    +--- org.jboss:jandex:2.0.0.Final
+|    |    |    +--- dom4j:dom4j:1.6.1
+|    |    |    \--- org.hibernate.common:hibernate-commons-annotations:5.0.1.Final
+|    |    |         \--- org.jboss.logging:jboss-logging:3.3.0.Final -> 3.3.1.Final
+|    |    +--- org.hibernate:hibernate-entitymanager:5.0.12.Final
+|    |    |    +--- org.jboss.logging:jboss-logging:3.3.0.Final -> 3.3.1.Final
+|    |    |    +--- org.hibernate:hibernate-core:5.0.12.Final (*)
+|    |    |    +--- dom4j:dom4j:1.6.1
+|    |    |    +--- org.hibernate.common:hibernate-commons-annotations:5.0.1.Final (*)
+|    |    |    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    |    |    \--- org.javassist:javassist:3.18.1-GA -> 3.21.0-GA
+|    |    +--- javax.transaction:javax.transaction-api:1.2
+|    |    +--- org.springframework.data:spring-data-jpa:1.11.7.RELEASE
+|    |    |    +--- org.springframework.data:spring-data-commons:1.13.7.RELEASE
+|    |    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    |    |    +--- org.springframework:spring-orm:4.3.11.RELEASE
+|    |    |    |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |    +--- org.springframework:spring-jdbc:4.3.11.RELEASE (*)
+|    |    |    |    \--- org.springframework:spring-tx:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-context:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-tx:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    |    \--- org.springframework:spring-aspects:4.3.11.RELEASE
+|    |         \--- org.aspectj:aspectjweaver:1.8.9 -> 1.8.10
+|    +--- org.flywaydb:flyway-core:4.2.0 -> 3.2.1
+|    \--- com.h2database:h2:1.4.192 -> 1.4.196
++--- project :server:user-management
+|    +--- project :server:persistence (*)
+|    \--- org.springframework.hateoas:spring-hateoas:0.24.0.RELEASE
+|         +--- org.springframework:spring-aop:4.3.12.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-beans:4.3.12.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-context:4.3.12.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-core:4.3.12.RELEASE -> 4.3.11.RELEASE
+|         +--- org.springframework:spring-web:4.3.12.RELEASE -> 4.3.11.RELEASE
+|         |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-context:4.3.11.RELEASE (*)
+|         |    \--- org.springframework:spring-core:4.3.11.RELEASE
+|         +--- org.springframework:spring-webmvc:4.3.12.RELEASE -> 4.3.11.RELEASE
+|         |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-context:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|         |    +--- org.springframework:spring-expression:4.3.11.RELEASE (*)
+|         |    \--- org.springframework:spring-web:4.3.11.RELEASE (*)
+|         \--- org.slf4j:slf4j-api:1.7.25
++--- org.springframework.data:spring-data-rest-hal-browser:2.6.7.RELEASE
+|    +--- org.springframework.data:spring-data-rest-webmvc:2.6.7.RELEASE
+|    |    +--- org.springframework.data:spring-data-rest-core:2.6.7.RELEASE
+|    |    |    +--- org.springframework:spring-tx:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework.hateoas:spring-hateoas:0.23.0.RELEASE -> 0.24.0.RELEASE (*)
+|    |    |    +--- org.springframework.data:spring-data-commons:1.13.7.RELEASE (*)
+|    |    |    +--- org.springframework.plugin:spring-plugin-core:1.2.0.RELEASE
+|    |    |    |    +--- org.springframework:spring-beans:4.0.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    |    |    +--- org.springframework:spring-context:4.0.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    |    |    +--- org.springframework:spring-aop:4.0.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    |    |    \--- org.slf4j:slf4j-api:1.7.10 -> 1.7.25
+|    |    |    +--- org.atteo:evo-inflector:1.2.2
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.8.10 -> 2.8.0
+|    |    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    |    +--- org.springframework:spring-webmvc:4.3.11.RELEASE (*)
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.8.10
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.8.0
+|    |    |    \--- com.fasterxml.jackson.core:jackson-core:2.8.10
+|    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.8.10 -> 2.8.0
+|    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    +--- org.slf4j:slf4j-api:1.7.25
+|    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
++--- org.springframework.hateoas:spring-hateoas:0.24.0.RELEASE (*)
++--- org.apache.commons:commons-lang3:3.7
+\--- org.springframework.boot:spring-boot-devtools: -> 1.5.7.RELEASE
+     +--- org.springframework.boot:spring-boot:1.5.7.RELEASE (*)
+     \--- org.springframework.boot:spring-boot-autoconfigure:1.5.7.RELEASE (*)
+
+runtimeElements - Elements of runtime for main. (n)
+No dependencies
+
+runtimeOnly - Runtime only dependencies for source set 'main'. (n)
+No dependencies
+
+testCompile - Dependencies for source set 'test' (deprecated, use 'testImplementation ' instead).
++--- project :server:persistence
+|    +--- org.springframework.boot:spring-boot-starter-data-jpa:1.5.1.RELEASE -> 1.5.7.RELEASE
+|    |    +--- org.springframework.boot:spring-boot-starter:1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot:1.5.7.RELEASE
+|    |    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |    \--- org.springframework:spring-context:4.3.11.RELEASE
+|    |    |    |         +--- org.springframework:spring-aop:4.3.11.RELEASE
+|    |    |    |         |    +--- org.springframework:spring-beans:4.3.11.RELEASE
+|    |    |    |         |    |    \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |         |    \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |         +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    |         +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |         \--- org.springframework:spring-expression:4.3.11.RELEASE
+|    |    |    |              \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-autoconfigure:1.5.7.RELEASE
+|    |    |    |    \--- org.springframework.boot:spring-boot:1.5.7.RELEASE (*)
+|    |    |    +--- org.springframework.boot:spring-boot-starter-logging:1.5.7.RELEASE
+|    |    |    |    +--- ch.qos.logback:logback-classic:1.1.11
+|    |    |    |    |    +--- ch.qos.logback:logback-core:1.1.11
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.22 -> 1.7.25
+|    |    |    |    +--- org.slf4j:jcl-over-slf4j:1.7.25
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.25
+|    |    |    |    +--- org.slf4j:jul-to-slf4j:1.7.25
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.25
+|    |    |    |    \--- org.slf4j:log4j-over-slf4j:1.7.25
+|    |    |    |         \--- org.slf4j:slf4j-api:1.7.25
+|    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    \--- org.yaml:snakeyaml:1.17
+|    |    +--- org.springframework.boot:spring-boot-starter-aop:1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-starter:1.5.7.RELEASE (*)
+|    |    |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|    |    |    \--- org.aspectj:aspectjweaver:1.8.10
+|    |    +--- org.springframework.boot:spring-boot-starter-jdbc:1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-starter:1.5.7.RELEASE (*)
+|    |    |    +--- org.apache.tomcat:tomcat-jdbc:8.5.20
+|    |    |    |    \--- org.apache.tomcat:tomcat-juli:8.5.20
+|    |    |    \--- org.springframework:spring-jdbc:4.3.11.RELEASE
+|    |    |         +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |         +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |         \--- org.springframework:spring-tx:4.3.11.RELEASE
+|    |    |              +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |              \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    +--- org.hibernate:hibernate-core:5.0.12.Final
+|    |    |    +--- org.jboss.logging:jboss-logging:3.3.0.Final -> 3.3.1.Final
+|    |    |    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    |    |    +--- org.javassist:javassist:3.18.1-GA -> 3.21.0-GA
+|    |    |    +--- antlr:antlr:2.7.7
+|    |    |    +--- org.jboss:jandex:2.0.0.Final
+|    |    |    +--- dom4j:dom4j:1.6.1
+|    |    |    \--- org.hibernate.common:hibernate-commons-annotations:5.0.1.Final
+|    |    |         \--- org.jboss.logging:jboss-logging:3.3.0.Final -> 3.3.1.Final
+|    |    +--- org.hibernate:hibernate-entitymanager:5.0.12.Final
+|    |    |    +--- org.jboss.logging:jboss-logging:3.3.0.Final -> 3.3.1.Final
+|    |    |    +--- org.hibernate:hibernate-core:5.0.12.Final (*)
+|    |    |    +--- dom4j:dom4j:1.6.1
+|    |    |    +--- org.hibernate.common:hibernate-commons-annotations:5.0.1.Final (*)
+|    |    |    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    |    |    \--- org.javassist:javassist:3.18.1-GA -> 3.21.0-GA
+|    |    +--- javax.transaction:javax.transaction-api:1.2
+|    |    +--- org.springframework.data:spring-data-jpa:1.11.7.RELEASE
+|    |    |    +--- org.springframework.data:spring-data-commons:1.13.7.RELEASE
+|    |    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    |    |    +--- org.springframework:spring-orm:4.3.11.RELEASE
+|    |    |    |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |    +--- org.springframework:spring-jdbc:4.3.11.RELEASE (*)
+|    |    |    |    \--- org.springframework:spring-tx:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-context:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-tx:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    |    \--- org.springframework:spring-aspects:4.3.11.RELEASE
+|    |         \--- org.aspectj:aspectjweaver:1.8.9 -> 1.8.10
+|    +--- org.flywaydb:flyway-core:4.2.0 -> 3.2.1
+|    \--- com.h2database:h2:1.4.192 -> 1.4.196
++--- project :server:user-management
+|    +--- project :server:persistence (*)
+|    \--- org.springframework.hateoas:spring-hateoas:0.24.0.RELEASE
+|         +--- org.springframework:spring-aop:4.3.12.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-beans:4.3.12.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-context:4.3.12.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-core:4.3.12.RELEASE -> 4.3.11.RELEASE
+|         +--- org.springframework:spring-web:4.3.12.RELEASE -> 4.3.11.RELEASE
+|         |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-context:4.3.11.RELEASE (*)
+|         |    \--- org.springframework:spring-core:4.3.11.RELEASE
+|         +--- org.springframework:spring-webmvc:4.3.12.RELEASE -> 4.3.11.RELEASE
+|         |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-context:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|         |    +--- org.springframework:spring-expression:4.3.11.RELEASE (*)
+|         |    \--- org.springframework:spring-web:4.3.11.RELEASE (*)
+|         \--- org.slf4j:slf4j-api:1.7.25
++--- org.springframework.data:spring-data-rest-hal-browser:2.6.7.RELEASE
+|    +--- org.springframework.data:spring-data-rest-webmvc:2.6.7.RELEASE
+|    |    +--- org.springframework.data:spring-data-rest-core:2.6.7.RELEASE
+|    |    |    +--- org.springframework:spring-tx:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework.hateoas:spring-hateoas:0.23.0.RELEASE -> 0.24.0.RELEASE (*)
+|    |    |    +--- org.springframework.data:spring-data-commons:1.13.7.RELEASE (*)
+|    |    |    +--- org.springframework.plugin:spring-plugin-core:1.2.0.RELEASE
+|    |    |    |    +--- org.springframework:spring-beans:4.0.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    |    |    +--- org.springframework:spring-context:4.0.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    |    |    +--- org.springframework:spring-aop:4.0.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    |    |    \--- org.slf4j:slf4j-api:1.7.10 -> 1.7.25
+|    |    |    +--- org.atteo:evo-inflector:1.2.2
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.8.10 -> 2.8.0
+|    |    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    |    +--- org.springframework:spring-webmvc:4.3.11.RELEASE (*)
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.8.10
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.8.0
+|    |    |    \--- com.fasterxml.jackson.core:jackson-core:2.8.10
+|    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.8.10 -> 2.8.0
+|    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    +--- org.slf4j:slf4j-api:1.7.25
+|    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
++--- org.springframework.hateoas:spring-hateoas:0.24.0.RELEASE (*)
++--- org.apache.commons:commons-lang3:3.7
++--- project :server:persistence-test
+|    +--- org.springframework.boot:spring-boot-starter-test:1.5.1.RELEASE
+|    |    +--- org.springframework.boot:spring-boot-test:1.5.1.RELEASE -> 1.5.7.RELEASE
+|    |    |    \--- org.springframework.boot:spring-boot:1.5.7.RELEASE (*)
+|    |    +--- org.springframework.boot:spring-boot-test-autoconfigure:1.5.1.RELEASE -> 1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-test:1.5.7.RELEASE (*)
+|    |    |    \--- org.springframework.boot:spring-boot-autoconfigure:1.5.7.RELEASE (*)
+|    |    +--- com.jayway.jsonpath:json-path:2.2.0
+|    |    |    +--- net.minidev:json-smart:2.2.1
+|    |    |    |    \--- net.minidev:accessors-smart:1.1
+|    |    |    |         \--- org.ow2.asm:asm:5.0.3
+|    |    |    \--- org.slf4j:slf4j-api:1.7.16 -> 1.7.25
+|    |    +--- junit:junit:4.12
+|    |    |    \--- org.hamcrest:hamcrest-core:1.3
+|    |    +--- org.assertj:assertj-core:2.6.0 -> 3.6.2
+|    |    +--- org.mockito:mockito-core:1.10.19 -> 2.7.13
+|    |    |    +--- net.bytebuddy:byte-buddy:1.6.9
+|    |    |    +--- net.bytebuddy:byte-buddy-agent:1.6.9
+|    |    |    \--- org.objenesis:objenesis:2.5
+|    |    +--- org.hamcrest:hamcrest-core:1.3
+|    |    +--- org.hamcrest:hamcrest-library:1.3
+|    |    |    \--- org.hamcrest:hamcrest-core:1.3
+|    |    +--- org.skyscreamer:jsonassert:1.4.0
+|    |    |    \--- com.vaadin.external.google:android-json:0.0.20131108.vaadin1
+|    |    +--- org.springframework:spring-core:4.3.6.RELEASE -> 4.3.11.RELEASE
+|    |    \--- org.springframework:spring-test:4.3.6.RELEASE -> 4.3.11.RELEASE
+|    |         \--- org.springframework:spring-core:4.3.11.RELEASE
+|    \--- org.flywaydb.flyway-test-extensions:flyway-spring-test:4.2.0
+|         +--- org.springframework:spring-test:4.3.8.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-context:4.3.8.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-jdbc:4.3.8.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.flywaydb:flyway-core:4.2.0 -> 3.2.1
+|         \--- commons-dbcp:commons-dbcp:1.4
+|              \--- commons-pool:commons-pool:1.5.4 -> 1.6
++--- org.springframework.boot:spring-boot-starter-test:1.5.1.RELEASE (*)
++--- org.springframework.restdocs:spring-restdocs-mockmvc:1.2.1.RELEASE
+|    +--- javax.servlet:javax.servlet-api:3.1.0
+|    +--- org.springframework:spring-test:4.3.6.RELEASE -> 4.3.11.RELEASE (*)
+|    +--- org.springframework.restdocs:spring-restdocs-core:1.2.1.RELEASE -> 1.1.3.RELEASE
+|    |    +--- javax.servlet:javax.servlet-api:3.1.0
+|    |    +--- org.springframework:spring-web:4.2.5.RELEASE -> 4.3.11.RELEASE (*)
+|    |    \--- com.fasterxml.jackson.core:jackson-databind:2.4.6.1 -> 2.8.10 (*)
+|    \--- org.springframework:spring-webmvc:4.3.6.RELEASE -> 4.3.11.RELEASE (*)
++--- org.springframework.security:spring-security-test:4.2.3.RELEASE
+|    +--- org.springframework.security:spring-security-core:4.2.3.RELEASE
+|    |    +--- aopalliance:aopalliance:1.0
+|    |    +--- org.springframework:spring-aop:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    +--- org.springframework:spring-context:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    +--- org.springframework:spring-core:4.3.9.RELEASE -> 4.3.11.RELEASE
+|    |    \--- org.springframework:spring-expression:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    +--- org.springframework.security:spring-security-web:4.2.3.RELEASE
+|    |    +--- aopalliance:aopalliance:1.0
+|    |    +--- org.springframework.security:spring-security-core:4.2.3.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    +--- org.springframework:spring-context:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    +--- org.springframework:spring-core:4.3.9.RELEASE -> 4.3.11.RELEASE
+|    |    +--- org.springframework:spring-expression:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    \--- org.springframework:spring-web:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    +--- org.springframework:spring-core:4.3.9.RELEASE -> 4.3.11.RELEASE
+|    \--- org.springframework:spring-test:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
++--- org.assertj:assertj-core:3.6.2
+\--- org.mockito:mockito-core:2.7.13 (*)
+
+testCompileClasspath - Compile classpath for source set 'test'.
++--- project :server:persistence
+|    +--- org.springframework.boot:spring-boot-starter-data-jpa:1.5.1.RELEASE -> 1.5.7.RELEASE
+|    |    +--- org.springframework.boot:spring-boot-starter:1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot:1.5.7.RELEASE
+|    |    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |    \--- org.springframework:spring-context:4.3.11.RELEASE
+|    |    |    |         +--- org.springframework:spring-aop:4.3.11.RELEASE
+|    |    |    |         |    +--- org.springframework:spring-beans:4.3.11.RELEASE
+|    |    |    |         |    |    \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |         |    \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |         +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    |         +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |         \--- org.springframework:spring-expression:4.3.11.RELEASE
+|    |    |    |              \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-autoconfigure:1.5.7.RELEASE
+|    |    |    |    \--- org.springframework.boot:spring-boot:1.5.7.RELEASE (*)
+|    |    |    +--- org.springframework.boot:spring-boot-starter-logging:1.5.7.RELEASE
+|    |    |    |    +--- ch.qos.logback:logback-classic:1.1.11
+|    |    |    |    |    +--- ch.qos.logback:logback-core:1.1.11
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.22 -> 1.7.25
+|    |    |    |    +--- org.slf4j:jcl-over-slf4j:1.7.25
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.25
+|    |    |    |    +--- org.slf4j:jul-to-slf4j:1.7.25
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.25
+|    |    |    |    \--- org.slf4j:log4j-over-slf4j:1.7.25
+|    |    |    |         \--- org.slf4j:slf4j-api:1.7.25
+|    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    \--- org.yaml:snakeyaml:1.17
+|    |    +--- org.springframework.boot:spring-boot-starter-aop:1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-starter:1.5.7.RELEASE (*)
+|    |    |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|    |    |    \--- org.aspectj:aspectjweaver:1.8.10
+|    |    +--- org.springframework.boot:spring-boot-starter-jdbc:1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-starter:1.5.7.RELEASE (*)
+|    |    |    +--- org.apache.tomcat:tomcat-jdbc:8.5.20
+|    |    |    |    \--- org.apache.tomcat:tomcat-juli:8.5.20
+|    |    |    \--- org.springframework:spring-jdbc:4.3.11.RELEASE
+|    |    |         +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |         +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |         \--- org.springframework:spring-tx:4.3.11.RELEASE
+|    |    |              +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |              \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    +--- org.hibernate:hibernate-core:5.0.12.Final
+|    |    |    +--- org.jboss.logging:jboss-logging:3.3.0.Final -> 3.3.1.Final
+|    |    |    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    |    |    +--- org.javassist:javassist:3.18.1-GA -> 3.21.0-GA
+|    |    |    +--- antlr:antlr:2.7.7
+|    |    |    +--- org.jboss:jandex:2.0.0.Final
+|    |    |    +--- dom4j:dom4j:1.6.1
+|    |    |    \--- org.hibernate.common:hibernate-commons-annotations:5.0.1.Final
+|    |    |         \--- org.jboss.logging:jboss-logging:3.3.0.Final -> 3.3.1.Final
+|    |    +--- org.hibernate:hibernate-entitymanager:5.0.12.Final
+|    |    |    +--- org.jboss.logging:jboss-logging:3.3.0.Final -> 3.3.1.Final
+|    |    |    +--- org.hibernate:hibernate-core:5.0.12.Final (*)
+|    |    |    +--- dom4j:dom4j:1.6.1
+|    |    |    +--- org.hibernate.common:hibernate-commons-annotations:5.0.1.Final (*)
+|    |    |    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    |    |    \--- org.javassist:javassist:3.18.1-GA -> 3.21.0-GA
+|    |    +--- javax.transaction:javax.transaction-api:1.2
+|    |    +--- org.springframework.data:spring-data-jpa:1.11.7.RELEASE
+|    |    |    +--- org.springframework.data:spring-data-commons:1.13.7.RELEASE
+|    |    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    |    |    +--- org.springframework:spring-orm:4.3.11.RELEASE
+|    |    |    |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |    +--- org.springframework:spring-jdbc:4.3.11.RELEASE (*)
+|    |    |    |    \--- org.springframework:spring-tx:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-context:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-tx:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    |    \--- org.springframework:spring-aspects:4.3.11.RELEASE
+|    |         \--- org.aspectj:aspectjweaver:1.8.9 -> 1.8.10
+|    +--- org.flywaydb:flyway-core:4.2.0 -> 3.2.1
+|    \--- com.h2database:h2:1.4.192 -> 1.4.196
++--- project :server:user-management
+|    +--- project :server:persistence (*)
+|    \--- org.springframework.hateoas:spring-hateoas:0.24.0.RELEASE
+|         +--- org.springframework:spring-aop:4.3.12.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-beans:4.3.12.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-context:4.3.12.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-core:4.3.12.RELEASE -> 4.3.11.RELEASE
+|         +--- org.springframework:spring-web:4.3.12.RELEASE -> 4.3.11.RELEASE
+|         |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-context:4.3.11.RELEASE (*)
+|         |    \--- org.springframework:spring-core:4.3.11.RELEASE
+|         +--- org.springframework:spring-webmvc:4.3.12.RELEASE -> 4.3.11.RELEASE
+|         |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-context:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|         |    +--- org.springframework:spring-expression:4.3.11.RELEASE (*)
+|         |    \--- org.springframework:spring-web:4.3.11.RELEASE (*)
+|         \--- org.slf4j:slf4j-api:1.7.25
++--- org.springframework.data:spring-data-rest-hal-browser:2.6.7.RELEASE
+|    +--- org.springframework.data:spring-data-rest-webmvc:2.6.7.RELEASE
+|    |    +--- org.springframework.data:spring-data-rest-core:2.6.7.RELEASE
+|    |    |    +--- org.springframework:spring-tx:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework.hateoas:spring-hateoas:0.23.0.RELEASE -> 0.24.0.RELEASE (*)
+|    |    |    +--- org.springframework.data:spring-data-commons:1.13.7.RELEASE (*)
+|    |    |    +--- org.springframework.plugin:spring-plugin-core:1.2.0.RELEASE
+|    |    |    |    +--- org.springframework:spring-beans:4.0.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    |    |    +--- org.springframework:spring-context:4.0.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    |    |    +--- org.springframework:spring-aop:4.0.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    |    |    \--- org.slf4j:slf4j-api:1.7.10 -> 1.7.25
+|    |    |    +--- org.atteo:evo-inflector:1.2.2
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.8.10 -> 2.8.0
+|    |    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    |    +--- org.springframework:spring-webmvc:4.3.11.RELEASE (*)
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.8.10
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.8.0
+|    |    |    \--- com.fasterxml.jackson.core:jackson-core:2.8.10
+|    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.8.10 -> 2.8.0
+|    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    +--- org.slf4j:slf4j-api:1.7.25
+|    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
++--- org.springframework.hateoas:spring-hateoas:0.24.0.RELEASE (*)
++--- org.apache.commons:commons-lang3:3.7
++--- project :server:persistence-test
+|    +--- org.springframework.boot:spring-boot-starter-test:1.5.1.RELEASE
+|    |    +--- org.springframework.boot:spring-boot-test:1.5.1.RELEASE -> 1.5.7.RELEASE
+|    |    |    \--- org.springframework.boot:spring-boot:1.5.7.RELEASE (*)
+|    |    +--- org.springframework.boot:spring-boot-test-autoconfigure:1.5.1.RELEASE -> 1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-test:1.5.7.RELEASE (*)
+|    |    |    \--- org.springframework.boot:spring-boot-autoconfigure:1.5.7.RELEASE (*)
+|    |    +--- com.jayway.jsonpath:json-path:2.2.0
+|    |    |    +--- net.minidev:json-smart:2.2.1
+|    |    |    |    \--- net.minidev:accessors-smart:1.1
+|    |    |    |         \--- org.ow2.asm:asm:5.0.3
+|    |    |    \--- org.slf4j:slf4j-api:1.7.16 -> 1.7.25
+|    |    +--- junit:junit:4.12
+|    |    |    \--- org.hamcrest:hamcrest-core:1.3
+|    |    +--- org.assertj:assertj-core:2.6.0 -> 3.6.2
+|    |    +--- org.mockito:mockito-core:1.10.19 -> 2.7.13
+|    |    |    +--- net.bytebuddy:byte-buddy:1.6.9
+|    |    |    +--- net.bytebuddy:byte-buddy-agent:1.6.9
+|    |    |    \--- org.objenesis:objenesis:2.5
+|    |    +--- org.hamcrest:hamcrest-core:1.3
+|    |    +--- org.hamcrest:hamcrest-library:1.3
+|    |    |    \--- org.hamcrest:hamcrest-core:1.3
+|    |    +--- org.skyscreamer:jsonassert:1.4.0
+|    |    |    \--- com.vaadin.external.google:android-json:0.0.20131108.vaadin1
+|    |    +--- org.springframework:spring-core:4.3.6.RELEASE -> 4.3.11.RELEASE
+|    |    \--- org.springframework:spring-test:4.3.6.RELEASE -> 4.3.11.RELEASE
+|    |         \--- org.springframework:spring-core:4.3.11.RELEASE
+|    \--- org.flywaydb.flyway-test-extensions:flyway-spring-test:4.2.0
+|         +--- org.springframework:spring-test:4.3.8.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-context:4.3.8.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-jdbc:4.3.8.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.flywaydb:flyway-core:4.2.0 -> 3.2.1
+|         \--- commons-dbcp:commons-dbcp:1.4
+|              \--- commons-pool:commons-pool:1.5.4 -> 1.6
++--- org.springframework.boot:spring-boot-starter-test:1.5.1.RELEASE (*)
++--- org.springframework.restdocs:spring-restdocs-mockmvc:1.2.1.RELEASE
+|    +--- javax.servlet:javax.servlet-api:3.1.0
+|    +--- org.springframework:spring-test:4.3.6.RELEASE -> 4.3.11.RELEASE (*)
+|    +--- org.springframework.restdocs:spring-restdocs-core:1.2.1.RELEASE -> 1.1.3.RELEASE
+|    |    +--- javax.servlet:javax.servlet-api:3.1.0
+|    |    +--- org.springframework:spring-web:4.2.5.RELEASE -> 4.3.11.RELEASE (*)
+|    |    \--- com.fasterxml.jackson.core:jackson-databind:2.4.6.1 -> 2.8.10 (*)
+|    \--- org.springframework:spring-webmvc:4.3.6.RELEASE -> 4.3.11.RELEASE (*)
++--- org.springframework.security:spring-security-test:4.2.3.RELEASE
+|    +--- org.springframework.security:spring-security-core:4.2.3.RELEASE
+|    |    +--- aopalliance:aopalliance:1.0
+|    |    +--- org.springframework:spring-aop:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    +--- org.springframework:spring-context:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    +--- org.springframework:spring-core:4.3.9.RELEASE -> 4.3.11.RELEASE
+|    |    \--- org.springframework:spring-expression:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    +--- org.springframework.security:spring-security-web:4.2.3.RELEASE
+|    |    +--- aopalliance:aopalliance:1.0
+|    |    +--- org.springframework.security:spring-security-core:4.2.3.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    +--- org.springframework:spring-context:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    +--- org.springframework:spring-core:4.3.9.RELEASE -> 4.3.11.RELEASE
+|    |    +--- org.springframework:spring-expression:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    \--- org.springframework:spring-web:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    +--- org.springframework:spring-core:4.3.9.RELEASE -> 4.3.11.RELEASE
+|    \--- org.springframework:spring-test:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
++--- org.assertj:assertj-core:3.6.2
+\--- org.mockito:mockito-core:2.7.13 (*)
+
+testCompileOnly - Compile only dependencies for source set 'test'.
+No dependencies
+
+testImplementation - Implementation only dependencies for source set 'test'. (n)
+No dependencies
+
+testRuntime - Runtime dependencies for source set 'test' (deprecated, use 'testRuntimeOnly ' instead).
++--- project :server:persistence
+|    +--- org.springframework.boot:spring-boot-starter-data-jpa:1.5.1.RELEASE -> 1.5.7.RELEASE
+|    |    +--- org.springframework.boot:spring-boot-starter:1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot:1.5.7.RELEASE
+|    |    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |    \--- org.springframework:spring-context:4.3.11.RELEASE
+|    |    |    |         +--- org.springframework:spring-aop:4.3.11.RELEASE
+|    |    |    |         |    +--- org.springframework:spring-beans:4.3.11.RELEASE
+|    |    |    |         |    |    \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |         |    \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |         +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    |         +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |         \--- org.springframework:spring-expression:4.3.11.RELEASE
+|    |    |    |              \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-autoconfigure:1.5.7.RELEASE
+|    |    |    |    \--- org.springframework.boot:spring-boot:1.5.7.RELEASE (*)
+|    |    |    +--- org.springframework.boot:spring-boot-starter-logging:1.5.7.RELEASE
+|    |    |    |    +--- ch.qos.logback:logback-classic:1.1.11
+|    |    |    |    |    +--- ch.qos.logback:logback-core:1.1.11
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.22 -> 1.7.25
+|    |    |    |    +--- org.slf4j:jcl-over-slf4j:1.7.25
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.25
+|    |    |    |    +--- org.slf4j:jul-to-slf4j:1.7.25
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.25
+|    |    |    |    \--- org.slf4j:log4j-over-slf4j:1.7.25
+|    |    |    |         \--- org.slf4j:slf4j-api:1.7.25
+|    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    \--- org.yaml:snakeyaml:1.17
+|    |    +--- org.springframework.boot:spring-boot-starter-aop:1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-starter:1.5.7.RELEASE (*)
+|    |    |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|    |    |    \--- org.aspectj:aspectjweaver:1.8.10
+|    |    +--- org.springframework.boot:spring-boot-starter-jdbc:1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-starter:1.5.7.RELEASE (*)
+|    |    |    +--- org.apache.tomcat:tomcat-jdbc:8.5.20
+|    |    |    |    \--- org.apache.tomcat:tomcat-juli:8.5.20
+|    |    |    \--- org.springframework:spring-jdbc:4.3.11.RELEASE
+|    |    |         +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |         +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |         \--- org.springframework:spring-tx:4.3.11.RELEASE
+|    |    |              +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |              \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    +--- org.hibernate:hibernate-core:5.0.12.Final
+|    |    |    +--- org.jboss.logging:jboss-logging:3.3.0.Final -> 3.3.1.Final
+|    |    |    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    |    |    +--- org.javassist:javassist:3.18.1-GA -> 3.21.0-GA
+|    |    |    +--- antlr:antlr:2.7.7
+|    |    |    +--- org.jboss:jandex:2.0.0.Final
+|    |    |    +--- dom4j:dom4j:1.6.1
+|    |    |    \--- org.hibernate.common:hibernate-commons-annotations:5.0.1.Final
+|    |    |         \--- org.jboss.logging:jboss-logging:3.3.0.Final -> 3.3.1.Final
+|    |    +--- org.hibernate:hibernate-entitymanager:5.0.12.Final
+|    |    |    +--- org.jboss.logging:jboss-logging:3.3.0.Final -> 3.3.1.Final
+|    |    |    +--- org.hibernate:hibernate-core:5.0.12.Final (*)
+|    |    |    +--- dom4j:dom4j:1.6.1
+|    |    |    +--- org.hibernate.common:hibernate-commons-annotations:5.0.1.Final (*)
+|    |    |    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    |    |    \--- org.javassist:javassist:3.18.1-GA -> 3.21.0-GA
+|    |    +--- javax.transaction:javax.transaction-api:1.2
+|    |    +--- org.springframework.data:spring-data-jpa:1.11.7.RELEASE
+|    |    |    +--- org.springframework.data:spring-data-commons:1.13.7.RELEASE
+|    |    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    |    |    +--- org.springframework:spring-orm:4.3.11.RELEASE
+|    |    |    |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |    +--- org.springframework:spring-jdbc:4.3.11.RELEASE (*)
+|    |    |    |    \--- org.springframework:spring-tx:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-context:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-tx:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    |    \--- org.springframework:spring-aspects:4.3.11.RELEASE
+|    |         \--- org.aspectj:aspectjweaver:1.8.9 -> 1.8.10
+|    +--- org.flywaydb:flyway-core:4.2.0 -> 3.2.1
+|    \--- com.h2database:h2:1.4.192 -> 1.4.196
++--- project :server:user-management
+|    +--- project :server:persistence (*)
+|    \--- org.springframework.hateoas:spring-hateoas:0.24.0.RELEASE
+|         +--- org.springframework:spring-aop:4.3.12.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-beans:4.3.12.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-context:4.3.12.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-core:4.3.12.RELEASE -> 4.3.11.RELEASE
+|         +--- org.springframework:spring-web:4.3.12.RELEASE -> 4.3.11.RELEASE
+|         |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-context:4.3.11.RELEASE (*)
+|         |    \--- org.springframework:spring-core:4.3.11.RELEASE
+|         +--- org.springframework:spring-webmvc:4.3.12.RELEASE -> 4.3.11.RELEASE
+|         |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-context:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|         |    +--- org.springframework:spring-expression:4.3.11.RELEASE (*)
+|         |    \--- org.springframework:spring-web:4.3.11.RELEASE (*)
+|         \--- org.slf4j:slf4j-api:1.7.25
++--- org.springframework.data:spring-data-rest-hal-browser:2.6.7.RELEASE
+|    +--- org.springframework.data:spring-data-rest-webmvc:2.6.7.RELEASE
+|    |    +--- org.springframework.data:spring-data-rest-core:2.6.7.RELEASE
+|    |    |    +--- org.springframework:spring-tx:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework.hateoas:spring-hateoas:0.23.0.RELEASE -> 0.24.0.RELEASE (*)
+|    |    |    +--- org.springframework.data:spring-data-commons:1.13.7.RELEASE (*)
+|    |    |    +--- org.springframework.plugin:spring-plugin-core:1.2.0.RELEASE
+|    |    |    |    +--- org.springframework:spring-beans:4.0.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    |    |    +--- org.springframework:spring-context:4.0.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    |    |    +--- org.springframework:spring-aop:4.0.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    |    |    \--- org.slf4j:slf4j-api:1.7.10 -> 1.7.25
+|    |    |    +--- org.atteo:evo-inflector:1.2.2
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.8.10 -> 2.8.0
+|    |    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    |    +--- org.springframework:spring-webmvc:4.3.11.RELEASE (*)
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.8.10
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.8.0
+|    |    |    \--- com.fasterxml.jackson.core:jackson-core:2.8.10
+|    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.8.10 -> 2.8.0
+|    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    +--- org.slf4j:slf4j-api:1.7.25
+|    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
++--- org.springframework.hateoas:spring-hateoas:0.24.0.RELEASE (*)
++--- org.apache.commons:commons-lang3:3.7
++--- org.springframework.boot:spring-boot-devtools: -> 1.5.7.RELEASE
+|    +--- org.springframework.boot:spring-boot:1.5.7.RELEASE (*)
+|    \--- org.springframework.boot:spring-boot-autoconfigure:1.5.7.RELEASE (*)
++--- project :server:persistence-test
+|    +--- org.springframework.boot:spring-boot-starter-test:1.5.1.RELEASE
+|    |    +--- org.springframework.boot:spring-boot-test:1.5.1.RELEASE -> 1.5.7.RELEASE
+|    |    |    \--- org.springframework.boot:spring-boot:1.5.7.RELEASE (*)
+|    |    +--- org.springframework.boot:spring-boot-test-autoconfigure:1.5.1.RELEASE -> 1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-test:1.5.7.RELEASE (*)
+|    |    |    \--- org.springframework.boot:spring-boot-autoconfigure:1.5.7.RELEASE (*)
+|    |    +--- com.jayway.jsonpath:json-path:2.2.0
+|    |    |    +--- net.minidev:json-smart:2.2.1
+|    |    |    |    \--- net.minidev:accessors-smart:1.1
+|    |    |    |         \--- org.ow2.asm:asm:5.0.3
+|    |    |    \--- org.slf4j:slf4j-api:1.7.16 -> 1.7.25
+|    |    +--- junit:junit:4.12
+|    |    |    \--- org.hamcrest:hamcrest-core:1.3
+|    |    +--- org.assertj:assertj-core:2.6.0 -> 3.6.2
+|    |    +--- org.mockito:mockito-core:1.10.19 -> 2.7.13
+|    |    |    +--- net.bytebuddy:byte-buddy:1.6.9
+|    |    |    +--- net.bytebuddy:byte-buddy-agent:1.6.9
+|    |    |    \--- org.objenesis:objenesis:2.5
+|    |    +--- org.hamcrest:hamcrest-core:1.3
+|    |    +--- org.hamcrest:hamcrest-library:1.3
+|    |    |    \--- org.hamcrest:hamcrest-core:1.3
+|    |    +--- org.skyscreamer:jsonassert:1.4.0
+|    |    |    \--- com.vaadin.external.google:android-json:0.0.20131108.vaadin1
+|    |    +--- org.springframework:spring-core:4.3.6.RELEASE -> 4.3.11.RELEASE
+|    |    \--- org.springframework:spring-test:4.3.6.RELEASE -> 4.3.11.RELEASE
+|    |         \--- org.springframework:spring-core:4.3.11.RELEASE
+|    \--- org.flywaydb.flyway-test-extensions:flyway-spring-test:4.2.0
+|         +--- org.springframework:spring-test:4.3.8.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-context:4.3.8.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-jdbc:4.3.8.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.flywaydb:flyway-core:4.2.0 -> 3.2.1
+|         \--- commons-dbcp:commons-dbcp:1.4
+|              \--- commons-pool:commons-pool:1.5.4 -> 1.6
++--- org.springframework.boot:spring-boot-starter-test:1.5.1.RELEASE (*)
++--- org.springframework.restdocs:spring-restdocs-mockmvc:1.2.1.RELEASE
+|    +--- javax.servlet:javax.servlet-api:3.1.0
+|    +--- org.springframework:spring-test:4.3.6.RELEASE -> 4.3.11.RELEASE (*)
+|    +--- org.springframework.restdocs:spring-restdocs-core:1.2.1.RELEASE -> 1.1.3.RELEASE
+|    |    +--- javax.servlet:javax.servlet-api:3.1.0
+|    |    +--- org.springframework:spring-web:4.2.5.RELEASE -> 4.3.11.RELEASE (*)
+|    |    \--- com.fasterxml.jackson.core:jackson-databind:2.4.6.1 -> 2.8.10 (*)
+|    \--- org.springframework:spring-webmvc:4.3.6.RELEASE -> 4.3.11.RELEASE (*)
++--- org.springframework.security:spring-security-test:4.2.3.RELEASE
+|    +--- org.springframework.security:spring-security-core:4.2.3.RELEASE
+|    |    +--- aopalliance:aopalliance:1.0
+|    |    +--- org.springframework:spring-aop:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    +--- org.springframework:spring-context:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    +--- org.springframework:spring-core:4.3.9.RELEASE -> 4.3.11.RELEASE
+|    |    \--- org.springframework:spring-expression:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    +--- org.springframework.security:spring-security-web:4.2.3.RELEASE
+|    |    +--- aopalliance:aopalliance:1.0
+|    |    +--- org.springframework.security:spring-security-core:4.2.3.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    +--- org.springframework:spring-context:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    +--- org.springframework:spring-core:4.3.9.RELEASE -> 4.3.11.RELEASE
+|    |    +--- org.springframework:spring-expression:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    \--- org.springframework:spring-web:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    +--- org.springframework:spring-core:4.3.9.RELEASE -> 4.3.11.RELEASE
+|    \--- org.springframework:spring-test:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
++--- org.assertj:assertj-core:3.6.2
+\--- org.mockito:mockito-core:2.7.13 (*)
+
+testRuntimeClasspath - Runtime classpath of source set 'test'.
++--- project :server:persistence
+|    +--- org.springframework.boot:spring-boot-starter-data-jpa:1.5.1.RELEASE -> 1.5.7.RELEASE
+|    |    +--- org.springframework.boot:spring-boot-starter:1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot:1.5.7.RELEASE
+|    |    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |    \--- org.springframework:spring-context:4.3.11.RELEASE
+|    |    |    |         +--- org.springframework:spring-aop:4.3.11.RELEASE
+|    |    |    |         |    +--- org.springframework:spring-beans:4.3.11.RELEASE
+|    |    |    |         |    |    \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |         |    \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |         +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    |         +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |         \--- org.springframework:spring-expression:4.3.11.RELEASE
+|    |    |    |              \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-autoconfigure:1.5.7.RELEASE
+|    |    |    |    \--- org.springframework.boot:spring-boot:1.5.7.RELEASE (*)
+|    |    |    +--- org.springframework.boot:spring-boot-starter-logging:1.5.7.RELEASE
+|    |    |    |    +--- ch.qos.logback:logback-classic:1.1.11
+|    |    |    |    |    +--- ch.qos.logback:logback-core:1.1.11
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.22 -> 1.7.25
+|    |    |    |    +--- org.slf4j:jcl-over-slf4j:1.7.25
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.25
+|    |    |    |    +--- org.slf4j:jul-to-slf4j:1.7.25
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.25
+|    |    |    |    \--- org.slf4j:log4j-over-slf4j:1.7.25
+|    |    |    |         \--- org.slf4j:slf4j-api:1.7.25
+|    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    \--- org.yaml:snakeyaml:1.17
+|    |    +--- org.springframework.boot:spring-boot-starter-aop:1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-starter:1.5.7.RELEASE (*)
+|    |    |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|    |    |    \--- org.aspectj:aspectjweaver:1.8.10
+|    |    +--- org.springframework.boot:spring-boot-starter-jdbc:1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-starter:1.5.7.RELEASE (*)
+|    |    |    +--- org.apache.tomcat:tomcat-jdbc:8.5.20
+|    |    |    |    \--- org.apache.tomcat:tomcat-juli:8.5.20
+|    |    |    \--- org.springframework:spring-jdbc:4.3.11.RELEASE
+|    |    |         +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |         +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |         \--- org.springframework:spring-tx:4.3.11.RELEASE
+|    |    |              +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |              \--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    +--- org.hibernate:hibernate-core:5.0.12.Final
+|    |    |    +--- org.jboss.logging:jboss-logging:3.3.0.Final -> 3.3.1.Final
+|    |    |    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    |    |    +--- org.javassist:javassist:3.18.1-GA -> 3.21.0-GA
+|    |    |    +--- antlr:antlr:2.7.7
+|    |    |    +--- org.jboss:jandex:2.0.0.Final
+|    |    |    +--- dom4j:dom4j:1.6.1
+|    |    |    \--- org.hibernate.common:hibernate-commons-annotations:5.0.1.Final
+|    |    |         \--- org.jboss.logging:jboss-logging:3.3.0.Final -> 3.3.1.Final
+|    |    +--- org.hibernate:hibernate-entitymanager:5.0.12.Final
+|    |    |    +--- org.jboss.logging:jboss-logging:3.3.0.Final -> 3.3.1.Final
+|    |    |    +--- org.hibernate:hibernate-core:5.0.12.Final (*)
+|    |    |    +--- dom4j:dom4j:1.6.1
+|    |    |    +--- org.hibernate.common:hibernate-commons-annotations:5.0.1.Final (*)
+|    |    |    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    |    |    \--- org.javassist:javassist:3.18.1-GA -> 3.21.0-GA
+|    |    +--- javax.transaction:javax.transaction-api:1.2
+|    |    +--- org.springframework.data:spring-data-jpa:1.11.7.RELEASE
+|    |    |    +--- org.springframework.data:spring-data-commons:1.13.7.RELEASE
+|    |    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    |    |    +--- org.springframework:spring-orm:4.3.11.RELEASE
+|    |    |    |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    |    +--- org.springframework:spring-jdbc:4.3.11.RELEASE (*)
+|    |    |    |    \--- org.springframework:spring-tx:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-context:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-tx:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|    |    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    |    \--- org.springframework:spring-aspects:4.3.11.RELEASE
+|    |         \--- org.aspectj:aspectjweaver:1.8.9 -> 1.8.10
+|    +--- org.flywaydb:flyway-core:4.2.0 -> 3.2.1
+|    \--- com.h2database:h2:1.4.192 -> 1.4.196
++--- project :server:user-management
+|    +--- project :server:persistence (*)
+|    \--- org.springframework.hateoas:spring-hateoas:0.24.0.RELEASE
+|         +--- org.springframework:spring-aop:4.3.12.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-beans:4.3.12.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-context:4.3.12.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-core:4.3.12.RELEASE -> 4.3.11.RELEASE
+|         +--- org.springframework:spring-web:4.3.12.RELEASE -> 4.3.11.RELEASE
+|         |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-context:4.3.11.RELEASE (*)
+|         |    \--- org.springframework:spring-core:4.3.11.RELEASE
+|         +--- org.springframework:spring-webmvc:4.3.12.RELEASE -> 4.3.11.RELEASE
+|         |    +--- org.springframework:spring-aop:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-beans:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-context:4.3.11.RELEASE (*)
+|         |    +--- org.springframework:spring-core:4.3.11.RELEASE
+|         |    +--- org.springframework:spring-expression:4.3.11.RELEASE (*)
+|         |    \--- org.springframework:spring-web:4.3.11.RELEASE (*)
+|         \--- org.slf4j:slf4j-api:1.7.25
++--- org.springframework.data:spring-data-rest-hal-browser:2.6.7.RELEASE
+|    +--- org.springframework.data:spring-data-rest-webmvc:2.6.7.RELEASE
+|    |    +--- org.springframework.data:spring-data-rest-core:2.6.7.RELEASE
+|    |    |    +--- org.springframework:spring-tx:4.3.11.RELEASE (*)
+|    |    |    +--- org.springframework.hateoas:spring-hateoas:0.23.0.RELEASE -> 0.24.0.RELEASE (*)
+|    |    |    +--- org.springframework.data:spring-data-commons:1.13.7.RELEASE (*)
+|    |    |    +--- org.springframework.plugin:spring-plugin-core:1.2.0.RELEASE
+|    |    |    |    +--- org.springframework:spring-beans:4.0.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    |    |    +--- org.springframework:spring-context:4.0.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    |    |    +--- org.springframework:spring-aop:4.0.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    |    |    \--- org.slf4j:slf4j-api:1.7.10 -> 1.7.25
+|    |    |    +--- org.atteo:evo-inflector:1.2.2
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.8.10 -> 2.8.0
+|    |    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    |    +--- org.springframework:spring-webmvc:4.3.11.RELEASE (*)
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.8.10
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.8.0
+|    |    |    \--- com.fasterxml.jackson.core:jackson-core:2.8.10
+|    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.8.10 -> 2.8.0
+|    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
+|    +--- org.slf4j:slf4j-api:1.7.25
+|    \--- org.slf4j:jcl-over-slf4j:1.7.25 (*)
++--- org.springframework.hateoas:spring-hateoas:0.24.0.RELEASE (*)
++--- org.apache.commons:commons-lang3:3.7
++--- org.springframework.boot:spring-boot-devtools: -> 1.5.7.RELEASE
+|    +--- org.springframework.boot:spring-boot:1.5.7.RELEASE (*)
+|    \--- org.springframework.boot:spring-boot-autoconfigure:1.5.7.RELEASE (*)
++--- project :server:persistence-test
+|    +--- org.springframework.boot:spring-boot-starter-test:1.5.1.RELEASE
+|    |    +--- org.springframework.boot:spring-boot-test:1.5.1.RELEASE -> 1.5.7.RELEASE
+|    |    |    \--- org.springframework.boot:spring-boot:1.5.7.RELEASE (*)
+|    |    +--- org.springframework.boot:spring-boot-test-autoconfigure:1.5.1.RELEASE -> 1.5.7.RELEASE
+|    |    |    +--- org.springframework.boot:spring-boot-test:1.5.7.RELEASE (*)
+|    |    |    \--- org.springframework.boot:spring-boot-autoconfigure:1.5.7.RELEASE (*)
+|    |    +--- com.jayway.jsonpath:json-path:2.2.0
+|    |    |    +--- net.minidev:json-smart:2.2.1
+|    |    |    |    \--- net.minidev:accessors-smart:1.1
+|    |    |    |         \--- org.ow2.asm:asm:5.0.3
+|    |    |    \--- org.slf4j:slf4j-api:1.7.16 -> 1.7.25
+|    |    +--- junit:junit:4.12
+|    |    |    \--- org.hamcrest:hamcrest-core:1.3
+|    |    +--- org.assertj:assertj-core:2.6.0 -> 3.6.2
+|    |    +--- org.mockito:mockito-core:1.10.19 -> 2.7.13
+|    |    |    +--- net.bytebuddy:byte-buddy:1.6.9
+|    |    |    +--- net.bytebuddy:byte-buddy-agent:1.6.9
+|    |    |    \--- org.objenesis:objenesis:2.5
+|    |    +--- org.hamcrest:hamcrest-core:1.3
+|    |    +--- org.hamcrest:hamcrest-library:1.3
+|    |    |    \--- org.hamcrest:hamcrest-core:1.3
+|    |    +--- org.skyscreamer:jsonassert:1.4.0
+|    |    |    \--- com.vaadin.external.google:android-json:0.0.20131108.vaadin1
+|    |    +--- org.springframework:spring-core:4.3.6.RELEASE -> 4.3.11.RELEASE
+|    |    \--- org.springframework:spring-test:4.3.6.RELEASE -> 4.3.11.RELEASE
+|    |         \--- org.springframework:spring-core:4.3.11.RELEASE
+|    \--- org.flywaydb.flyway-test-extensions:flyway-spring-test:4.2.0
+|         +--- org.springframework:spring-test:4.3.8.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-context:4.3.8.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.springframework:spring-jdbc:4.3.8.RELEASE -> 4.3.11.RELEASE (*)
+|         +--- org.flywaydb:flyway-core:4.2.0 -> 3.2.1
+|         \--- commons-dbcp:commons-dbcp:1.4
+|              \--- commons-pool:commons-pool:1.5.4 -> 1.6
++--- org.springframework.boot:spring-boot-starter-test:1.5.1.RELEASE (*)
++--- org.springframework.restdocs:spring-restdocs-mockmvc:1.2.1.RELEASE
+|    +--- javax.servlet:javax.servlet-api:3.1.0
+|    +--- org.springframework:spring-test:4.3.6.RELEASE -> 4.3.11.RELEASE (*)
+|    +--- org.springframework.restdocs:spring-restdocs-core:1.2.1.RELEASE -> 1.1.3.RELEASE
+|    |    +--- javax.servlet:javax.servlet-api:3.1.0
+|    |    +--- org.springframework:spring-web:4.2.5.RELEASE -> 4.3.11.RELEASE (*)
+|    |    \--- com.fasterxml.jackson.core:jackson-databind:2.4.6.1 -> 2.8.10 (*)
+|    \--- org.springframework:spring-webmvc:4.3.6.RELEASE -> 4.3.11.RELEASE (*)
++--- org.springframework.security:spring-security-test:4.2.3.RELEASE
+|    +--- org.springframework.security:spring-security-core:4.2.3.RELEASE
+|    |    +--- aopalliance:aopalliance:1.0
+|    |    +--- org.springframework:spring-aop:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    +--- org.springframework:spring-context:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    +--- org.springframework:spring-core:4.3.9.RELEASE -> 4.3.11.RELEASE
+|    |    \--- org.springframework:spring-expression:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    +--- org.springframework.security:spring-security-web:4.2.3.RELEASE
+|    |    +--- aopalliance:aopalliance:1.0
+|    |    +--- org.springframework.security:spring-security-core:4.2.3.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    +--- org.springframework:spring-context:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    +--- org.springframework:spring-core:4.3.9.RELEASE -> 4.3.11.RELEASE
+|    |    +--- org.springframework:spring-expression:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    |    \--- org.springframework:spring-web:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
+|    +--- org.springframework:spring-core:4.3.9.RELEASE -> 4.3.11.RELEASE
+|    \--- org.springframework:spring-test:4.3.9.RELEASE -> 4.3.11.RELEASE (*)
++--- org.assertj:assertj-core:3.6.2
+\--- org.mockito:mockito-core:2.7.13 (*)
+
+testRuntimeOnly - Runtime only dependencies for source set 'test'. (n)
+No dependencies
+
+(*) - dependencies omitted (listed previously)
+
+BUILD SUCCESSFUL in 2s
+1 actionable task: 1 executed
