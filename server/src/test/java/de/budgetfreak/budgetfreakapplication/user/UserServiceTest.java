@@ -4,16 +4,13 @@ import de.budgetfreak.budgetfreakapplication.user.domain.User;
 import de.budgetfreak.budgetfreakapplication.user.domain.UserRepository;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.data.domain.Example;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.isA;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 public class UserServiceTest {
 
@@ -49,7 +46,7 @@ public class UserServiceTest {
     @Test
     public void shouldFindOneUser() {
         final User bob = UserTestUtils.createBob();
-        when(userRepositoryMock.findOne(bob.getId())).thenReturn(bob);
+        when(userRepositoryMock.findOne(isA(Example.class))).thenReturn(Optional.of(bob));
 
         final User user = testSubject.get(bob.getId());
         assertThat(user).isEqualToComparingFieldByField(bob);

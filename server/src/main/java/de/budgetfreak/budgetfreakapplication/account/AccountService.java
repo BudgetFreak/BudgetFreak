@@ -5,6 +5,7 @@ import de.budgetfreak.budgetfreakapplication.account.domain.AccountRepository;
 import de.budgetfreak.budgetfreakapplication.user.domain.User;
 import de.budgetfreak.budgetfreakapplication.user.domain.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -35,10 +36,11 @@ public class AccountService {
 
     /**
      * Returns one account by id.
+     *
      * @param id The id of the account.
      */
     public Account get(long id) {
-        return accountRepository.findOne(id);
+        return accountRepository.findOne(Example.of(new Account().setId(id))).orElse(null);
     }
 
     /**
