@@ -3,6 +3,7 @@ package de.budgetfreak.budgetfreakapplication.user;
 import de.budgetfreak.budgetfreakapplication.user.domain.User;
 import de.budgetfreak.budgetfreakapplication.user.domain.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -41,6 +42,6 @@ public class UserService {
      * Get one user by id.
      */
     public User get(long id) {
-        return userRepository.findOne(id);
+        return userRepository.findOne(Example.of(new User().setId(id))).orElse(null);
     }
 }

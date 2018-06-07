@@ -1,12 +1,24 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.2.RELEASE'
+    }
+    repositories {
+        jcenter()
+    }
+}
+
 plugins {
     id "java"
     id "jacoco"
-    id "org.springframework.boot" version "1.5.7.RELEASE"
+    id "org.springframework.boot" version "2.0.2.RELEASE"
+    id "io.spring.dependency-management" version "1.0.5.RELEASE"
 }
 
 repositories {
     jcenter()
 }
+
+sourceCompatibility = 1.8
 
 dependencies {
     compile(

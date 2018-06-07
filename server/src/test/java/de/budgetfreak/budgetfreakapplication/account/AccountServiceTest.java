@@ -1,19 +1,20 @@
 package de.budgetfreak.budgetfreakapplication.account;
 
-import static de.budgetfreak.budgetfreakapplication.user.UserTestUtils.createBob;
-import static java.util.Arrays.asList;
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.*;
-
 import de.budgetfreak.budgetfreakapplication.account.domain.Account;
 import de.budgetfreak.budgetfreakapplication.account.domain.AccountRepository;
 import de.budgetfreak.budgetfreakapplication.user.domain.User;
 import de.budgetfreak.budgetfreakapplication.user.domain.UserRepository;
-import org.assertj.core.api.SoftAssertions;
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.data.domain.Example;
 
 import java.util.List;
+import java.util.Optional;
+
+import static de.budgetfreak.budgetfreakapplication.user.UserTestUtils.createBob;
+import static java.util.Arrays.asList;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.*;
 
 public class AccountServiceTest {
 
@@ -44,7 +45,7 @@ public class AccountServiceTest {
     public void shoudlGetAccount() {
         User bob = createBob();
         Account checkings = AccountTestUtils.createCheckingsAccount(bob);
-        when(accountRepositoryMock.findOne(bob.getId())).thenReturn(checkings);
+        when(accountRepositoryMock.findOne(isA(Example.class))).thenReturn(Optional.of(checkings));
 
         Account accounts = testSubject.get(checkings.getId());
 
