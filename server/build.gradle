@@ -1,12 +1,3 @@
-buildscript {
-    ext {
-        springBootVersion = '2.0.2.RELEASE'
-    }
-    repositories {
-        jcenter()
-    }
-}
-
 plugins {
     id "java"
     id "jacoco"
