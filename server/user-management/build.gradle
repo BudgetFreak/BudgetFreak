@@ -1,0 +1,3 @@
+dependencyManagement {
+    imports { mavenBom("org.springframework.boot:spring-boot-dependencies:${version_spring_boot}") }
+}
