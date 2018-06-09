@@ -4,7 +4,7 @@ dependencyManagement {
 
 dependencies {
     compile(
-                "org.flywaydb:flyway-core:${version_flyway}",
+            "org.flywaydb:flyway-core:${version_flyway}",
     )
 
     testCompile(

@@ -1,13 +1,13 @@
 package de.budgetfreak.application.account;
 
-import static org.assertj.core.api.Assertions.*;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.validation.BeanPropertyBindingResult;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class AccountResourceValidatorTest {
-    
+
     private AccountResourceValidator testSubject;
 
     @Before

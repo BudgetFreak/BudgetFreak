@@ -19,7 +19,7 @@ ext {
     isCiBuild = getBoolEnv('CI', false)
     buildNumber = getEnv('CIRCLE_BUILD_NUM', null)
     gitCommit = getEnv('CIRCLE_SHA1', null)
-    gitCommitShort = gitCommit != null ? gitCommit.substring(0,8) : null
+    gitCommitShort = gitCommit != null ? gitCommit.substring(0, 8) : null
     pullRequestNumber = getEnv('CIRCLE_PR_NUMBER', '')
     isPullRequest = pullRequestNumber != ''
 

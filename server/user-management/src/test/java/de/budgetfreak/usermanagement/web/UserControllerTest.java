@@ -3,9 +3,6 @@ package de.budgetfreak.usermanagement.web;
 import de.budgetfreak.usermanagement.UserTestUtils;
 import de.budgetfreak.usermanagement.domain.User;
 import de.budgetfreak.usermanagement.service.UserService;
-import de.budgetfreak.usermanagement.web.UserController;
-import de.budgetfreak.usermanagement.web.UserResource;
-import de.budgetfreak.usermanagement.web.UserResourceAssembler;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +14,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -79,8 +75,8 @@ public class UserControllerTest {
         final UserResource userResource = new UserResource(name, currency);
         when(userServiceMock.create(anyString(), anyString())).thenAnswer(invocation ->
                 new User().setId(1L)
-                    .setName(invocation.getArgument(0))
-                    .setCurrency(invocation.getArgument(1))
+                        .setName(invocation.getArgument(0))
+                        .setCurrency(invocation.getArgument(1))
         );
 
         final MockHttpServletRequestBuilder requestBuilder = post("/users").accept(MediaType.APPLICATION_JSON)
