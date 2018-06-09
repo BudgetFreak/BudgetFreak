@@ -1,5 +1,6 @@
 package de.budgetfreak.application;
 
+import de.budgetfreak.BudgetfreakApplication;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.ActiveProfiles;

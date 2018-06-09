@@ -1,6 +1,6 @@
 package de.budgetfreak.application.account;
 
-import de.budgetfreak.application.BudgetfreakApplication;
+import de.budgetfreak.BudgetfreakApplication;
 import de.budgetfreak.application.JsonHelper;
 import de.budgetfreak.application.account.domain.Account;
 import de.budgetfreak.usermanagement.domain.User;

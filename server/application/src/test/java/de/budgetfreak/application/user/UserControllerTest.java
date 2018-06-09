@@ -1,6 +1,6 @@
 package de.budgetfreak.application.user;
 
-import de.budgetfreak.application.BudgetfreakApplication;
+import de.budgetfreak.BudgetfreakApplication;
 import de.budgetfreak.application.JsonHelper;
 import de.budgetfreak.usermanagement.domain.User;
 import org.junit.Test;
