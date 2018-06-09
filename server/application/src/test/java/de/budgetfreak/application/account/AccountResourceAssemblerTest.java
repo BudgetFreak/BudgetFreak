@@ -1,12 +1,12 @@
 package de.budgetfreak.application.account;
 
-import static de.budgetfreak.application.account.AccountTestUtils.createCheckingsAccount;
-import static de.budgetfreak.application.user.UserTestUtils.createBob;
-import static org.assertj.core.api.Assertions.*;
-
 import de.budgetfreak.application.account.domain.Account;
 import org.junit.Before;
 import org.junit.Test;
+
+import static de.budgetfreak.application.account.AccountTestUtils.createCheckingsAccount;
+import static de.budgetfreak.application.user.UserTestUtils.createBob;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class AccountResourceAssemblerTest {
 

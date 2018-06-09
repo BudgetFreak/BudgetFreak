@@ -52,6 +52,7 @@ public class UserService {
 
     /**
      * Reads the testProperty.
+     *
      * @return The configured property.
      */
     public String getTestProperty() {
