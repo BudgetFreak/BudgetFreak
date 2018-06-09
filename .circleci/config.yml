@@ -34,7 +34,7 @@ jobs:
           when: always
       - store_test_results:
           path: ~/server-test-results
-      - archive_test_results:
+      - store_artifacts:
           path: ~/server-test-results
   java_sonarqube:
     docker:
