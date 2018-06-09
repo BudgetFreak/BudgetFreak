@@ -23,11 +23,17 @@ jobs:
             - ~/.gradle/wrapper
           key: v{{ .Environment.CACHE_TOKEN }}-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
       - run: ./gradlew build
-      - store_test_results:
-          path: server/build/test-results
       - persist_to_workspace:
           root: .
           paths: ./*
+      - run:
+          name: Collect test results
+          command: |
+            mkdir -p ~/server-test-results/
+            find . -type f -regex "server/.*/build/test-results/.*xml" -exec cp {} ~/server-test-results/ \;
+          when: always
+      - store_test_results:
+          path: ~/server-test-results
   java_sonarqube:
     docker:
       - image: circleci/openjdk:8-jdk
