@@ -1,12 +1,12 @@
-package de.budgetfreak.usermanagement.web;
+package de.budgetfreak.testutils.web;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.hateoas.Link;
 import org.springframework.hateoas.PagedResources;
 import org.springframework.hateoas.hal.Jackson2HalModule;
-import org.springframework.restdocs.hypermedia.Link;
 
 import java.io.IOException;
 import java.util.ArrayList;

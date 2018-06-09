@@ -7,4 +7,8 @@ dependencies {
             project(":server:user-management"),
             project(":server:persistence"),
     )
+
+    testCompile(
+            project(":server:test-utils:web"),
+    )
 }

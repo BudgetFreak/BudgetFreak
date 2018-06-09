@@ -1,5 +1,6 @@
 package de.budgetfreak.usermanagement.web;
 
+import de.budgetfreak.testutils.web.JsonHelper;
 import de.budgetfreak.usermanagement.UserTestUtils;
 import de.budgetfreak.usermanagement.domain.User;
 import de.budgetfreak.usermanagement.service.UserService;

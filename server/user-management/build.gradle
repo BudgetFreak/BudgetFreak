@@ -6,4 +6,8 @@ dependencies {
     compile(
             project(":server:persistence"),
     )
+
+    testCompile(
+            project(":server:test-utils:web"),
+    )
 }
