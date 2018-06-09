@@ -26,8 +26,4 @@ public class UserServiceIntegrationTest {
     public void shouldReadTestProperty() {
         assertThat(testSubject.getTestProperty()).isEqualTo("property from application.properties in user-management");
     }
-
-    @SpringBootApplication
-    static class TestConfiguration {
-    }
 }

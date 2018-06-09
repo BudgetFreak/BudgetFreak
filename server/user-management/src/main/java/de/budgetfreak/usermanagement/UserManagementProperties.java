@@ -2,6 +2,9 @@ package de.budgetfreak.usermanagement;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
+/**
+ * Properties for the user-management-module.
+ */
 @ConfigurationProperties("usermanagement")
 public class UserManagementProperties {
 
