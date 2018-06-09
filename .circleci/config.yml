@@ -46,6 +46,10 @@ jobs:
               echo "CIRCLE_PR_NUMBER: $CIRCLE_PR_NUMBER"
       - attach_workspace:
           at: .
+      - restore_cache:
+          key: v{{ .Environment.CACHE_TOKEN }}-dependencies-{{ checksum "gradle.properties" }}
+      - restore_cache:
+          key: v{{ .Environment.CACHE_TOKEN }}-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
       - run: ./gradlew sonarqube
   angular_check:
       working_directory: ~/repo
