@@ -8,6 +8,6 @@ dependencies {
     )
 
     testCompile(
-            "org.flywaydb.flyway-test-extensions:flyway-spring-test:${version_flyway}",
+            "org.flywaydb.flyway-test-extensions:flyway-spring-test:${version_flyway_spring_test}",
     )
 }
