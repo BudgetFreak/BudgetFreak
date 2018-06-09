@@ -1,5 +1,7 @@
-package de.budgetfreak.application.user;
+package de.budgetfreak.usermanagement.service;
 
+import de.budgetfreak.usermanagement.UserManagementProperties;
+import de.budgetfreak.usermanagement.UserTestUtils;
 import de.budgetfreak.usermanagement.domain.User;
 import de.budgetfreak.usermanagement.domain.UserRepository;
 import org.junit.Before;
@@ -16,11 +18,13 @@ public class UserServiceTest {
 
     private UserService testSubject;
     private UserRepository userRepositoryMock;
+    private UserManagementProperties userManagementProperties;
 
     @Before
     public void setUp() throws Exception {
         userRepositoryMock = mock(UserRepository.class);
-        testSubject = new UserService(userRepositoryMock);
+        userManagementProperties = new UserManagementProperties().setTestProperty("mockedTestProperty");
+        testSubject = new UserService(userRepositoryMock, userManagementProperties);
     }
 
     @Test
@@ -50,5 +54,10 @@ public class UserServiceTest {
 
         final User user = testSubject.get(bob.getId());
         assertThat(user).isEqualToComparingFieldByField(bob);
+    }
+
+    @Test
+    public void shouldReadTestProperty() {
+        assertThat(testSubject.getTestProperty()).isEqualTo("mockedTestProperty");
     }
 }

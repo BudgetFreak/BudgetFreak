@@ -1,0 +1,13 @@
+dependencyManagement {
+    imports { mavenBom("org.springframework.boot:spring-boot-dependencies:${version_spring_boot}") }
+}
+
+dependencies {
+    compile(
+                "org.flywaydb:flyway-core:${version_flyway}",
+    )
+
+    testCompile(
+            "org.flywaydb.flyway-test-extensions:flyway-spring-test:${version_flyway_spring_test}",
+    )
+}

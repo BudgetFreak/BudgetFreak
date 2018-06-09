@@ -1,4 +1,4 @@
-package de.budgetfreak.application.user;
+package de.budgetfreak.usermanagement.web;
 
 import org.springframework.hateoas.ResourceSupport;
 

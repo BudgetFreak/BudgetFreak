@@ -1,7 +1,9 @@
-package de.budgetfreak.application.user;
+package de.budgetfreak.usermanagement.web;
 
 import static org.assertj.core.api.Assertions.*;
 
+import de.budgetfreak.usermanagement.web.UserResource;
+import de.budgetfreak.usermanagement.web.UserResourceValidator;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.validation.BeanPropertyBindingResult;

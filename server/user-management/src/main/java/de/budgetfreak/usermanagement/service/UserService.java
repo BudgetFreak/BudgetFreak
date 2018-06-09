@@ -1,8 +1,10 @@
-package de.budgetfreak.application.user;
+package de.budgetfreak.usermanagement.service;
 
+import de.budgetfreak.usermanagement.UserManagementProperties;
 import de.budgetfreak.usermanagement.domain.User;
 import de.budgetfreak.usermanagement.domain.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
@@ -12,13 +14,16 @@ import java.util.List;
  * Service for managing users.
  */
 @Service
+@EnableConfigurationProperties(UserManagementProperties.class)
 public class UserService {
 
     private UserRepository userRepository;
+    private UserManagementProperties userManagementProperties;
 
     @Autowired
-    public UserService(UserRepository userRepository) {
+    public UserService(UserRepository userRepository, UserManagementProperties userManagementProperties) {
         this.userRepository = userRepository;
+        this.userManagementProperties = userManagementProperties;
     }
 
     /**
@@ -43,5 +48,13 @@ public class UserService {
      */
     public User get(long id) {
         return userRepository.findOne(Example.of(new User().setId(id))).orElse(null);
+    }
+
+    /**
+     * Reads the testProperty.
+     * @return The configured property.
+     */
+    public String getTestProperty() {
+        return userManagementProperties.getTestProperty();
     }
 }

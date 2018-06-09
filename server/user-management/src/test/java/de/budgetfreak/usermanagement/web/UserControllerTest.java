@@ -1,8 +1,11 @@
-package de.budgetfreak.application.user;
+package de.budgetfreak.usermanagement.web;
 
-import de.budgetfreak.BudgetfreakApplication;
-import de.budgetfreak.application.JsonHelper;
+import de.budgetfreak.usermanagement.UserTestUtils;
 import de.budgetfreak.usermanagement.domain.User;
+import de.budgetfreak.usermanagement.service.UserService;
+import de.budgetfreak.usermanagement.web.UserController;
+import de.budgetfreak.usermanagement.web.UserResource;
+import de.budgetfreak.usermanagement.web.UserResourceAssembler;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +32,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = BudgetfreakApplication.class)
+//@ContextConfiguration(classes = BudgetfreakApplication.class)
 @ActiveProfiles("test")
 @WebMvcTest(value = UserController.class)
 @Import(value = UserResourceAssembler.class)
