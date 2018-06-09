@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @SpringBootApplication
 public class BudgetfreakApplication {
@@ -14,12 +13,12 @@ public class BudgetfreakApplication {
         SpringApplication.run(BudgetfreakApplication.class, args);
     }
 
-    //TODO change that to custom mapping (not globaly!)
     @Bean
     public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurerAdapter() {
+        return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
+                //TODO change that to custom mapping (not globaly!)
                 registry.addMapping("/**");
             }
         };
