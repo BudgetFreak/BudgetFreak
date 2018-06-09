@@ -39,7 +39,6 @@ subprojects {
         )
 
         runtime(
-                "org.springframework.boot:spring-boot-devtools",
                 "com.h2database:h2:${version_h2}",
         )
 

@@ -8,7 +8,11 @@ apply plugin: "org.springframework.boot"
 
 dependencies {
     compile(
-            project(":server:user-management")
+            project(":server:user-management"),
+    )
+
+    runtime(
+            "org.springframework.boot:spring-boot-devtools",
     )
 }
 
