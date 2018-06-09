@@ -63,13 +63,14 @@ public class JsonHelper {
             mapper.addMixIn(object.getClass(), IgnoreLinksMixin.class);
             return mapper.writeValueAsString(object);
         } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
+            throw new IllegalStateException(e);
         }
     }
 
     /**
      * Jackson Mixin used to ignore HATEOAS Links.
      */
+    @SuppressWarnings("squid:S1610") // Abstract classes without fields should be converted to interfaces
     private abstract class IgnoreLinksMixin {
         @JsonIgnore
         abstract List<Link> getLinks();
