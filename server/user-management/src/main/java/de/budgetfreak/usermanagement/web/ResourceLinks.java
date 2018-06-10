@@ -2,16 +2,23 @@ package de.budgetfreak.usermanagement.web;
 
 import org.springframework.hateoas.Link;
 
-public abstract class ResourceLinks<T> {
-    private Class<T> targetType;
+import java.util.Collection;
 
-    public ResourceLinks(Class<T> targetType) {
+/**
+ * Factory to determine all {@link Link}s for a given entity.
+ *
+ * @param <E> The type of the entity.
+ */
+public abstract class ResourceLinks<E> {
+    private Class<E> targetType;
+
+    public ResourceLinks(Class<E> targetType) {
         this.targetType = targetType;
     }
 
-    public abstract Iterable<Link> generateLinks(T entity);
+    public abstract Collection<Link> generateLinks(E entity);
 
-    public boolean accepts(Class<T> targetClass) {
+    public boolean accepts(Class<?> targetClass) {
         return targetClass == targetType;
     }
 }

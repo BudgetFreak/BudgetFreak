@@ -29,7 +29,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(value = UserController.class)
-@Import(value = UserResourceAssembler.class)
 public class UserControllerTest {
 
     @MockBean
