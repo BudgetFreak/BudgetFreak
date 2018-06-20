@@ -1,2 +1,8 @@
 include 'web'
 include 'server'
+include 'server:persistence'
+include 'server:user-management'
+include 'server:accounting'
+include 'server:application'
+include 'server:test-utils'
+include 'server:test-utils:web'
