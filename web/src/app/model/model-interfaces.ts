@@ -22,17 +22,30 @@ export interface Account {
   name?: string;
 }
 
-export interface BudgetGroup {
+export interface Budget {
+  carryover?: number;
+  income?: number;
+  masterCategories?: MasterCategory[];
+  _links?: BudgetLinks
+}
+
+export interface BudgetLinks {
+  self?: string;
+}
+
+export interface MasterCategory {
   name?: string,
-  entries?: BudgetEntry[]
+  categories?: Category[]
 }
 
-export interface BudgetCategory {
-  name?: string;
-}
-
-export interface BudgetEntry {
-  category?: BudgetCategory,
-  budget?: number,
-  expenses?: number
+export interface Category {
+  name?: string,
+  planned?: number,
+  spending?: number,
+  previousPlanned?: number,
+  previousSpending?: number,
+  averageSpending?: number,
+  _links: {
+    self?: string 
+  }
 }

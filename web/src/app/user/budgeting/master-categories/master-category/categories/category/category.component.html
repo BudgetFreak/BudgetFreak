@@ -2,7 +2,7 @@
   <div class="categories">
     <div class="column-row">
       <div class="cell d-flex justify-content-between ">
-        {{ budgetEntry.category.name }}
+        {{ category.name }}
         <button type="button" class="btn btn-link">Bearbeiten</button>
       </div>
     </div>
@@ -10,21 +10,21 @@
   <div class="current-month">
     <div class="column-row">
       <div class="cell cell-input">
-        <input class="form-control" placeholder="0,00" [value]="budgetEntry.budget">
+        <input class="form-control" placeholder="0,00" [value]="category.planned">
       </div>
-      <div class="cell">{{ budgetEntry.expenses }}</div>
+      <div class="cell">{{ category.spending }}</div>
       <div class="cell">{{ getDifference() }}</div>
     </div>
   </div>
   <div class="last-month">
     <div class="column-row">
-      <div class="cell">650,00 €</div>
-      <div class="cell">650,00 €</div>
+      <div class="cell">{{ category.previousPlanned }}</div>
+      <div class="cell">{{ category.previousSpending }}</div>
     </div>
   </div>
   <div class="average">
     <div class="column-row">
-      <div class="cell">650,00 €</div>
+      <div class="cell">{{ category.averageSpending }}</div>
     </div>
   </div>
 </div>

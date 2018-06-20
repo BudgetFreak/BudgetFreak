@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {BudgetGroup} from "../../model/model-interfaces";
+import { Component, OnInit } from '@angular/core';
+import { MasterCategory } from "../../model/model-interfaces";
 
 @Component({
   selector: 'app-budgeting',
@@ -7,116 +7,49 @@ import {BudgetGroup} from "../../model/model-interfaces";
 })
 export class BudgetingComponent implements OnInit {
 
-  budgetGroups: BudgetGroup[];
+  masterCategories: MasterCategory[];
 
   constructor() {
 
   }
 
   ngOnInit() {
-    this.budgetGroups = [
+    this.masterCategories = [
       {
         name: 'Wohnen',
-        entries: [
+        categories: [
           {
-            category: {name: 'Miete'},
-            budget: 600,
-            expenses: 560
+            name: 'Miete',
+            planned: 600,
+            spending: 560,
+            previousPlanned: 300,
+            previousSpending: 240,
+            averageSpending: 50,
+            _links: {}
           },
           {
-            category: {name: 'Nebenekosten'},
-            budget: 150,
-            expenses: 125
+            name: 'Strom',
+            planned: 50,
+            spending: 45,
+            previousPlanned: 49,
+            previousSpending: 45,
+            averageSpending: 42,
+            _links: {}
           },
           {
-            category: {name: 'Strom'},
-            budget: 50,
-            expenses: 42
+            name: 'Internet',
+            planned: 40,
+            spending: 39.9,
+            previousPlanned: 42,
+            previousSpending: 40,
+            averageSpending: 35,
+            _links: {}
           }
-
-        ]
-      },
-      {
-        name: 'Freizeit',
-        entries: [
-          {
-            category: {name: 'Fotografie'},
-            budget: 50,
-            expenses: 35
-          },
-          {
-            category: {name: 'Spiele'},
-            budget: 350,
-            expenses: 25
-          },
-          {
-            category: {name: 'Bücher'},
-            budget: 30,
-            expenses: 9.99
-          }
-
-        ]
-      },
-      {
-        name: 'Essen',
-        entries: [
-          {
-            category: {name: 'Cafes & Restaurants'},
-            budget: 200,
-            expenses: 65
-          },
-          {
-            category: {name: 'Mittagessen'},
-            budget: 150,
-            expenses: 45
-          }
-          
-
-        ]
-      },
-      {
-        name: 'Auto',
-        entries: [
-          {
-            category: {name: 'Versicherung'},
-            budget: 80,
-            expenses: 0
-          },
-          {
-            category: {name: 'Leasing'},
-            budget: 350,
-            expenses: 350
-          },
-          {
-            category: {name: 'Wartung'},
-            budget: 100,
-            expenses: 0
-          }        
-
-        ]
-      },
-      {
-        name: 'Abonements',
-        entries: [
-          {
-            category: {name: 'Spotify'},
-            budget: 9.99,
-            expenses: 0
-          },
-          {
-            category: {name: 'Amazon Prime'},
-            budget: 7.99,
-            expenses: 0
-          },
-          {
-            category: {name: 'Audible'},
-            budget: 9.99,
-            expenses: 0
-          }        
 
         ]
       }
-    ];
+    ]
+    
   }
 
 }
