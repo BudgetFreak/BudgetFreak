@@ -16,7 +16,7 @@ export interface UserLinks {
 }
 
 /**
- * Represent an account.
+ * Represents an account.
  */
 export interface Account {
   name?: string;

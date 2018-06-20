@@ -3,7 +3,7 @@ $panel-border: $table-border-width solid $table-border-color;
 $column-container-padding: 0 10px;
 $column-container-font-size: 0.85rem;
 $cell-padding: 0.54rem 1.5rem;
-$cell-control-padding: 0.2rem 0.8rem 0;
+$cell-control-padding: 0.3rem 0.8rem 0;
 $cell-font-weight: $font-weight-light;
 
 $metadata-padding: 0.9rem 1.5rem 0.54rem;
@@ -51,9 +51,11 @@ $metadata-box-padding: 0 1.5rem;
   .cell {
     @include make-col-ready();
     padding: $cell-padding;
+      border-bottom: $panel-border;
 
     &.cell-input {
       padding: $cell-control-padding;
+      border-bottom: none;      
     }
   }
 }
@@ -91,12 +93,6 @@ $metadata-box-padding: 0 1.5rem;
         }
       }
 
-    }
-
-    &:last-child {
-      .column-row .cell {
-        border-bottom: $panel-border;
-      }
     }
 
     &.category-group {
