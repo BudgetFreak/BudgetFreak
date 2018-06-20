@@ -4,7 +4,7 @@ import {AccountsComponent} from "./accounts/accounts.component";
 import {BudgetingComponent} from "./budgeting/budgeting.component";
 import {BudgetingBannerComponent} from "./budgeting/budgeting-banner/budgeting-banner.component";
 import {MonthNavComponent} from "./budgeting/month-nav/month-nav.component";
-import {BudgetHeadersComponent} from "./budgeting/budget-headers/budget-headers.component";
+import {BudgetGroupHeadersComponent} from "./budgeting/budget-group-headers/budget-group-headers.component";
 import {BudgetGroupsComponent} from "./budgeting/budget-groups/budget-groups.component";
 import {BudgetGroupComponent} from "./budgeting/budget-groups/budget-group/budget-group.component";
 import {BudgetEntriesComponent} from "./budgeting/budget-groups/budget-group/budget-entries/budget-entries.component";
@@ -24,7 +24,7 @@ export const USER_ROUTING_COMPONENTS = [
   AccountsComponent,
   BudgetingBannerComponent,
   MonthNavComponent,
-  BudgetHeadersComponent,
+  BudgetGroupHeadersComponent,
   BudgetGroupsComponent,
   BudgetGroupComponent,
   BudgetEntriesComponent,
