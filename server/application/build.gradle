@@ -1,0 +1,26 @@
+buildscript {
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${version_spring_boot}"
+    }
+}
+
+apply plugin: "org.springframework.boot"
+
+dependencies {
+    compile(
+            project(":server:accounting"),
+            project(":server:user-management"),
+    )
+
+    runtime(
+            "org.springframework.boot:spring-boot-devtools",
+    )
+}
+
+bootRun {
+    // default application configuration for running application via bootRun in development mode
+    // (in production, these properties are defined in application.properties)
+    jvmArgs "-Xdebug",
+            "-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=9010",
+            "-Dspring.output.ansi.enabled=ALWAYS"
+}
