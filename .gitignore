@@ -33,3 +33,7 @@ gradle-app.setting
 
 # JRebel
 **/rebel.xml
+
+# Visual Studio Code
+server/.project
+.project
