@@ -9,23 +9,24 @@
   </div>
   <div class="current-month">
     <div class="column-row">
-      <div class="cell">{{ planned }}</div>
-      <div class="cell">{{ spending }}</div>
-      <div class="cell">{{ difference }}</div>
+      <div class="cell">{{ planned | currency:'EUR':'2.2-2' }}</div>
+      <div class="cell">{{ spending | currency:'EUR':'2.2-2' }}</div>
+      <div class="cell">{{ difference | currency:'EUR':'2.2-2' }}</div>
     </div>
   </div>
   <div class="last-month">
     <div class="column-row">
-      <div class="cell">{{ previousPlanned }}</div>
-      <div class="cell">{{ previousSpending }}</div>
+      <div class="cell">{{ previousPlanned | currency:'EUR':'2.2-2' }}</div>
+      <div class="cell">{{ previousSpending | currency:'EUR':'2.2-2' }}</div>
     </div>
   </div>
   <div class="average">
     <div class="column-row">
-      <div class="cell">{{ average }}</div>
+      <div class="cell">{{ average | currency:'EUR':'2.2-2' }}</div>
     </div>
   </div>
 </div>
 
-<app-categories [categories]="masterCategory.categories"></app-categories>
+<app-category-entry *ngFor="let category of masterCategory._embedded" [category]="category"></app-category-entry>
+
 

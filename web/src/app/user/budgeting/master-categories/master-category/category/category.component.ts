@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Category} from "../../../../../../model/model-interfaces";
+import {Category} from "../../../../../model/budgeting";
 
 @Component({
   selector: 'app-category-entry',
@@ -17,7 +17,7 @@ export class CategoryComponent implements OnInit {
   }
 
   getDifference(): number {
-    return this.category.planned - this.category.spending;
+    return this.category.budget - this.category.expenses;
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-budgeting-banner',
@@ -6,7 +6,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BudgetingBannerComponent implements OnInit {
 
-  constructor() { }
+  @Input() carryover: number;
+  @Input() income: number;
+  @Input() plannedBudget: number;
+  budgetToAllocate: number;
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

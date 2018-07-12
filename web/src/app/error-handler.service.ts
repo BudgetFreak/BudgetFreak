@@ -1,6 +1,7 @@
+
+import {throwError as observableThrowError, Observable} from 'rxjs';
 import {User} from "./model/model-interfaces";
 import {Response} from "@angular/http";
-import {Observable} from "rxjs/Observable";
 
 /**
  * Service for central error handling
@@ -15,7 +16,7 @@ export class ErrorHandlerService {
       error.status ? `${error.status} - ${error.statusText}` : 'Server error';
     console.error(errMsg);
     console.error(error);
-    return Observable.throw(errMsg);
+    return observableThrowError(errMsg);
   }
 
 }

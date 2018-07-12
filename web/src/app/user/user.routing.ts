@@ -6,8 +6,7 @@ import { BudgetingBannerComponent } from "./budgeting/budgeting-banner/budgeting
 import { MonthNavComponent } from "./budgeting/month-nav/month-nav.component";
 import { MasterCategoriesComponent } from "./budgeting/master-categories/master-categories.component";
 import { MasterCategoryComponent } from "./budgeting/master-categories/master-category/master-category.component";
-import { CategoriesComponent } from "./budgeting/master-categories/master-category/categories/categories.component";
-import { CategoryComponent } from "./budgeting/master-categories/master-category/categories/category/category.component";
+import { CategoryComponent } from "./budgeting/master-categories/master-category/category/category.component";
 
 export const USER_ROUTES: Routes = [{
   path: '', component: UserComponent,
@@ -25,6 +24,5 @@ export const USER_ROUTING_COMPONENTS = [
   MonthNavComponent,
   MasterCategoriesComponent,
   MasterCategoryComponent,
-  CategoriesComponent,
   CategoryComponent
 ];

@@ -10,21 +10,21 @@
   <div class="current-month">
     <div class="column-row">
       <div class="cell cell-input">
-        <input class="form-control" placeholder="0,00" [value]="category.planned">
+        <input class="form-control" placeholder="0,00" [value]="category.budget">
       </div>
-      <div class="cell">{{ category.spending }}</div>
-      <div class="cell">{{ getDifference() }}</div>
+      <div class="cell">{{ category.expenses | currency:'EUR':'2.2-2' }}</div>
+      <div class="cell">{{ getDifference() | currency}}</div>
     </div>
   </div>
   <div class="last-month">
     <div class="column-row">
-      <div class="cell">{{ category.previousPlanned }}</div>
-      <div class="cell">{{ category.previousSpending }}</div>
+      <div class="cell">{{ category.previousBudget | currency:'EUR':'2.2-2' }}</div>
+      <div class="cell">{{ category.previousExpenses | currency:'EUR':'2.2-2' }}</div>
     </div>
   </div>
   <div class="average">
     <div class="column-row">
-      <div class="cell">{{ category.averageSpending }}</div>
+      <div class="cell">{{ category.averageExpenses | currency:'EUR':'2.2-2' }}</div>
     </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {MasterCategory} from "../../../model/model-interfaces";
+import {MasterCategory} from "../../../model/budgeting";
 
 @Component({
   selector: 'app-master-categories',

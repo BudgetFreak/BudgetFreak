@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {MasterCategory} from '../../../../model/model-interfaces'
+import {MasterCategory} from "../../../../model/budgeting";
 
 @Component({
   selector: 'app-master-category',
@@ -33,8 +33,8 @@ export class MasterCategoryComponent implements OnInit {
 
   getPlannedSum(): number {
     let sum = 0;
-    for (let entry of this.masterCategory.categories) {
-      sum += entry.planned;
+    for (let entry of this.masterCategory._embedded) {
+      sum += entry.budget;
     }
 
     return sum;
@@ -42,8 +42,8 @@ export class MasterCategoryComponent implements OnInit {
 
   getSpendingsSum(): number {
     let sum = 0;
-    for (let entry of this.masterCategory.categories) {
-      sum += entry.spending;
+    for (let entry of this.masterCategory._embedded) {
+      sum += entry.expenses;
     }
 
     return sum;
@@ -51,8 +51,8 @@ export class MasterCategoryComponent implements OnInit {
 
   getPreviousSpendingSum(): number {
     let sum = 0;
-    for (let entry of this.masterCategory.categories) {
-      sum += entry.previousSpending;
+    for (let entry of this.masterCategory._embedded) {
+      sum += entry.previousExpenses;
     }
 
     return sum;
@@ -60,8 +60,8 @@ export class MasterCategoryComponent implements OnInit {
 
   getPreviousPlannedSum(): number {
     let sum = 0;
-    for (let entry of this.masterCategory.categories) {
-      sum += entry.previousPlanned;
+    for (let entry of this.masterCategory._embedded) {
+      sum += entry.previousBudget;
     }
 
     return sum;
@@ -69,8 +69,8 @@ export class MasterCategoryComponent implements OnInit {
 
   getAverageSum(): number {
     let sum = 0;
-    for (let entry of this.masterCategory.categories) {
-      sum += entry.averageSpending;
+    for (let entry of this.masterCategory._embedded) {
+      sum += entry.averageExpenses;
     }
 
     return sum;
