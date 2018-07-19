@@ -1,5 +1,7 @@
 package de.budgetfreak.budgeting.web;
 
+import de.budgetfreak.utils.web.ResourceEmbeddableSupport;
+
 /**
  * Ressource representing a master category in a budget.
  */

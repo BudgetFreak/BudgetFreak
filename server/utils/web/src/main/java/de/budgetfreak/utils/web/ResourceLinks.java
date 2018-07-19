@@ -1,4 +1,4 @@
-package de.budgetfreak.usermanagement.web;
+package de.budgetfreak.utils.web;
 
 import org.springframework.hateoas.Link;
 

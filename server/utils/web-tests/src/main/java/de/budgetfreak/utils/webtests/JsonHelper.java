@@ -1,4 +1,4 @@
-package de.budgetfreak.testutils.web;
+package de.budgetfreak.utils.webtests;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.core.JsonProcessingException;

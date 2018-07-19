@@ -1,4 +1,4 @@
-package de.budgetfreak.budgeting.web;
+package de.budgetfreak.utils.web;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;

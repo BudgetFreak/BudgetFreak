@@ -1,6 +1,8 @@
 package de.budgetfreak.usermanagement.web;
 
 import de.budgetfreak.usermanagement.domain.User;
+import de.budgetfreak.utils.web.ResourceAssembler;
+import de.budgetfreak.utils.web.ResourceLinks;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

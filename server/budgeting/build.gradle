@@ -9,6 +9,6 @@ dependencies {
     )
 
     testCompile(
-            project(":server:test-utils:web"),
+            project(":server:utils:web-tests"),
     )
 }

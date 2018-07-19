@@ -2,14 +2,12 @@ package de.budgetfreak.budgeting.web;
 
 import de.budgetfreak.accounting.web.AccountController;
 import de.budgetfreak.usermanagement.domain.User;
-import de.budgetfreak.usermanagement.web.ResourceLinks;
+import de.budgetfreak.utils.web.ResourceLinks;
 import org.springframework.hateoas.Link;
 import org.springframework.stereotype.Component;
 
 import java.util.Collection;
-import java.util.Collections;
 
-import static java.util.Arrays.asList;
 import static java.util.Collections.singletonList;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;

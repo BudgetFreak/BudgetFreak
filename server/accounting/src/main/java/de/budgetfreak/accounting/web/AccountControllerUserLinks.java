@@ -1,7 +1,7 @@
 package de.budgetfreak.accounting.web;
 
 import de.budgetfreak.usermanagement.domain.User;
-import de.budgetfreak.usermanagement.web.ResourceLinks;
+import de.budgetfreak.utils.web.ResourceLinks;
 import org.springframework.hateoas.Link;
 import org.springframework.stereotype.Component;
 

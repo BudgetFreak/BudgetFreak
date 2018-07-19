@@ -5,9 +5,10 @@ dependencyManagement {
 dependencies {
     compile(
             project(":server:persistence"),
+            project(":server:utils:web"),
     )
 
     testCompile(
-            project(":server:test-utils:web"),
+            project(":server:utils:web-tests"),
     )
 }
