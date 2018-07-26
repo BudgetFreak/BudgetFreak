@@ -57,7 +57,7 @@ public class BudgetController {
         ));
 
         // add categories to savings
-        dailySpendings.embedResource("categories", Arrays.asList(
+        savings.embedResource("categories", Arrays.asList(
                 createCategory("Emergencies", userId, year, month),
                 createCategory("New car", userId, year, month)
         ));
