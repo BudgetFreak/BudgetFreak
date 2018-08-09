@@ -8,21 +8,21 @@ public class CategoryBudget {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "ID")
     private Long id;
 
-    @Column(name = "amount")
+    @Column(name = "AMOUNT")
     private BigDecimal amount;
 
-    @Column(name = "description")
+    @Column(name = "DESCRIPTION")
     private String description;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id")
+    @JoinColumn(name = "CATEGORY_ID")
     private Category category;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "budget_id")
+    @JoinColumn(name = "BUDGET_ID")
     private Budget budget;
 
     public Long getId() {
