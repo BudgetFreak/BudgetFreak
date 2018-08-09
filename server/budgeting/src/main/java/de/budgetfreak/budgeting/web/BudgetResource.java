@@ -2,6 +2,8 @@ package de.budgetfreak.budgeting.web;
 
 import de.budgetfreak.utils.web.ResourceEmbeddableSupport;
 
+import java.math.BigDecimal;
+
 /**
  * Ressource representing a budget for a month.
  */
@@ -9,10 +11,10 @@ public class BudgetResource extends ResourceEmbeddableSupport {
 
     private final long year;
     private final long month;
-    private final double carryover;
-    private final double income;
+    private final BigDecimal carryover;
+    private final BigDecimal income;
 
-    public BudgetResource(long year, long month, double carryover, double income) {
+    public BudgetResource(long year, long month, BigDecimal carryover, BigDecimal income) {
         this.year = year;
         this.month = month;
         this.carryover = carryover;
@@ -27,11 +29,11 @@ public class BudgetResource extends ResourceEmbeddableSupport {
         return month;
     }
 
-    public double getCarryover() {
+    public BigDecimal getCarryover() {
         return carryover;
     }
 
-    public double getIncome() {
+    public BigDecimal getIncome() {
         return income;
     }
 }

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
-
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 
@@ -38,7 +38,7 @@ public class BudgetController {
             @Valid @NotNull @RequestParam("month") Long month
     ) {
         // create BudgetResource
-        BudgetResource budgetResource = new BudgetResource(year, month, 21.05, 1740.00);
+        BudgetResource budgetResource = new BudgetResource(year, month, new BigDecimal("21.05"), new BigDecimal("1740.00"));
         budgetResource.add(linkTo(methodOn(BudgetController.class).get(userId, year, month)).withSelfRel());
         budgetResource.add(linkTo(methodOn(BudgetController.class).get(userId, year, month + 1)).withRel("next"));
         budgetResource.add(linkTo(methodOn(BudgetController.class).get(userId, year, month - 1)).withRel("previous"));
