@@ -22,7 +22,7 @@ public class Account {
     private boolean onBudget;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "USER_ID")
+    @JoinColumn(name = "user_id")
     private User user;
 
     public Account() {
