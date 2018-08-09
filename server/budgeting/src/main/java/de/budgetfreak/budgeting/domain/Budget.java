@@ -4,6 +4,10 @@ import de.budgetfreak.usermanagement.domain.User;
 
 import javax.persistence.*;
 
+/**
+ * A budget is planned for a specific month. It consists of a {@link CategoryBudget} for every
+ * {@link Category}.
+ */
 @Entity(name = "BF_BUDGET")
 public class Budget {
 

@@ -4,22 +4,26 @@ import de.budgetfreak.usermanagement.domain.User;
 
 import javax.persistence.*;
 
+/**
+ * A {@link MasterCategory} is the container for several {@link Category}-entities and used for
+ * displaying accumulated data.
+ */
 @Entity(name = "BF_MASTERCATEGORY")
 public class MasterCategory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "ID")
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "NAME")
     private String name;
 
-    @Column(name = "description")
+    @Column(name = "DESCRIPTION")
     private String description;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "USER_ID")
     private User user;
 
     public Long getId() {

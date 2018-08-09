@@ -12,17 +12,17 @@ public class Account {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "ID")
     private Long id;
 
-    @Column(name = "description")
+    @Column(name = "DESCRIPTION")
     private String description;
 
-    @Column(name = "on_budget")
+    @Column(name = "ON_BUDGET")
     private boolean onBudget;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "USER_ID")
     private User user;
 
     public Account() {

@@ -2,22 +2,26 @@ package de.budgetfreak.budgeting.domain;
 
 import javax.persistence.*;
 
+/**
+ * A category contains monthly spendings and has relating {@link Transaction}-entities which contain the
+ * spending for each category. Categories are combined in a {@link MasterCategory}.
+ */
 @Entity(name = "BF_CATEGORY")
 public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "ID")
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "NAME")
     private String name;
 
-    @Column(name = "description")
+    @Column(name = "DESCRIPTION")
     private String description;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "matercategory_id")
+    @JoinColumn(name = "MASTERCATEGORY_ID")
     private MasterCategory masterCategory;
 
     public Long getId() {
