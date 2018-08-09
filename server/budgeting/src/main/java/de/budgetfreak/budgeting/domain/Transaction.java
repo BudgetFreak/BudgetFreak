@@ -6,36 +6,40 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ * A transaction is money spent issued to a {@link Payee}.
+ * Transactions are assigned to an {@link Account} and a {@link Category}.
+ */
 @Entity(name = "BF_TRANSACTION")
 public class Transaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "ID")
     private Long id;
 
-    @Column(name = "amount")
+    @Column(name = "AMOUNT")
     private BigDecimal amount;
 
-    @Column(name = "booking_date")
+    @Column(name = "BOOKING_DATE")
     private Date bookingDate;
 
-    @Column(name = "description")
+    @Column(name = "DESCRIPTION")
     private String description;
 
-    @Column(name = "cleared")
+    @Column(name = "CLEARED")
     private boolean cleared;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "payee_id")
+    @JoinColumn(name = "PAYEE_ID")
     private Payee payee;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id")
+    @JoinColumn(name = "CATEGORY_ID")
     private Category category;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "account_id")
+    @JoinColumn(name = "ACCOUNT_ID")
     private Account account;
 
     public Long getId() {
