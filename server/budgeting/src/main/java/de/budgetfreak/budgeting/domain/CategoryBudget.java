@@ -3,6 +3,10 @@ package de.budgetfreak.budgeting.domain;
 import javax.persistence.*;
 import java.math.BigDecimal;
 
+/**
+ * A CategoryBudget represents the amount of money you want to spend for a given
+ * {@link Category} and {@link Budget}.
+ */
 @Entity(name = "BF_CATEGORYBUDGET")
 public class CategoryBudget {
 
