@@ -1,6 +1,5 @@
 package de.budgetfreak.budgeting.web;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Link;
 import org.springframework.hateoas.Resource;
 import org.springframework.validation.annotation.Validated;
@@ -23,10 +22,6 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 @RequestMapping("/users/{userId}/budget")
 @Validated
 public class BudgetController {
-
-    @Autowired
-    public BudgetController() {
-    }
 
     /**
      * Get one account. WORK IN PROGRESS. THIS IS CURRENTLY JUST FOR DEFINING THE API.

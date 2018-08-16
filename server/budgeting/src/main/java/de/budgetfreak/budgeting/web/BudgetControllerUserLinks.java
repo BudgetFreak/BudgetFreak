@@ -23,7 +23,8 @@ public class BudgetControllerUserLinks extends ResourceLinks<User> {
 
     @Override
     public Collection<Link> generateLinks(User entity) {
-        Link budget = linkTo(methodOn(BudgetController.class).get(entity.getId(), null, null)).withRel("budget");
+        @SuppressWarnings("squid:S2637") // Passing null values to @NonNull parameters here. Spring will create placeholders for them in the link.
+                Link budget = linkTo(methodOn(BudgetController.class).get(entity.getId(), null, null)).withRel("budget");
         return singletonList(budget);
     }
 }
