@@ -1,5 +1,6 @@
 package de.budgetfreak.budgeting.specification;
 
+import de.budgetfreak.BudgetingIntegrationTestApplication;
 import de.budgetfreak.budgeting.domain.Category;
 import de.budgetfreak.budgeting.domain.CategoryRepository;
 import de.budgetfreak.budgeting.domain.MasterCategory;
@@ -9,13 +10,10 @@ import de.budgetfreak.usermanagement.domain.UserRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.jdbc.EmbeddedDatabaseConnection;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.context.annotation.Import;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.jpa.domain.Specification;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
@@ -24,11 +22,8 @@ import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
-@DataJpaTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE, classes = BudgetingIntegrationTestApplication.class)
 @AutoConfigureTestDatabase(connection = EmbeddedDatabaseConnection.H2)
-@EntityScan("de.budgetfreak")
-@EnableJpaRepositories("de.budgetfreak")
-@Import(CategorySpecifications.class)
 public class CategorySpecificationsTest {
 
     @Autowired
