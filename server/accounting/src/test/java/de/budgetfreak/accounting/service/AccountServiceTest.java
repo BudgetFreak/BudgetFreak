@@ -46,7 +46,7 @@ public class AccountServiceTest {
     public void shoudlGetAccount() {
         User bob = UserTestUtils.createBob();
         Account checkings = AccountTestUtils.createCheckingsAccount(bob);
-        when(accountRepositoryMock.findOne(isA(Example.class))).thenReturn(Optional.of(checkings));
+        when(accountRepositoryMock.findById(anyLong())).thenReturn(Optional.of(checkings));
 
         Account accounts = testSubject.get(checkings.getId());
 
