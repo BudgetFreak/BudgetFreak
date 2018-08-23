@@ -43,7 +43,7 @@ public class AccountServiceTest {
     }
 
     @Test
-    public void shoudlGetAccount() {
+    public void shouldGetAccount() {
         User bob = UserTestUtils.createBob();
         Account checkings = AccountTestUtils.createCheckingsAccount(bob);
         when(accountRepositoryMock.findById(anyLong())).thenReturn(Optional.of(checkings));
