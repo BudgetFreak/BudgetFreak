@@ -1,0 +1,15 @@
+dependencyManagement {
+    imports { mavenBom("org.springframework.boot:spring-boot-dependencies:${version_spring_boot}") }
+}
+
+dependencies {
+    compile(
+            project(":server:user-management"),
+            project(":server:accounting"),
+            project(":server:persistence"),
+    )
+
+    testCompile(
+            project(":server:test-utils:web"),
+    )
+}

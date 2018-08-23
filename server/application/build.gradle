@@ -10,6 +10,7 @@ dependencies {
     compile(
             project(":server:accounting"),
             project(":server:user-management"),
+            project(":server:demo-user-generation")
     )
 
     runtime(
