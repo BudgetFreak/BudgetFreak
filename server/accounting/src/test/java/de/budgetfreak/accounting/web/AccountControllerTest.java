@@ -48,9 +48,9 @@ public class AccountControllerTest {
         final MockHttpServletResponse response = mvcResult.getResponse();
 
         assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
-        final PagedResources<AccountResource> userResources = JsonHelper.fromPagedResourceJson(response.getContentAsString(), AccountResource.class);
-        Assertions.assertThat(userResources).hasSize(2);
-        Assertions.assertThat(userResources).extracting("description").containsExactly("Checkings", "Savings");
+        final PagedResources<AccountResource> accountResources = JsonHelper.fromPagedResourceJson(response.getContentAsString(), AccountResource.class);
+        Assertions.assertThat(accountResources).hasSize(2);
+        Assertions.assertThat(accountResources).extracting("description").containsExactly("Checkings", "Savings");
     }
 
     @Test
