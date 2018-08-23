@@ -40,7 +40,7 @@ public class AccountService {
      * @param id The id of the account.
      */
     public Account get(long id) {
-        return accountRepository.findOne(Example.of(new Account().setId(id))).orElse(null);
+        return accountRepository.findById(id).orElse(null);
     }
 
     /**
