@@ -13,13 +13,13 @@ public class Budget {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "ID")
     private Long id;
 
-    @Column(name = "year")
+    @Column(name = "YEAR")
     private int year;
 
-    @Column(name = "month")
+    @Column(name = "MONTH")
     private int month;
 
     @ManyToOne(fetch = FetchType.LAZY)
