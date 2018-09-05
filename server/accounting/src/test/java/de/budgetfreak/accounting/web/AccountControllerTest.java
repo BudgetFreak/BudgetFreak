@@ -4,7 +4,7 @@ import de.budgetfreak.accounting.AccountTestUtils;
 import de.budgetfreak.accounting.UserTestUtils;
 import de.budgetfreak.accounting.domain.Account;
 import de.budgetfreak.accounting.service.AccountService;
-import de.budgetfreak.testutils.web.JsonHelper;
+import de.budgetfreak.utils.webtests.JsonHelper;
 import de.budgetfreak.usermanagement.domain.User;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
