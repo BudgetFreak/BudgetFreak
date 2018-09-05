@@ -1,6 +1,8 @@
 package de.budgetfreak.budgeting.specification;
 
 import de.budgetfreak.budgeting.domain.Category;
+import de.budgetfreak.budgeting.domain.Category_;
+import de.budgetfreak.budgeting.domain.MasterCategory_;
 import de.budgetfreak.usermanagement.domain.User;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
@@ -12,6 +14,6 @@ import org.springframework.stereotype.Component;
 public class CategorySpecifications {
 
     public Specification<Category> byUser(User user) {
-        return (root, query, criteriaBuilder) -> criteriaBuilder.equal(root.get("masterCategory").get("user"), user);
+        return (root, query, criteriaBuilder) -> criteriaBuilder.equal(root.get(Category_.masterCategory).get(MasterCategory_.user), user);
     }
 }

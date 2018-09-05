@@ -40,3 +40,6 @@ gradle-app.setting
 
 # JRebel
 **/rebel.xml
+
+# Generated sources
+**/src/main/generated

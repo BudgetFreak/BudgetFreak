@@ -27,6 +27,34 @@ subprojects {
         options.encoding = "UTF-8"
     }
 
+    ext {
+        generatedSourcesDir = file("src/main/generated")
+    }
+
+    sourceSets {
+        main {
+            java {
+                srcDir 'src/main/java'
+                // This directory only contains generated sources by builds from ItelliJ. It should always be empty and
+                // is ignored in version control.
+                srcDir 'src/main/generated'
+            }
+        }
+    }
+
+    compileJava {
+        doFirst {
+            delete generatedSourcesDir
+            mkdir generatedSourcesDir
+        }
+        options.compilerArgs += ['-s', generatedSourcesDir]
+    }
+
+    task removeGeneratedMetamodel(type: Delete) {
+        delete generatedSourcesDir
+    }
+    clean.dependsOn(removeGeneratedMetamodel)
+
     dependencies {
         compile(
                 "org.springframework.boot:spring-boot-starter-data-jpa",
@@ -36,9 +64,12 @@ subprojects {
                 "org.apache.commons:commons-lang3:${version_commons_lang}",
         )
 
+        annotationProcessor(
+                "org.hibernate:hibernate-jpamodelgen:${version_jpamodelgen}",
+        )
+
         compileOnly(
                 "org.hibernate:hibernate-jpamodelgen:${version_jpamodelgen}",
-
         )
 
         runtime(
