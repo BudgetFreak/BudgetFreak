@@ -1,6 +1,7 @@
 package de.budgetfreak.usermanagement.web;
 
-import de.budgetfreak.testutils.web.JsonHelper;
+import de.budgetfreak.utils.web.ResourceLinks;
+import de.budgetfreak.utils.webtests.JsonHelper;
 import de.budgetfreak.usermanagement.UserTestUtils;
 import de.budgetfreak.usermanagement.domain.User;
 import de.budgetfreak.usermanagement.service.UserService;
@@ -8,7 +9,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Import;
 import org.springframework.hateoas.PagedResources;
