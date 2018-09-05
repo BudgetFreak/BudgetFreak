@@ -44,17 +44,15 @@ subprojects {
 
     compileJava {
         doFirst {
-            // delete any generated sources from IntelliJ
-            removeGeneratedMetamodel.execute()
-//            generatedSourcesDir.mkdirs()
+            delete generatedSourcesDir
+            mkdir generatedSourcesDir
         }
-//        options.compilerArgs += ['-s', generatedSourcesDir]
+        options.compilerArgs += ['-s', generatedSourcesDir]
     }
 
     task removeGeneratedMetamodel(type: Delete) {
-        generatedSourcesDir.deleteDir()
+        delete generatedSourcesDir
     }
-//
     clean.dependsOn(removeGeneratedMetamodel)
 
     dependencies {
