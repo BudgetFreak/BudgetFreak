@@ -8,7 +8,8 @@ import javax.persistence.*;
  * A {@link MasterCategory} is the container for several {@link Category}-entities and used for
  * displaying accumulated data.
  */
-@Entity(name = "BF_MASTERCATEGORY")
+@Entity
+@Table(name = "BF_MASTERCATEGORY")
 public class MasterCategory {
 
     @Id

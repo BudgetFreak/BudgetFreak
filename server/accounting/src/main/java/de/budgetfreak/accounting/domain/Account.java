@@ -7,7 +7,8 @@ import javax.persistence.*;
 /**
  * Entity representing an account.
  */
-@Entity(name = "BF_ACCOUNT")
+@Entity
+@Table(name = "BF_ACCOUNT")
 public class Account {
 
     @Id

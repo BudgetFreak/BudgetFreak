@@ -5,7 +5,8 @@ import javax.persistence.*;
 /**
  * Entity representing an user with an own budget and accounts.
  */
-@Entity(name = "BF_USER")
+@Entity
+@Table(name = "BF_USER")
 public class User {
 
     @Id

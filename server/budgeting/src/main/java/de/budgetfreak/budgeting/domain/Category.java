@@ -6,7 +6,8 @@ import javax.persistence.*;
  * A category contains monthly spendings and has relating {@link Transaction}-entities which contain the
  * spending for each category. Categories are combined in a {@link MasterCategory}.
  */
-@Entity(name = "BF_CATEGORY")
+@Entity
+@Table(name = "BF_CATEGORY")
 public class Category {
 
     @Id

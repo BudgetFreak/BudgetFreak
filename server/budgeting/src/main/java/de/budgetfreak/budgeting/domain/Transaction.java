@@ -10,7 +10,8 @@ import java.util.Date;
  * A transaction is money spent issued to a {@link Payee}.
  * Transactions are assigned to an {@link Account} and a {@link Category}.
  */
-@Entity(name = "BF_TRANSACTION")
+@Entity
+@Table(name = "BF_TRANSACTION")
 public class Transaction {
 
     @Id

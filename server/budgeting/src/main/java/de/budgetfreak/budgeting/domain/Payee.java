@@ -7,7 +7,8 @@ import javax.persistence.*;
 /**
  * A payee can be linked to {@link Transaction}-entities.
  */
-@Entity(name = "BF_PAYEE")
+@Entity
+@Table(name = "BF_PAYEE")
 public class Payee {
 
     @Id
