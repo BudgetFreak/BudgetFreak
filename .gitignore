@@ -23,6 +23,7 @@ gradle-app.setting
 .shelf
 .ideaDataSources
 .idea/sonarlint
+.idea/shelf
 .idea/workspace.xml
 .idea/usage.statistics.xml
 .idea/tasks.xml
