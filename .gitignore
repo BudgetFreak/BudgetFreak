@@ -31,6 +31,7 @@ gradle-app.setting
 *.iml
 .idea/modules.xml
 .idea/gradle.xml
+.idea/shelf
 
 # temp
 *.*~
