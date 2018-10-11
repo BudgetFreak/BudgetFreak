@@ -7,8 +7,8 @@ import java.math.BigDecimal;
  * A CategoryBudget represents the amount of money you want to spend for a given
  * {@link Category} and {@link Budget}.
  */
-@Entity(name = "BF_CATEGORYBUDGET")
-public class CategoryBudget {
+@Entity
+@Table(name="BF_CATEGORYBUDGET")public class CategoryBudget {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

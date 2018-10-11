@@ -9,10 +9,15 @@ import org.springframework.stereotype.Component;
 
 /**
  * {@link Specification}s for {@link Category}-entities.
- */
+        */
 @Component
 public class CategorySpecifications {
 
+    /**
+     * Query a categories by it's owner.
+     * @param user
+     * @return
+     */
     public Specification<Category> byUser(User user) {
         return (root, query, criteriaBuilder) -> criteriaBuilder.equal(root.get(Category_.masterCategory).get(MasterCategory_.user), user);
     }
