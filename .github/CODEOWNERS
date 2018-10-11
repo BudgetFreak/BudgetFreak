@@ -1,0 +1,18 @@
+# Lines starting with '#' are comments.
+# Each line is a file pattern followed by one or more owners.
+# Order is important. The last matching pattern has the most precedence.
+
+# everything
+* @BudgetFreak/core
+
+# server
+server/*  @acetous
+
+# build files
+*.gradle @acetous
+
+# CI
+.circleci/* @acetous
+
+# GitHub config
+.github/* @acetous
