@@ -6,6 +6,8 @@ import de.budgetfreak.usermanagement.domain.User;
 import de.budgetfreak.usermanagement.domain.UserRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -28,6 +30,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 @EntityScan("de.budgetfreak")
 @EnableJpaRepositories("de.budgetfreak")
 public class BudgetSummaryRepositoryTest {
+
+    private static final Logger LOG = LoggerFactory.getLogger(BudgetSummaryRepositoryTest.class);
 
     @Autowired
     private BudgetRepository budgetRepository;
@@ -87,6 +91,8 @@ public class BudgetSummaryRepositoryTest {
         assertThat(budgetCategories).hasSize(2);
         assertThat(budgetCategories).filteredOn(budgetCategory -> budgetCategory.getName().equals("Games")).extracting(BudgetCategory::getBalance).first().isEqualTo(new BigDecimal("150.00"));
         assertThat(budgetCategories).filteredOn(budgetCategory -> budgetCategory.getName().equals("Groceries")).extracting(BudgetCategory::getBalance).first().isEqualTo(new BigDecimal("90.00"));
+
+        budgetCategories.forEach(budgetCategory -> LOG.info("BudgetCategory: {}", budgetCategory));
     }
 
     private Transaction createTransaction(Payee payee, Account account) {

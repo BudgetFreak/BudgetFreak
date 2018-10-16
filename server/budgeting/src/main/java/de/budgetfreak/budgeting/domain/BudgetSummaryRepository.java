@@ -12,9 +12,13 @@ import java.util.List;
  */
 public interface BudgetSummaryRepository extends JpaRepository<Budget, Long> {
 
-    @Query("select new de.budgetfreak.budgeting.domain.BudgetCategory(c.name, (select sum(t.amount) from Transaction t where t.category = c)) from Category c")
+    @Query("select new de.budgetfreak.budgeting.domain.BudgetCategory(" +
+                "c.name, " +
+                "(select sum(t.amount) from Transaction t where t.category = c), " +
+                "(select mc from MasterCategory mc where mc.id = c.masterCategory.id) " +
+            ") " +
+            "from Category c " +
+            "where c.masterCategory.user = :user")
     List<BudgetCategory> findAllBudgetCategories(@Param("user") User user);
 
-//    @Query("select c from Category c")
-//    List<Category> findByJpql();
 }

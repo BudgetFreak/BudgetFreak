@@ -8,14 +8,16 @@ import org.springframework.hateoas.ResourceSupport;
 public class CategoryResource extends ResourceSupport {
 
     private String name;
+    private double balance;
     private double budget;
     private double expenses;
     private double previousBudget;
     private double previousExpenses;
     private double averageExpenses;
 
-    public CategoryResource(String name, double budget, double expenses, double previousBudget, double previousExpenses, double averageExpenses) {
+    public CategoryResource(String name, double balance, double budget, double expenses, double previousBudget, double previousExpenses, double averageExpenses) {
         this.name = name;
+        this.balance = balance;
         this.budget = budget;
         this.expenses = expenses;
         this.previousBudget = previousBudget;
@@ -45,5 +47,9 @@ public class CategoryResource extends ResourceSupport {
 
     public double getAverageExpenses() {
         return averageExpenses;
+    }
+
+    public double getBalance() {
+        return balance;
     }
 }

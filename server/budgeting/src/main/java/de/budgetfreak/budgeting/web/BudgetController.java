@@ -62,7 +62,7 @@ public class BudgetController {
     }
 
     private CategoryResource createCategory(String name, @PathVariable("userId") long userId, @Valid @NotNull @RequestParam(value = "year") Long year, @Valid @NotNull @RequestParam("month") Long month) {
-        CategoryResource categoryResource = new CategoryResource(name, 200, 72.15, 150, 195.10, 132.57);
+        CategoryResource categoryResource = new CategoryResource(name, 1337.42, 200, 72.15, 150, 195.10, 132.57);
         categoryResource.add(new Link("/users/" + userId + "/budget/category/" + 42 + "?year=" + year + "&month=" + month));
         return categoryResource;
     }
