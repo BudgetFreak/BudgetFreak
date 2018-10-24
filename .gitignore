@@ -28,6 +28,7 @@ gradle-app.setting
 .idea/tasks.xml
 .idea/shelf
 .idea/misc.xml
+.idea/libraries
 # ignored IntelliJ-files for Gradle based projects
 *.iml
 .idea/modules.xml
