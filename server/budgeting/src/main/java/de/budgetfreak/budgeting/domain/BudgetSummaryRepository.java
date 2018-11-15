@@ -16,7 +16,7 @@ public interface BudgetSummaryRepository extends JpaRepository<Budget, Long> {
     @Query("select new de.budgetfreak.budgeting.domain.BudgetCategory(" +
             "c.id, " +
                 "c.name, " +
-            "(select sum(cb.amount) from CategoryBudget cb where cb.category = c and cb.budget.year = :budgetYear and cb.budget.month = :budgetMonth), " +
+            "(select cb.amount from CategoryBudget cb where cb.category = c and cb.budget.year = :budgetYear and cb.budget.month = :budgetMonth), " +
             "(select sum(t.amount) from Transaction t where t.category = c and t.bookingDate >= :intervalStart and t.bookingDate <= :intervalEnd), " +
                 "(select mc from MasterCategory mc where mc.id = c.masterCategory.id) " +
             ") " +

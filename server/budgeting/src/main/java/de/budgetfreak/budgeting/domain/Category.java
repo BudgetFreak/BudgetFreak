@@ -36,6 +36,15 @@ public class Category {
     @Column(name = "TYPE")
     private CategoryType type = CategoryType.USER_DEFINED;
 
+    public Category() {
+    }
+
+    public Category(String name, User user, CategoryType type) {
+        this.name = name;
+        this.user = user;
+        this.type = type;
+    }
+
     public Long getId() {
         return id;
     }
