@@ -4,7 +4,7 @@ import de.budgetfreak.accounting.domain.Account;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * A transaction is money spent issued to a {@link Payee}.
@@ -23,7 +23,7 @@ public class Transaction {
     private BigDecimal amount;
 
     @Column(name = "BOOKING_DATE")
-    private Date bookingDate;
+    private LocalDateTime bookingDate;
 
     @Column(name = "DESCRIPTION")
     private String description;
@@ -61,11 +61,11 @@ public class Transaction {
         return this;
     }
 
-    public Date getBookingDate() {
+    public LocalDateTime getBookingDate() {
         return bookingDate;
     }
 
-    public Transaction setBookingDate(Date bookingDate) {
+    public Transaction setBookingDate(LocalDateTime bookingDate) {
         this.bookingDate = bookingDate;
         return this;
     }

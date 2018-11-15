@@ -45,10 +45,10 @@ public class CategorySpecificationsTest {
         MasterCategory mcSavings = masterCategoryRepository.save(new MasterCategory().setName("Savings").setUser(user));
 
         categoryRepository.saveAll(asList(
-                new Category().setName("Rent").setMasterCategory(mcMonthly),
-                new Category().setName("Internet").setMasterCategory(mcMonthly),
-                new Category().setName("Rainy Day Funds").setMasterCategory(mcSavings),
-                new Category().setName("Christmas").setMasterCategory(mcSavings)
+                new Category().setName("Rent").setMasterCategory(mcMonthly).setUser(user),
+                new Category().setName("Internet").setMasterCategory(mcMonthly).setUser(user),
+                new Category().setName("Rainy Day Funds").setMasterCategory(mcSavings).setUser(user),
+                new Category().setName("Christmas").setMasterCategory(mcSavings).setUser(user)
         ));
 
 

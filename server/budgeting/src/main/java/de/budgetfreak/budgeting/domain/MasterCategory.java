@@ -1,6 +1,7 @@
 package de.budgetfreak.budgeting.domain;
 
 import de.budgetfreak.usermanagement.domain.User;
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
 import javax.persistence.*;
 
@@ -61,5 +62,10 @@ public class MasterCategory {
     public MasterCategory setUser(User user) {
         this.user = user;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ReflectionToStringBuilder.toString(this);
     }
 }

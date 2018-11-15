@@ -62,6 +62,7 @@ subprojects {
                 "org.springframework.data:spring-data-rest-hal-browser",
                 "org.springframework.hateoas:spring-hateoas",
                 "org.apache.commons:commons-lang3:${version_commons_lang}",
+                "org.hibernate:hibernate-java8",
         )
 
         annotationProcessor(

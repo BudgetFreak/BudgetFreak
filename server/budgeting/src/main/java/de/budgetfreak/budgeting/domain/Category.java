@@ -1,5 +1,9 @@
 package de.budgetfreak.budgeting.domain;
 
+import de.budgetfreak.usermanagement.domain.User;
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 import javax.persistence.*;
 
 /**
@@ -24,6 +28,13 @@ public class Category {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "MASTERCATEGORY_ID")
     private MasterCategory masterCategory;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "USER_ID")
+    private User user;
+
+    @Column(name = "TYPE")
+    private CategoryType type = CategoryType.USER_DEFINED;
 
     public Long getId() {
         return id;
@@ -59,5 +70,28 @@ public class Category {
     public Category setMasterCategory(MasterCategory masterCategory) {
         this.masterCategory = masterCategory;
         return this;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public Category setUser(User user) {
+        this.user = user;
+        return this;
+    }
+
+    public CategoryType getType() {
+        return type;
+    }
+
+    public Category setType(CategoryType type) {
+        this.type = type;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return ReflectionToStringBuilder.toString(this, ToStringStyle.MULTI_LINE_STYLE);
     }
 }

@@ -41,9 +41,9 @@ public class CategoryBudgetRepositoryTest {
 
     @Test
     public void shouldSaveNewMaterCategories() {
-        User user = userRepository.save(new User().setName("Bob").setCurrency("€"));
-        MasterCategory masterCategory = masterCategoryRepository.save(new MasterCategory().setName("mastercategory").setUser(user));
-        Category category = categoryRepository.save(new Category().setName("category").setMasterCategory(masterCategory));
+        User user = createUser();
+        MasterCategory masterCategory = createMasterCategory(user);
+        Category category = createCategory(user, masterCategory);
         Budget budget = budgetRepository.save(new Budget().setUser(user).setYear(2018).setMonth(8));
 
         CategoryBudget categoryBudget = new CategoryBudget().setBudget(budget).setCategory(category).setAmount(new BigDecimal("1337.42")).setDescription("description");
@@ -56,5 +56,22 @@ public class CategoryBudgetRepositoryTest {
         assertThat(savedCategoryBudget.getAmount()).isEqualTo(new BigDecimal("1337.42"));
         assertThat(savedCategoryBudget.getBudget().getId()).isEqualTo(budget.getId());
         assertThat(savedCategoryBudget.getCategory().getId()).isEqualTo(category.getId());
+    }
+
+    private Category createCategory(User user, MasterCategory masterCategory) {
+        return categoryRepository.save(new Category().setName("category").setMasterCategory(masterCategory).setUser(user));
+    }
+
+    private MasterCategory createMasterCategory(User user) {
+        return masterCategoryRepository.save(new MasterCategory().setName("mastercategory").setUser(user));
+    }
+
+    private User createUser() {
+        return userRepository.save(new User().setName("Bob").setCurrency("€"));
+    }
+
+    @Test
+    public void constraintShouldCheckMasterCategory() {
+
     }
 }

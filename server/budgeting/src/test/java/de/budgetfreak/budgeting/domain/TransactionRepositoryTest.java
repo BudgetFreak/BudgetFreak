@@ -15,7 +15,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -49,10 +49,10 @@ public class TransactionRepositoryTest {
     public void shouldSaveNewMaterCategories() {
         User user = userRepository.save(new User().setName("Bob").setCurrency("€"));
         MasterCategory masterCategory = masterCategoryRepository.save(new MasterCategory().setName("mastercategory").setUser(user));
-        Category category = categoryRepository.save(new Category().setName("category").setMasterCategory(masterCategory));
+        Category category = categoryRepository.save(new Category().setName("category").setMasterCategory(masterCategory).setUser(user));
         Payee payee = payeeRepository.save(new Payee().setName("payee").setUser(user));
         Account account = accountRepository.save(new Account().setUser(user).setOnBudget(true).setDescription("account"));
-        Date bookingDate = new Date();
+        LocalDateTime bookingDate = LocalDateTime.now();
 
         Transaction transaction = new Transaction()
                 .setAmount(new BigDecimal("1337.42"))

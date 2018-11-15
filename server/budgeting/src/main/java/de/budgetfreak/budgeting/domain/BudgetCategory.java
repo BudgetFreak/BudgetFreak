@@ -10,22 +10,34 @@ import java.math.BigDecimal;
  */
 public class BudgetCategory {
 
+    private long id;
     private String name;
-    private BigDecimal balance;
+    private final BigDecimal budget;
+    private final BigDecimal expenses;
     private MasterCategory masterCategory;
 
-    public BudgetCategory(String name, BigDecimal balance, MasterCategory masterCategory) {
+    public BudgetCategory(long id, String name, BigDecimal budget, BigDecimal expenses, MasterCategory masterCategory) {
+        this.id = id;
         this.name = name;
-        this.balance = balance;
+        this.budget = budget;
+        this.expenses = expenses;
         this.masterCategory = masterCategory;
+    }
+
+    public long getId() {
+        return id;
     }
 
     public String getName() {
         return name;
     }
 
-    public BigDecimal getBalance() {
-        return balance;
+    public BigDecimal getBudget() {
+        return budget;
+    }
+
+    public BigDecimal getExpenses() {
+        return expenses;
     }
 
     public MasterCategory getMasterCategory() {
