@@ -14,7 +14,7 @@ feature beforehand.
 ## Tools
 
 We're using IntelliJ (Java) and Visual Studio Code (Java / Typescript) to develop the project. You can import the project
-as Gradle Project to get started. If you want to develop the web frontend just import the `web` folder 
+as a Gradle Project to get started. If you want to develop the web frontend just import the `web` folder 
 in IntelliJ or VSC. 
 
 ## How to run things
