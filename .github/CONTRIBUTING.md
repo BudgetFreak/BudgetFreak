@@ -13,15 +13,16 @@ feature beforehand.
 
 ## Tools
 
-We're using IntelliJ (Java) and Visual Studio Code (Java / Typescript) to develop the project. You can run 
-`gradlew idea` to create IntelliJ project files. If you want to develop the web frontend just import the `web` folder 
+We're using IntelliJ (Java) and Visual Studio Code (Java / Typescript) to develop the project. You can import the project
+as Gradle Project to get started. If you want to develop the web frontend just import the `web` folder 
 in IntelliJ or VSC. 
 
 ## How to run things
 
 TBA :smirk:
 
-For the time being just run the server with `gradlew bootrun` and the web module using `ng serve`.
+For the time being just run the server with the `bootrun` task which is placed under `BudgetFreak` > `Tasks` > 
+`application` in the Gradle tool window in IntelliJ. If you want to start the web module use `ng serve` on your console.
 
 ## How to code
 
