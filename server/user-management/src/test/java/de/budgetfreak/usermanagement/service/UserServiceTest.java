@@ -21,14 +21,14 @@ public class UserServiceTest {
     private UserManagementProperties userManagementProperties;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         userRepositoryMock = mock(UserRepository.class);
         userManagementProperties = new UserManagementProperties().setTestProperty("mockedTestProperty");
         testSubject = new UserService(userRepositoryMock, userManagementProperties);
     }
 
     @Test
-    public void shouldCreateUser() throws Exception {
+    public void shouldCreateUser() {
         when(userRepositoryMock.save(isA(User.class))).thenAnswer(invocation -> invocation.getArgument(0));
 
         final User user = testSubject.create("Clark", "$");
@@ -38,7 +38,7 @@ public class UserServiceTest {
     }
 
     @Test
-    public void shouldReturnAllUser() throws Exception {
+    public void shouldReturnAllUser() {
         final List<User> bobAndJane = UserTestUtils.createBobAndJane();
         when(userRepositoryMock.findAll()).thenReturn(bobAndJane);
 
@@ -52,8 +52,8 @@ public class UserServiceTest {
         final User bob = UserTestUtils.createBob();
         when(userRepositoryMock.findOne(isA(Example.class))).thenReturn(Optional.of(bob));
 
-        final User user = testSubject.get(bob.getId());
-        assertThat(user).isEqualToComparingFieldByField(bob);
+        final Optional<User> user = testSubject.get(bob.getId());
+        assertThat(user).get().isEqualToComparingFieldByField(bob);
     }
 
     @Test

@@ -9,6 +9,7 @@ import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Service for managing users.
@@ -46,8 +47,8 @@ public class UserService {
     /**
      * Get one user by id.
      */
-    public User get(long id) {
-        return userRepository.findOne(Example.of(new User().setId(id))).orElse(null);
+    public Optional<User> get(long id) {
+        return userRepository.findOne(Example.of(new User().setId(id)));
     }
 
     /**

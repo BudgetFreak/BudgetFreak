@@ -11,6 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -34,7 +35,6 @@ public class UserController {
         binder.setValidator(new UserResourceValidator());
     }
 
-
     @Autowired
     public UserController(UserService userService, UserResourceAssembler userResourceAssembler) {
         this.userService = userService;
@@ -57,9 +57,9 @@ public class UserController {
      */
     @GetMapping("/{userId}")
     public Resource<UserResource> get(@PathVariable("userId") long userId) {
-        User user = userService.get(userId);
-        final UserResource userResource = userResourceAssembler.toResource(user);
-        return new Resource<>(userResource);
+        return userService.get(userId) //
+                .map(user -> new Resource<>(userResourceAssembler.toResource(user)))//
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found"));
     }
 
     /**

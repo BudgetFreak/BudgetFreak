@@ -20,6 +20,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 
+import java.util.Optional;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.anyString;
@@ -58,7 +60,7 @@ public class UserControllerTest {
 
     @Test
     public void shouldGetOneUser() throws Exception {
-        when(userServiceMock.get(anyLong())).thenReturn(UserTestUtils.createBob());
+        when(userServiceMock.get(anyLong())).thenReturn(Optional.of(UserTestUtils.createBob()));
 
         final MockHttpServletRequestBuilder requestBuilder = get("/users/{id}", 1L).accept(MediaType.APPLICATION_JSON);
         final MvcResult mvcResult = mockMvc.perform(requestBuilder).andReturn();
@@ -68,6 +70,30 @@ public class UserControllerTest {
         final UserResource userResource = JsonHelper.fromJson(response.getContentAsString(), UserResource.class);
         assertThat(userResource.getName()).isEqualTo("Bob");
         assertThat(userResource.getCurrency()).isEqualTo("€");
+    }
+
+    @Test
+    public void shouldReturn404WhenUserNotExists() throws Exception {
+        long userId = 1337;
+        when(userServiceMock.get(userId)).thenReturn(Optional.empty());
+
+        final MockHttpServletRequestBuilder requestBuilder = get("/users/{id}", userId).accept(MediaType.APPLICATION_JSON);
+        final MvcResult mvcResult = mockMvc.perform(requestBuilder).andReturn();
+        final MockHttpServletResponse response = mvcResult.getResponse();
+
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.NOT_FOUND.value());
+    }
+
+    @Test
+    public void shouldReturnUserNotFoundErrorMessageWhenUserNotExists() throws Exception {
+        long userId = 1337;
+        when(userServiceMock.get(userId)).thenReturn(Optional.empty());
+
+        final MockHttpServletRequestBuilder requestBuilder = get("/users/{id}", userId).accept(MediaType.APPLICATION_JSON);
+        final MvcResult mvcResult = mockMvc.perform(requestBuilder).andReturn();
+        final MockHttpServletResponse response = mvcResult.getResponse();
+
+        assertThat(response.getErrorMessage()).isEqualTo("User not found");
     }
 
     @Test
