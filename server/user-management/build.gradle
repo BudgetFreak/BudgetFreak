@@ -3,12 +3,12 @@ dependencyManagement {
 }
 
 dependencies {
-    compile(
+    implementation(
             project(":server:persistence"),
             project(":server:utils:web"),
     )
 
-    testCompile(
+    testImplementation(
             project(":server:utils:web-tests"),
     )
 }

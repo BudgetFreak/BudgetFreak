@@ -56,7 +56,7 @@ subprojects {
     clean.dependsOn(removeGeneratedMetamodel)
 
     dependencies {
-        compile(
+        implementation(
                 "org.springframework.boot:spring-boot-starter-data-jpa",
                 "org.springframework.boot:spring-boot-starter-data-rest",
                 "org.springframework.data:spring-data-rest-hal-browser",
@@ -73,11 +73,11 @@ subprojects {
                 "org.hibernate:hibernate-jpamodelgen:${version_jpamodelgen}",
         )
 
-        runtime(
+        runtimeOnly(
                 "com.h2database:h2:${version_h2}",
         )
 
-        testCompile(
+        testImplementation(
                 "org.springframework.boot:spring-boot-starter-test",
                 "org.springframework.restdocs:spring-restdocs-mockmvc",
                 "org.springframework.security:spring-security-test",
