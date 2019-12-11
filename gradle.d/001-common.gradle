@@ -12,15 +12,7 @@ task resolveDependencies {
 }
 
 void resolveConfiguration(configuration) {
-    if (isResolveableConfiguration(configuration)) {
+    if (configuration.canBeResolved()) {
         configuration.resolve()
     }
-}
-
-boolean isResolveableConfiguration(configuration) {
-    def nonResolveableConfigurations = ['apiElements', 'implementation',
-                                        'runtimeElements', 'runtimeOnly',
-                                        'testImplementation', 'testRuntimeOnly']
-
-    return !nonResolveableConfigurations.contains(configuration.getName())
 }

@@ -3,11 +3,11 @@ dependencyManagement {
 }
 
 dependencies {
-    compile(
+    implementation(
             "org.flywaydb:flyway-core:${version_flyway}",
     )
 
-    testCompile(
+    testImplementation(
             "org.flywaydb.flyway-test-extensions:flyway-spring-test:${version_flyway_spring_test}",
     )
 }
