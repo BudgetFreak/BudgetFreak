@@ -13,7 +13,7 @@ jobs:
           key: v{{ .Environment.CACHE_TOKEN }}-dependencies-{{ checksum "gradle.properties" }}
       - restore_cache:
           key: v{{ .Environment.CACHE_TOKEN }}-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
-      - run: ./gradlew resolveDependencies --stacktrace
+      - run: ./gradlew build --stacktrace
       - save_cache:
           paths:
             - ~/.gradle/caches
@@ -22,8 +22,6 @@ jobs:
           paths:
             - ~/.gradle/wrapper
           key: v{{ .Environment.CACHE_TOKEN }}-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
-      - run: ./gradlew check --stacktrace
-      - run: ./gradlew build --stacktrace
       - persist_to_workspace:
           root: .
           paths: ./*
