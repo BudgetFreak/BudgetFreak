@@ -22,15 +22,8 @@ gradle-app.setting
 *.iws
 .shelf
 .ideaDataSources
-.idea/sonarlint
-.idea/workspace.xml
-.idea/usage.statistics.xml
-.idea/tasks.xml
-.idea/shelf
-# ignored IntelliJ-files for Gradle based projects
+/.idea/
 *.iml
-.idea/modules.xml
-.idea/gradle.xml
 
 # temp
 *.*~
